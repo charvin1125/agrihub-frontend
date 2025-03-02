@@ -40,7 +40,7 @@
 //     const fetchData = async () => {
 //       setLoading(true);
 //       try {
-//         const userRes = await axios.get("http://localhost:5000/api/users/me", { withCredentials: true });
+//         const userRes = await axios.get("https://agrihub-backend.onrender.com/api/users/me", { withCredentials: true });
 //         console.log("User Data:", userRes.data);
 //         if (!userRes.data.isAdmin) {
 //           console.log("Redirecting non-admin to /");
@@ -49,8 +49,8 @@
 //         }
 
 //         const [bookingsRes, laborsRes] = await Promise.all([
-//           axios.get("http://localhost:5000/api/bookings/all", { withCredentials: true }),
-//           axios.get("http://localhost:5000/api/labors/list", { withCredentials: true }),
+//           axios.get("https://agrihub-backend.onrender.com/api/bookings/all", { withCredentials: true }),
+//           axios.get("https://agrihub-backend.onrender.com/api/labors/list", { withCredentials: true }),
 //         ]);
 //         setBookings(bookingsRes.data || []);
 //         setLabors(laborsRes.data || []);
@@ -78,7 +78,7 @@
 //   const handleApprove = async (bookingId, laborId, serviceDate) => {
 //     try {
 //       await axios.put(
-//         `http://localhost:5000/api/bookings/approve/${bookingId}`,
+//         `https://agrihub-backend.onrender.com/api/bookings/approve/${bookingId}`,
 //         { laborId, serviceDate },
 //         { withCredentials: true }
 //       );
@@ -318,7 +318,7 @@ const AdminServiceBookings = () => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const userRes = await axios.get("http://localhost:5000/api/users/me", { withCredentials: true });
+        const userRes = await axios.get("https://agrihub-backend.onrender.com/api/users/me", { withCredentials: true });
         console.log("User Data:", userRes.data);
         if (!userRes.data.isAdmin) {
           console.log("Redirecting non-admin to /");
@@ -327,8 +327,8 @@ const AdminServiceBookings = () => {
         }
 
         const [bookingsRes, laborsRes] = await Promise.all([
-          axios.get("http://localhost:5000/api/bookings/all", { withCredentials: true }),
-          axios.get("http://localhost:5000/api/labors/list", { withCredentials: true }),
+          axios.get("https://agrihub-backend.onrender.com/api/bookings/all", { withCredentials: true }),
+          axios.get("https://agrihub-backend.onrender.com/api/labors/list", { withCredentials: true }),
         ]);
         setBookings(
           bookingsRes.data.map((booking) => ({
@@ -395,7 +395,7 @@ const AdminServiceBookings = () => {
 
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/bookings/approve/${bookingId}`,
+        `https://agrihub-backend.onrender.com/api/bookings/approve/${bookingId}`,
         { laborId: booking.laborId, serviceDate: booking.serviceDate },
         { withCredentials: true }
       );

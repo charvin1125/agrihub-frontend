@@ -23,7 +23,7 @@
 
 //   const fetchVendors = async () => {
 //     try {
-//       const response = await axios.get("http://localhost:5000/api/vendor/list", { withCredentials: true });
+//       const response = await axios.get("https://agrihub-backend.onrender.com/api/vendor/list", { withCredentials: true });
 //       setVendors(response.data);
 //     } catch (error) {
 //       alert("Failed to fetch vendors");
@@ -32,7 +32,7 @@
 
 //   const fetchUser = async () => {
 //     try {
-//       const response = await axios.get("http://localhost:5000/api/users/me", { withCredentials: true });
+//       const response = await axios.get("https://agrihub-backend.onrender.com/api/users/me", { withCredentials: true });
 //       setUser(response.data);
 //     } catch (error) {
 //       console.log("User not logged in");
@@ -51,12 +51,12 @@
 //     }
 //     try {
 //       if (isEditing) {
-//         await axios.put(`http://localhost:5000/api/vendor/${editId}`, vendor, { withCredentials: true });
+//         await axios.put(`https://agrihub-backend.onrender.com/api/vendor/${editId}`, vendor, { withCredentials: true });
 //         alert("Vendor updated successfully!");
 //         setIsEditing(false);
 //         setEditId(null);
 //       } else {
-//         await axios.post("http://localhost:5000/api/vendor/add", vendor, { withCredentials: true });
+//         await axios.post("https://agrihub-backend.onrender.com/api/vendor/add", vendor, { withCredentials: true });
 //         alert("Vendor added successfully!");
 //       }
 //       setVendor({ name: "", email: "", phone: "", address: "" });
@@ -79,7 +79,7 @@
 //     }
 //     if (window.confirm("Are you sure you want to delete this vendor?")) {
 //       try {
-//         await axios.delete(`http://localhost:5000/api/vendor/${id}`, { withCredentials: true });
+//         await axios.delete(`https://agrihub-backend.onrender.com/api/vendor/${id}`, { withCredentials: true });
 //         alert("Vendor deleted successfully!");
 //         fetchVendors();
 //       } catch (error) {
@@ -198,7 +198,7 @@ const ManageVendors = () => {
 
   const fetchVendors = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/vendor/list", { withCredentials: true });
+      const response = await axios.get("https://agrihub-backend.onrender.com/api/vendor/list", { withCredentials: true });
       setVendors(response.data);
     } catch (error) {
       alert("Failed to fetch vendors");
@@ -207,7 +207,7 @@ const ManageVendors = () => {
 
   const fetchUser = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/users/me", { withCredentials: true });
+      const response = await axios.get("https://agrihub-backend.onrender.com/api/users/me", { withCredentials: true });
       setUser(response.data);
       if (!response.data.isAdmin) navigate("/"); // Redirect non-admins
     } catch (error) {
@@ -228,12 +228,12 @@ const ManageVendors = () => {
     }
     try {
       if (isEditing) {
-        await axios.put(`http://localhost:5000/api/vendor/${editId}`, vendor, { withCredentials: true });
+        await axios.put(`https://agrihub-backend.onrender.com/api/vendor/${editId}`, vendor, { withCredentials: true });
         alert("Vendor updated successfully!");
         setIsEditing(false);
         setEditId(null);
       } else {
-        await axios.post("http://localhost:5000/api/vendor/add", vendor, { withCredentials: true });
+        await axios.post("https://agrihub-backend.onrender.com/api/vendor/add", vendor, { withCredentials: true });
         alert("Vendor added successfully!");
       }
       setVendor({ name: "", email: "", phone: "", address: "" });
@@ -256,7 +256,7 @@ const ManageVendors = () => {
     }
     if (window.confirm("Are you sure you want to delete this vendor?")) {
       try {
-        await axios.delete(`http://localhost:5000/api/vendor/${id}`, { withCredentials: true });
+        await axios.delete(`https://agrihub-backend.onrender.com/api/vendor/${id}`, { withCredentials: true });
         alert("Vendor deleted successfully!");
         fetchVendors();
       } catch (error) {

@@ -40,7 +40,7 @@
 //   useEffect(() => {
 //     const fetchUser = async () => {
 //       try {
-//         const res = await axios.get("http://localhost:5000/api/users/me", { withCredentials: true });
+//         const res = await axios.get("https://agrihub-backend.onrender.com/api/users/me", { withCredentials: true });
 //         setUser(res.data);
 //         // Pre-fill form with user data if available
 //         setFormData((prev) => ({
@@ -97,7 +97,7 @@
 //     };
 
 //     try {
-//       const res = await axios.post("http://localhost:5000/api/services/book-service", bookingData, {
+//       const res = await axios.post("https://agrihub-backend.onrender.com/api/services/book-service", bookingData, {
 //         withCredentials: true,
 //       });
 //       alert("Service booked successfully! Booking ID: " + res.data.bookingId);
@@ -378,7 +378,7 @@ const ServiceBooking = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/users/me", { withCredentials: true });
+        const res = await axios.get("https://agrihub-backend.onrender.com/api/users/me", { withCredentials: true });
         setUser(res.data);
         setFormData((prev) => ({
           ...prev,
@@ -436,7 +436,7 @@ const ServiceBooking = () => {
     console.log("Booking Data:", bookingData); // Log data for debugging
 
     try {
-      const res = await axios.post("http://localhost:5000/api/book-service", bookingData, {
+      const res = await axios.post("https://agrihub-backend.onrender.com/api/book-service", bookingData, {
         withCredentials: true,
       });
       alert("Service booked successfully! Booking ID: " + res.data.bookingId);

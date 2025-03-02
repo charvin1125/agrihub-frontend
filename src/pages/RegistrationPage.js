@@ -22,7 +22,7 @@
 //     setMessage("");
 
 //     try {
-//       const response = await axios.post("http://localhost:5000/api/users/register", formData);
+//       const response = await axios.post("https://agrihub-backend.onrender.com/api/users/register", formData);
 //       setMessage(response.data.message + ` Username: ${response.data.username}`);
 //     } catch (error) {
 //       setMessage(error.response?.data?.error || "Registration failed");
@@ -104,7 +104,7 @@
 //     setMessage("");
 
 //     try {
-//       const response = await axios.post("http://localhost:5000/api/users/register", formData);
+//       const response = await axios.post("https://agrihub-backend.onrender.com/api/users/register", formData);
 //       setMessage(`Success! Username: ${response.data.username}`);
 //     } catch (error) {
 //       setMessage(error.response?.data?.error || "Registration failed");
@@ -233,7 +233,7 @@ const RegistrationPage = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post("http://localhost:5000/api/users/register", formData);
+      const response = await axios.post("https://agrihub-backend.onrender.com/api/users/register", formData);
       setMessage(`Success! Username: ${response.data.username}`);
       setFormData({
         firstName: "",

@@ -17,7 +17,7 @@
 //   const fetchProducts = async () => {
 //     setLoading(true);
 //     try {
-//       const response = await axios.get("http://localhost:5000/api/product/list");
+//       const response = await axios.get("https://agrihub-backend.onrender.com/api/product/list");
 //       setProducts(response.data); // ✅ Ensure correct response data
 //     } catch (error) {
 //       message.error("Failed to fetch products");
@@ -34,7 +34,7 @@
 
 //   const handleUpdateStock = async () => {
 //     try {
-//       await axios.put(`http://localhost:5000/api/products/${selectedProduct._id}/update-stock`, {
+//       await axios.put(`https://agrihub-backend.onrender.com/api/products/${selectedProduct._id}/update-stock`, {
 //         variantId: selectedVariant._id, // ✅ Update specific variant stock
 //         stock: updatedStock
 //       });
@@ -129,7 +129,7 @@
 //   // const fetchProducts = async () => {
 //   //   setLoading(true);
 //   //   try {
-//   //     const response = await axios.get("http://localhost:5000/api/product/list");
+//   //     const response = await axios.get("https://agrihub-backend.onrender.com/api/product/list");
 //   //     setProducts(response.data || []); // ✅ Ensure response is an array
 //   //   } catch (error) {
 //   //     console.error("Failed to fetch products");
@@ -140,15 +140,15 @@
 //     setLoading(true);
 //     try {
 //       // Fetch Products
-//       const productRes = await axios.get("http://localhost:5000/api/product/list",{ withCredentials: true });
+//       const productRes = await axios.get("https://agrihub-backend.onrender.com/api/product/list",{ withCredentials: true });
 //       console.log("🔹 Products:", productRes.data);
   
 //       // Fetch Categories
-//       const categoryRes = await axios.get("http://localhost:5000/api/category/list",{ withCredentials: true });
+//       const categoryRes = await axios.get("https://agrihub-backend.onrender.com/api/category/list",{ withCredentials: true });
 //       console.log("🔹 Categories:", categoryRes.data);
   
 //       // Fetch Brands
-//       const brandRes = await axios.get("http://localhost:5000/api/vendor/list",{ withCredentials: true });
+//       const brandRes = await axios.get("https://agrihub-backend.onrender.com/api/vendor/list",{ withCredentials: true });
 //       console.log("🔹 Brands:", brandRes.data);
   
 //       // Check if data is empty
@@ -192,7 +192,7 @@
 
 //   const handleUpdateStock = async () => {
 //     try {
-//       await axios.put(`http://localhost:5000/api/products/${selectedProduct._id}/update-stock`, {
+//       await axios.put(`https://agrihub-backend.onrender.com/api/products/${selectedProduct._id}/update-stock`, {
 //         variantId: selectedVariant._id,
 //         stock: updatedStock
 //       });
@@ -371,9 +371,9 @@
 //     setLoading(true);
 //     try {
 //       const [productRes, categoryRes, brandRes] = await Promise.all([
-//         axios.get("http://localhost:5000/api/product/list", { withCredentials: true }),
-//         axios.get("http://localhost:5000/api/category/list", { withCredentials: true }),
-//         axios.get("http://localhost:5000/api/vendor/list", { withCredentials: true }),
+//         axios.get("https://agrihub-backend.onrender.com/api/product/list", { withCredentials: true }),
+//         axios.get("https://agrihub-backend.onrender.com/api/category/list", { withCredentials: true }),
+//         axios.get("https://agrihub-backend.onrender.com/api/vendor/list", { withCredentials: true }),
 //       ]);
 
 //       const categories = categoryRes.data.reduce((acc, category) => {
@@ -425,7 +425,7 @@
 //   const handleUpdateStock = async () => {
 //     try {
 //       await axios.put(
-//         `http://localhost:5000/api/products/${editProduct._id}/update-stock`,
+//         `https://agrihub-backend.onrender.com/api/products/${editProduct._id}/update-stock`,
 //         {
 //           variantId: editVariant._id,
 //           stock: editStock,
@@ -733,9 +733,9 @@ const InventoryManagement = () => {
     setLoading(true);
     try {
       const [productRes, categoryRes, brandRes] = await Promise.all([
-        axios.get("http://localhost:5000/api/product/list", { withCredentials: true }),
-        axios.get("http://localhost:5000/api/category/list", { withCredentials: true }),
-        axios.get("http://localhost:5000/api/vendor/list", { withCredentials: true }),
+        axios.get("https://agrihub-backend.onrender.com/api/product/list", { withCredentials: true }),
+        axios.get("https://agrihub-backend.onrender.com/api/category/list", { withCredentials: true }),
+        axios.get("https://agrihub-backend.onrender.com/api/vendor/list", { withCredentials: true }),
       ]);
 
       const categories = categoryRes.data.reduce((acc, category) => {
@@ -787,7 +787,7 @@ const InventoryManagement = () => {
   const handleUpdateStock = async () => {
     try {
       await axios.put(
-        `http://localhost:5000/api/products/${editProduct._id}/update-stock`,
+        `https://agrihub-backend.onrender.com/api/products/${editProduct._id}/update-stock`,
         {
           variantId: editVariant._id,
           stock: editStock,

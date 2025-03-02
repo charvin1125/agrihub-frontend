@@ -202,7 +202,7 @@
 //   useEffect(() => {
 //     const fetchUserProfile = async () => {
 //       try {
-//         const response = await axios.get("http://localhost:5000/api/users/profile", {
+//         const response = await axios.get("https://agrihub-backend.onrender.com/api/users/profile", {
 //           withCredentials: true, // Ensure cookies (session) are sent with request
 //         });
 //         setUser(response.data);
@@ -217,7 +217,7 @@
 //   }, [navigate]);
 
 //   const handleLogout = () => {
-//     axios.post("http://localhost:5000/api/users/logout", {}, { withCredentials: true })
+//     axios.post("https://agrihub-backend.onrender.com/api/users/logout", {}, { withCredentials: true })
 //       .then(() => {
 //         localStorage.removeItem("user");
 //         navigate("/login");
@@ -244,7 +244,7 @@
 
 //   const handleSave = async () => {
 //     try {
-//       const response = await axios.put("http://localhost:5000/api/users/update", formData, {
+//       const response = await axios.put("https://agrihub-backend.onrender.com/api/users/update", formData, {
 //         withCredentials: true,
 //       });
 //       setUser(response.data);
@@ -385,7 +385,7 @@ const ProfilePage = () => {
   useEffect(() => {
     const fetchUserProfile = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/users/profile", {
+        const response = await axios.get("https://agrihub-backend.onrender.com/api/users/profile", {
           withCredentials: true,
         });
         setUser(response.data);
@@ -403,7 +403,7 @@ const ProfilePage = () => {
   // Handle logout
   const handleLogout = () => {
     axios
-      .post("http://localhost:5000/api/users/logout", {}, { withCredentials: true })
+      .post("https://agrihub-backend.onrender.com/api/users/logout", {}, { withCredentials: true })
       .then(() => {
         localStorage.removeItem("user");
         navigate("/login");
@@ -427,7 +427,7 @@ const ProfilePage = () => {
   // Handle profile save
   const handleSave = async () => {
     try {
-      const response = await axios.put("http://localhost:5000/api/users/update", formData, {
+      const response = await axios.put("https://agrihub-backend.onrender.com/api/users/update", formData, {
         withCredentials: true,
       });
       setUser(response.data);
@@ -456,7 +456,7 @@ const ProfilePage = () => {
     }
     try {
       await axios.put(
-        "http://localhost:5000/api/users/change-password",
+        "https://agrihub-backend.onrender.com/api/users/change-password",
         {
           currentPassword: passwordData.currentPassword,
           newPassword: passwordData.newPassword,

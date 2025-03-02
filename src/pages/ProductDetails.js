@@ -9,7 +9,7 @@
 //   const [selectedVariant, setSelectedVariant] = useState(null);
 
 //   useEffect(() => {
-//     axios.get(`http://localhost:5000/api/product/${id}`).then((response) => {
+//     axios.get(`https://agrihub-backend.onrender.com/api/product/${id}`).then((response) => {
 //       setProduct(response.data);
 //       setSelectedVariant(response.data.variants[0]);
 //     });
@@ -27,7 +27,7 @@
 //       {product ? (
 //         <div className="row">
 //           <div className="col-md-6">
-//             <img src={`http://localhost:5000/${product.image}`} alt={product.name} className="img-fluid rounded shadow" />
+//             <img src={`https://agrihub-backend.onrender.com/${product.image}`} alt={product.name} className="img-fluid rounded shadow" />
 //           </div>
 //           <div className="col-md-6">
 //             <h2>{product.name}</h2>
@@ -66,7 +66,7 @@
 //   const [selectedVariant, setSelectedVariant] = useState(null);
 
 //   useEffect(() => {
-//     axios.get(`http://localhost:5000/api/product/${id}`).then((response) => {
+//     axios.get(`https://agrihub-backend.onrender.com/api/product/${id}`).then((response) => {
 //       setProduct(response.data);
 //       setSelectedVariant(response.data.variants[0]); // Default selection
 //     });
@@ -97,7 +97,7 @@
 //             {/* ✅ Left Side: Product Image */}
 //             <div className="col-md-6 text-center">
 //               <img
-//                 src={`http://localhost:5000/${product.image}`}
+//                 src={`https://agrihub-backend.onrender.com/${product.image}`}
 //                 alt={product.name}
 //                 className="img-fluid rounded shadow"
 //                 style={{ maxHeight: "350px" }}
@@ -171,7 +171,7 @@
 //   const [selectedVariant, setSelectedVariant] = useState(null);
 
 //   useEffect(() => {
-//     axios.get(`http://localhost:5000/api/product/${id}`).then(async (response) => {
+//     axios.get(`https://agrihub-backend.onrender.com/api/product/${id}`).then(async (response) => {
 //       const productData = response.data;
 //       setProduct(productData);
 //       setSelectedVariant(productData.variants[0]); // Default selection
@@ -179,7 +179,7 @@
 //       // Fetch brand name
 //       if (productData.brand) {
 //         try {
-//           const brandRes = await axios.get(`http://localhost:5000/api/vendor/${productData.brand}`);
+//           const brandRes = await axios.get(`https://agrihub-backend.onrender.com/api/vendor/${productData.brand}`);
 //           setBrandName(brandRes.data.name);
 //         } catch (error) {
 //           console.error("Error fetching brand name:", error);
@@ -211,7 +211,7 @@
 //           <div className="row">
 //             <div className="col-md-6 text-center">
 //               <img
-//                 src={`http://localhost:5000/${product.image}`}
+//                 src={`https://agrihub-backend.onrender.com/${product.image}`}
 //                 alt={product.name}
 //                 className="img-fluid rounded shadow"
 //                 style={{ maxHeight: "350px" }}
@@ -279,7 +279,7 @@
 //   const [selectedVariant, setSelectedVariant] = useState(null);
 
 //   useEffect(() => {
-//     axios.get(`http://localhost:5000/api/product/${id}`).then(async (response) => {
+//     axios.get(`https://agrihub-backend.onrender.com/api/product/${id}`).then(async (response) => {
 //       const productData = response.data;
 //       setProduct(productData);
 //       setSelectedVariant(productData.variants[0]); // Default selection
@@ -287,7 +287,7 @@
 //       // Fetch brand name
 //       if (productData.brand) {
 //         try {
-//           const brandRes = await axios.get(`http://localhost:5000/api/vendor/${productData.brand}`);
+//           const brandRes = await axios.get(`https://agrihub-backend.onrender.com/api/vendor/${productData.brand}`);
 //           setBrandName(brandRes.data.name);
 //         } catch (error) {
 //           console.error("Error fetching brand name:", error);
@@ -345,7 +345,7 @@
 //           <div className="row">
 //             <div className="col-md-6 text-center">
 //               <img
-//                 src={`http://localhost:5000/${product.image}`}
+//                 src={`https://agrihub-backend.onrender.com/${product.image}`}
 //                 alt={product.name}
 //                 className="img-fluid rounded shadow"
 //                 style={{ maxHeight: "350px" }}
@@ -439,14 +439,14 @@ const ProductDetails = () => {
     const fetchProductDetails = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(`http://localhost:5000/api/product/${id}`);
+        const response = await axios.get(`https://agrihub-backend.onrender.com/api/product/${id}`);
         const productData = response.data;
         setProduct(productData);
         setSelectedVariant(productData.variants[0]); // Default to first variant
 
         // Fetch brand name
         if (productData.brand) {
-          const brandRes = await axios.get(`http://localhost:5000/api/vendor/${productData.brand}`);
+          const brandRes = await axios.get(`https://agrihub-backend.onrender.com/api/vendor/${productData.brand}`);
           setBrandName(brandRes.data.name || "Unknown Brand");
         }
       } catch (error) {
@@ -545,7 +545,7 @@ const ProductDetails = () => {
             <Card sx={{ boxShadow: "0 4px 12px rgba(0,0,0,0.1)", borderRadius: "12px" }}>
               <CardMedia
                 component="img"
-                image={`http://localhost:5000/${product.image}`}
+                image={`https://agrihub-backend.onrender.com/${product.image}`}
                 alt={product.name}
                 sx={{ height: 350, objectFit: "cover", borderRadius: "12px 12px 0 0" }}
               />

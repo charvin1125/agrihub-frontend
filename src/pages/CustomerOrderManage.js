@@ -15,7 +15,7 @@
 
 //     setLoading(true);
 //     try {
-//       const response = await axios.get(`http://localhost:5000/api/orders/customer-orders/${mobile}`);
+//       const response = await axios.get(`https://agrihub-backend.onrender.com/api/orders/customer-orders/${mobile}`);
 //       setOrders(response.data);
 //     } catch (error) {
 //       message.error(error.response?.data?.message || "Failed to fetch orders");
@@ -88,7 +88,7 @@
 
 //     setLoading(true);
 //     try {
-//       const response = await axios.get(`http://localhost:5000/api/orders/customer-orders/${mobile}`);
+//       const response = await axios.get(`https://agrihub-backend.onrender.com/api/orders/customer-orders/${mobile}`);
 //       setOrders(response.data);
 //     } catch (error) {
 //       toast.error(error.response?.data?.message || "Failed to fetch orders");
@@ -172,7 +172,7 @@
 
 //     setLoading(true);
 //     try {
-//       const response = await axios.get(`http://localhost:5000/api/orders/customer-orders/${mobile}`);
+//       const response = await axios.get(`https://agrihub-backend.onrender.com/api/orders/customer-orders/${mobile}`);
 //       setOrders(response.data);
 //     } catch (error) {
 //       toast.error(error.response?.data?.message || "Failed to fetch orders");
@@ -262,7 +262,7 @@
 
 //     setLoading(true);
 //     try {
-//       const response = await axios.get(`http://localhost:5000/api/orders/customer-orders/${mobile}`);
+//       const response = await axios.get(`https://agrihub-backend.onrender.com/api/orders/customer-orders/${mobile}`);
 //       setOrders(response.data);
 //     } catch (error) {
 //       toast.error(error.response?.data?.message || "Failed to fetch orders");
@@ -414,7 +414,7 @@
 
 //   //   setLoading(true);
 //   //   try {
-//   //     const response = await axios.get(`http://localhost:5000/api/orders/customer-orders/${mobile}`);
+//   //     const response = await axios.get(`https://agrihub-backend.onrender.com/api/orders/customer-orders/${mobile}`);
       
 //   //     // 🔹 Sort orders by latest first
 //   //     const sortedOrders = response.data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
@@ -434,7 +434,7 @@
   
 //     setLoading(true);
 //     try {
-//       const response = await axios.get(`http://localhost:5000/api/orders/customer-orders/${mobile}`);
+//       const response = await axios.get(`https://agrihub-backend.onrender.com/api/orders/customer-orders/${mobile}`);
   
 //       // 🔹 Extract orders and dues
 //       const sortedOrders = response.data.orders.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
@@ -619,7 +619,7 @@
 
 //     setLoading(true);
 //     try {
-//       const response = await axios.get(`http://localhost:5000/api/orders/customer-orders/${mobile}`);
+//       const response = await axios.get(`https://agrihub-backend.onrender.com/api/orders/customer-orders/${mobile}`);
 //       const sortedOrders = response.data.orders.sort(
 //         (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
 //       );
@@ -982,7 +982,7 @@ const CustomerOrderManage = () => {
 
     setLoading(true);
     try {
-      const response = await axios.get(`http://localhost:5000/api/orders/customer-orders/${mobile}`, { withCredentials: true });
+      const response = await axios.get(`https://agrihub-backend.onrender.com/api/orders/customer-orders/${mobile}`, { withCredentials: true });
       const sortedOrders = response.data.orders.sort(
         (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
       );

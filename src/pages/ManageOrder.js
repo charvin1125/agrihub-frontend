@@ -12,7 +12,7 @@
 //   useEffect(() => {
 //     const fetchOrders = async () => {
 //       try {
-//         const res = await axios.get("http://localhost:5000/api/orders/all-orders", { withCredentials: true });
+//         const res = await axios.get("https://agrihub-backend.onrender.com/api/orders/all-orders", { withCredentials: true });
 //         setOrders(res.data);
 //       } catch (error) {
 //         console.error("Error fetching orders:", error);
@@ -27,7 +27,7 @@
 //   // Handle Order Status Update
 //   const updateOrderStatus = async (orderId, status) => {
 //     try {
-//       await axios.put(`http://localhost:5000/api/orders/${orderId}`, { status }, { withCredentials: true });
+//       await axios.put(`https://agrihub-backend.onrender.com/api/orders/${orderId}`, { status }, { withCredentials: true });
 //       message.success("Order status updated.");
 //       setOrders(orders.map(order => (order.orderId === orderId ? { ...order, status } : order)));
 //     } catch (error) {
@@ -103,7 +103,7 @@ const ManageOrders = () => {
   const fetchOrders = async () => {
     setLoading(true);
     try {
-      const res = await axios.get("http://localhost:5000/api/orders/list");
+      const res = await axios.get("https://agrihub-backend.onrender.com/api/orders/list");
       setOrders(res.data || []);
     } catch (error) {
       console.error("Error fetching orders:", error);
@@ -119,7 +119,7 @@ const ManageOrders = () => {
 
   const handleUpdateStatus = async () => {
     try {
-      await axios.put(`http://localhost:5000/api/orders/update/${selectedOrder._id}`, {
+      await axios.put(`https://agrihub-backend.onrender.com/api/orders/update/${selectedOrder._id}`, {
         status: updatedStatus,
       }, { withCredentials: true });
 

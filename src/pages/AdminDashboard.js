@@ -11,7 +11,7 @@
 //   useEffect(() => {
 //     const fetchUser = async () => {
 //       try {
-//         const res = await axios.get("http://localhost:5000/api/users/me", { withCredentials: true });
+//         const res = await axios.get("https://agrihub-backend.onrender.com/api/users/me", { withCredentials: true });
 //         if (res.data && res.data.isAdmin) {
 //           setUser(res.data); // Store user info
 //         } else {
@@ -99,7 +99,7 @@
 //   useEffect(() => {
 //     const fetchUser = async () => {
 //       try {
-//         const res = await axios.get("http://localhost:5000/api/users/me", { withCredentials: true });
+//         const res = await axios.get("https://agrihub-backend.onrender.com/api/users/me", { withCredentials: true });
 //         if (res.data && res.data.isAdmin) {
 //           setUser(res.data);
 //         } else {
@@ -116,7 +116,7 @@
 //   useEffect(() => {
 //     const fetchLowStock = async () => {
 //       try {
-//         const res = await axios.get("http://localhost:5000/api/product/low-stock", { withCredentials: true });
+//         const res = await axios.get("https://agrihub-backend.onrender.com/api/product/low-stock", { withCredentials: true });
 //         setLowStockProducts(res.data);
 //       } catch (error) {
 //         console.error("Error fetching low-stock products:", error);
@@ -238,7 +238,7 @@
 //   useEffect(() => {
 //     const fetchUser = async () => {
 //       try {
-//         const res = await axios.get("http://localhost:5000/api/users/me", { withCredentials: true });
+//         const res = await axios.get("https://agrihub-backend.onrender.com/api/users/me", { withCredentials: true });
 //         if (res.data && res.data.isAdmin) {
 //           setUser(res.data);
 //         } else {
@@ -256,7 +256,7 @@
 //   useEffect(() => {
 //     const fetchLowStock = async () => {
 //       try {
-//         const res = await axios.get("http://localhost:5000/api/product/low-stock", { withCredentials: true });
+//         const res = await axios.get("https://agrihub-backend.onrender.com/api/product/low-stock", { withCredentials: true });
 //         setLowStockProducts(res.data);
 //       } catch (error) {
 //         console.error("Error fetching low-stock products:", error);
@@ -374,7 +374,7 @@
 //   useEffect(() => {
 //     const fetchUser = async () => {
 //       try {
-//         const res = await axios.get("http://localhost:5000/api/users/me", { withCredentials: true });
+//         const res = await axios.get("https://agrihub-backend.onrender.com/api/users/me", { withCredentials: true });
 //         if (res.data && res.data.isAdmin) {
 //           setUser(res.data);
 //         } else {
@@ -392,7 +392,7 @@
 //   useEffect(() => {
 //     const fetchLowStock = async () => {
 //       try {
-//         const res = await axios.get("http://localhost:5000/api/product/low-stock", { withCredentials: true });
+//         const res = await axios.get("https://agrihub-backend.onrender.com/api/product/low-stock", { withCredentials: true });
 
 //         // ✅ Flatten product variants that have low stock
 //         const lowStockItems = res.data.flatMap(product =>
@@ -525,11 +525,11 @@
 //     const fetchData = async () => {
 //       try {
 //         const [statsRes, brandStockRes, orderStatsRes, salesTrendsRes, topProductsRes] = await Promise.all([
-//           axios.get("http://localhost:5000/api/dashboard/stats"),
-//           axios.get("http://localhost:5000/api/dashboard/brand-stock"),
-//           axios.get("http://localhost:5000/api/dashboard/order-stats"),
-//           axios.get("http://localhost:5000/api/dashboard/sales-trends"),
-//           axios.get("http://localhost:5000/api/dashboard/top-products"),
+//           axios.get("https://agrihub-backend.onrender.com/api/dashboard/stats"),
+//           axios.get("https://agrihub-backend.onrender.com/api/dashboard/brand-stock"),
+//           axios.get("https://agrihub-backend.onrender.com/api/dashboard/order-stats"),
+//           axios.get("https://agrihub-backend.onrender.com/api/dashboard/sales-trends"),
+//           axios.get("https://agrihub-backend.onrender.com/api/dashboard/top-products"),
 //         ]);
 
 //         setStats(statsRes.data);
@@ -671,11 +671,11 @@
 //     const fetchData = async () => {
 //       try {
 //         const [statsRes, brandStockRes, orderStatsRes, salesTrendsRes, topProductsRes] = await Promise.all([
-//           axios.get("http://localhost:5000/api/dashboard/stats"),
-//           axios.get("http://localhost:5000/api/dashboard/brand-stock"),
-//           axios.get("http://localhost:5000/api/dashboard/order-stats"),
-//           axios.get("http://localhost:5000/api/dashboard/sales-trends"),
-//           axios.get("http://localhost:5000/api/dashboard/top-products"),
+//           axios.get("https://agrihub-backend.onrender.com/api/dashboard/stats"),
+//           axios.get("https://agrihub-backend.onrender.com/api/dashboard/brand-stock"),
+//           axios.get("https://agrihub-backend.onrender.com/api/dashboard/order-stats"),
+//           axios.get("https://agrihub-backend.onrender.com/api/dashboard/sales-trends"),
+//           axios.get("https://agrihub-backend.onrender.com/api/dashboard/top-products"),
 //         ]);
 // const brand = brandStockRes.data.reduce((acc,brand)=>{
 //   acc[brand._id] = brand.name;
@@ -924,7 +924,7 @@
 //   useEffect(() => {
 //     const fetchUser = async () => {
 //       try {
-//         const res = await axios.get("http://localhost:5000/api/users/me", { withCredentials: true });
+//         const res = await axios.get("https://agrihub-backend.onrender.com/api/users/me", { withCredentials: true });
 //         if (res.data && res.data.isAdmin) {
 //           setUser(res.data);
 //         } else {
@@ -942,7 +942,7 @@
 //   useEffect(() => {
 //     const fetchLowStock = async () => {
 //       try {
-//         const res = await axios.get("http://localhost:5000/api/product/low-stock", { withCredentials: true });
+//         const res = await axios.get("https://agrihub-backend.onrender.com/api/product/low-stock", { withCredentials: true });
 //         const lowStockItems = res.data.flatMap((product) =>
 //           product.variants
 //             .filter((variant) => variant.stock < 10)
@@ -963,7 +963,7 @@
 //   useEffect(() => {
 //     const fetchOrderStats = async () => {
 //       try {
-//         const res = await axios.get("http://localhost:5000/api/orders/stats", { withCredentials: true });
+//         const res = await axios.get("https://agrihub-backend.onrender.com/api/orders/stats", { withCredentials: true });
 //         const labels = res.data.map((d) => `Month ${d.month}`);
 //         const data = res.data.map((d) => d.count);
 //         setOrderData({
@@ -980,7 +980,7 @@
 //   useEffect(() => {
 //     const fetchSalesDistribution = async () => {
 //       try {
-//         const res = await axios.get("http://localhost:5000/api/orders/sales", { withCredentials: true });
+//         const res = await axios.get("https://agrihub-backend.onrender.com/api/orders/sales", { withCredentials: true });
 //         const labels = res.data.map((d) => d._id);
 //         const data = res.data.map((d) => d.total);
 //         setSalesData({
@@ -1228,7 +1228,7 @@
 //   useEffect(() => {
 //     const fetchUser = async () => {
 //       try {
-//         const res = await axios.get("http://localhost:5000/api/users/me", { withCredentials: true });
+//         const res = await axios.get("https://agrihub-backend.onrender.com/api/users/me", { withCredentials: true });
 //         if (res.data && res.data.isAdmin) {
 //           setUser(res.data);
 //         } else {
@@ -1246,7 +1246,7 @@
 //   useEffect(() => {
 //     const fetchLowStock = async () => {
 //       try {
-//         const res = await axios.get("http://localhost:5000/api/product/low-stock", { withCredentials: true });
+//         const res = await axios.get("https://agrihub-backend.onrender.com/api/product/low-stock", { withCredentials: true });
 //         const lowStockItems = res.data.flatMap((product) =>
 //           product.variants
 //             .filter((variant) => variant.stock < 10)
@@ -1269,7 +1269,7 @@
 //   useEffect(() => {
 //     const fetchStockData = async () => {
 //       try {
-//         const res = await axios.get("http://localhost:5000/api/product/stock-by-vendor", {
+//         const res = await axios.get("https://agrihub-backend.onrender.com/api/product/stock-by-vendor", {
 //           withCredentials: true,
 //         });
 //         const labels = res.data.map((vendor) => vendor.vendorName);
@@ -1290,7 +1290,7 @@
 //   useEffect(() => {
 //     const fetchOrderStats = async () => {
 //       try {
-//         const res = await axios.get("http://localhost:5000/api/orders/stats", { withCredentials: true });
+//         const res = await axios.get("https://agrihub-backend.onrender.com/api/orders/stats", { withCredentials: true });
 //         const labels = res.data.map((d) => `Month ${d.month}`);
 //         const data = res.data.map((d) => d.count);
 //         setOrderData({
@@ -1308,7 +1308,7 @@
 //   useEffect(() => {
 //     const fetchSalesDistribution = async () => {
 //       try {
-//         const res = await axios.get("http://localhost:5000/api/orders/sales", { withCredentials: true });
+//         const res = await axios.get("https://agrihub-backend.onrender.com/api/orders/sales", { withCredentials: true });
 //         const data = [res.data.find((d) => d._id === "Online")?.total || 0, res.data.find((d) => d._id === "Offline")?.total || 0];
 //         setSalesData({
 //           labels: ["Online", "Offline"],
@@ -1561,7 +1561,7 @@
 //   useEffect(() => {
 //     const fetchUser = async () => {
 //       try {
-//         const res = await axios.get("http://localhost:5000/api/users/me", { withCredentials: true });
+//         const res = await axios.get("https://agrihub-backend.onrender.com/api/users/me", { withCredentials: true });
 //         if (res.data && res.data.isAdmin) {
 //           setUser(res.data);
 //         } else {
@@ -1580,9 +1580,9 @@
 //     const fetchDashboardStats = async () => {
 //       try {
 //         const [usersRes, revenueRes, ordersRes] = await Promise.all([
-//           axios.get("http://localhost:5000/api/dashboard/total-users", { withCredentials: true }),
-//           axios.get("http://localhost:5000/api/dashboard/total-revenue", { withCredentials: true }),
-//           axios.get("http://localhost:5000/api/dashboard/total-orders", { withCredentials: true }),
+//           axios.get("https://agrihub-backend.onrender.com/api/dashboard/total-users", { withCredentials: true }),
+//           axios.get("https://agrihub-backend.onrender.com/api/dashboard/total-revenue", { withCredentials: true }),
+//           axios.get("https://agrihub-backend.onrender.com/api/dashboard/total-orders", { withCredentials: true }),
 //         ]);
 //         setTotalUsers(usersRes.data.totalUsers);
 //         setTotalRevenue(revenueRes.data.totalRevenue);
@@ -1598,7 +1598,7 @@
 //   useEffect(() => {
 //     const fetchLowStock = async () => {
 //       try {
-//         const res = await axios.get("http://localhost:5000/api/product/low-stock", { withCredentials: true });
+//         const res = await axios.get("https://agrihub-backend.onrender.com/api/product/low-stock", { withCredentials: true });
 //         const lowStockItems = res.data.flatMap((product) =>
 //           product.variants
 //             .filter((variant) => variant.stock < 10)
@@ -1621,7 +1621,7 @@
 //   useEffect(() => {
 //     const fetchStockData = async () => {
 //       try {
-//         const res = await axios.get("http://localhost:5000/api/product/stock-by-vendor", { withCredentials: true });
+//         const res = await axios.get("https://agrihub-backend.onrender.com/api/product/stock-by-vendor", { withCredentials: true });
 //         const labels = res.data.map((vendor) => vendor.vendorName);
 //         const data = res.data.map((vendor) => vendor.totalStock);
 //         const backgroundColor = res.data.map(() => `#${Math.floor(Math.random() * 16777215).toString(16)}`);
@@ -1636,7 +1636,7 @@
 //   useEffect(() => {
 //     const fetchOrderStats = async () => {
 //       try {
-//         const res = await axios.get("http://localhost:5000/api/orders/stats", { withCredentials: true });
+//         const res = await axios.get("https://agrihub-backend.onrender.com/api/orders/stats", { withCredentials: true });
 //         const labels = res.data.map((d) => `Month ${d.month}`);
 //         const data = res.data.map((d) => d.count);
 //         setOrderData({
@@ -1653,7 +1653,7 @@
 //   useEffect(() => {
 //     const fetchSalesDistribution = async () => {
 //       try {
-//         const res = await axios.get("http://localhost:5000/api/orders/sales", { withCredentials: true });
+//         const res = await axios.get("https://agrihub-backend.onrender.com/api/orders/sales", { withCredentials: true });
 //         const data = [
 //           res.data.find((d) => d._id === "Online")?.total || 0,
 //           res.data.find((d) => d._id === "Offline")?.total || 0,
@@ -1910,7 +1910,7 @@
 //   useEffect(() => {
 //     const fetchUser = async () => {
 //       try {
-//         const res = await axios.get("http://localhost:5000/api/users/me", { withCredentials: true });
+//         const res = await axios.get("https://agrihub-backend.onrender.com/api/users/me", { withCredentials: true });
 //         if (res.data && res.data.isAdmin) {
 //           setUser(res.data);
 //         } else {
@@ -1929,9 +1929,9 @@
 //     const fetchDashboardStats = async () => {
 //       try {
 //         const [usersRes, revenueRes, ordersRes] = await Promise.all([
-//           axios.get("http://localhost:5000/api/dashboard/total-users", { withCredentials: true }),
-//           axios.get("http://localhost:5000/api/dashboard/total-revenue", { withCredentials: true }),
-//           axios.get("http://localhost:5000/api/dashboard/total-orders", { withCredentials: true }),
+//           axios.get("https://agrihub-backend.onrender.com/api/dashboard/total-users", { withCredentials: true }),
+//           axios.get("https://agrihub-backend.onrender.com/api/dashboard/total-revenue", { withCredentials: true }),
+//           axios.get("https://agrihub-backend.onrender.com/api/dashboard/total-orders", { withCredentials: true }),
 //         ]);
 //         setTotalUsers(usersRes.data.totalUsers);
 //         setTotalRevenue(revenueRes.data.totalRevenue);
@@ -1947,7 +1947,7 @@
 //   useEffect(() => {
 //     const fetchLowStock = async () => {
 //       try {
-//         const res = await axios.get("http://localhost:5000/api/product/low-stock", { withCredentials: true });
+//         const res = await axios.get("https://agrihub-backend.onrender.com/api/product/low-stock", { withCredentials: true });
 //         const lowStockItems = res.data.flatMap((product) =>
 //           product.variants
 //             .filter((variant) => variant.stock < 10)
@@ -1970,7 +1970,7 @@
 //   useEffect(() => {
 //     const fetchStockData = async () => {
 //       try {
-//         const res = await axios.get("http://localhost:5000/api/product/stock-by-vendor", { withCredentials: true });
+//         const res = await axios.get("https://agrihub-backend.onrender.com/api/product/stock-by-vendor", { withCredentials: true });
 //         const labels = res.data.map((vendor) => vendor.vendorName);
 //         const data = res.data.map((vendor) => vendor.totalStock);
 //         const backgroundColor = res.data.map(() => `#${Math.floor(Math.random() * 16777215).toString(16)}`);
@@ -1985,7 +1985,7 @@
 //   useEffect(() => {
 //     const fetchOrderStats = async () => {
 //       try {
-//         const res = await axios.get("http://localhost:5000/api/orders/stats", { withCredentials: true });
+//         const res = await axios.get("https://agrihub-backend.onrender.com/api/orders/stats", { withCredentials: true });
 //         const labels = res.data.map((d) => `Month ${d.month}`);
 //         const data = res.data.map((d) => d.count);
 //         setOrderData({
@@ -2002,7 +2002,7 @@
 //   useEffect(() => {
 //     const fetchSalesDistribution = async () => {
 //       try {
-//         const res = await axios.get("http://localhost:5000/api/orders/sales", { withCredentials: true });
+//         const res = await axios.get("https://agrihub-backend.onrender.com/api/orders/sales", { withCredentials: true });
 //         const data = [
 //           res.data.find((d) => d._id === "Online")?.total || 0,
 //           res.data.find((d) => d._id === "Offline")?.total || 0,
@@ -2272,7 +2272,7 @@ const AdminDashboard = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/users/me", { withCredentials: true });
+        const res = await axios.get("https://agrihub-backend.onrender.com/api/users/me", { withCredentials: true });
         if (res.data && res.data.isAdmin) {
           setUser(res.data);
         } else {
@@ -2291,9 +2291,9 @@ const AdminDashboard = () => {
     const fetchDashboardStats = async () => {
       try {
         const [usersRes, revenueRes, ordersRes] = await Promise.all([
-          axios.get("http://localhost:5000/api/dashboard/total-users", { withCredentials: true }),
-          axios.get("http://localhost:5000/api/dashboard/total-revenue", { withCredentials: true }),
-          axios.get("http://localhost:5000/api/dashboard/total-orders", { withCredentials: true }),
+          axios.get("https://agrihub-backend.onrender.com/api/dashboard/total-users", { withCredentials: true }),
+          axios.get("https://agrihub-backend.onrender.com/api/dashboard/total-revenue", { withCredentials: true }),
+          axios.get("https://agrihub-backend.onrender.com/api/dashboard/total-orders", { withCredentials: true }),
         ]);
         setTotalUsers(usersRes.data.totalUsers);
         setTotalRevenue(revenueRes.data.totalRevenue);
@@ -2309,7 +2309,7 @@ const AdminDashboard = () => {
   useEffect(() => {
     const fetchLowStock = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/product/low-stock", { withCredentials: true });
+        const res = await axios.get("https://agrihub-backend.onrender.com/api/product/low-stock", { withCredentials: true });
         const lowStockItems = res.data.flatMap((product) =>
           product.variants
             .filter((variant) => variant.stock < 10)
@@ -2332,7 +2332,7 @@ const AdminDashboard = () => {
   useEffect(() => {
     const fetchStockData = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/product/stock-by-vendor", { withCredentials: true });
+        const res = await axios.get("https://agrihub-backend.onrender.com/api/product/stock-by-vendor", { withCredentials: true });
         const labels = res.data.map((vendor) => vendor.vendorName);
         const data = res.data.map((vendor) => vendor.totalStock);
         const backgroundColor = res.data.map(() => `#${Math.floor(Math.random() * 16777215).toString(16)}`);
@@ -2347,7 +2347,7 @@ const AdminDashboard = () => {
   useEffect(() => {
     const fetchOrderStats = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/orders/stats", { withCredentials: true });
+        const res = await axios.get("https://agrihub-backend.onrender.com/api/orders/stats", { withCredentials: true });
         const labels = res.data.map((d) => `Month ${d.month}`);
         const data = res.data.map((d) => d.count);
         setOrderData({
@@ -2364,7 +2364,7 @@ const AdminDashboard = () => {
   useEffect(() => {
     const fetchSalesDistribution = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/orders/sales", { withCredentials: true });
+        const res = await axios.get("https://agrihub-backend.onrender.com/api/orders/sales", { withCredentials: true });
         const data = [
           res.data.find((d) => d._id === "Online")?.total || 0,
           res.data.find((d) => d._id === "Offline")?.total || 0,

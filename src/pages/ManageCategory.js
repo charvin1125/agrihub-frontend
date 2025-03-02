@@ -17,7 +17,7 @@
 
 //   const fetchCategories = async () => {
 //     try {
-//       const response = await axios.get("http://localhost:5000/api/category/list", { withCredentials: true });
+//       const response = await axios.get("https://agrihub-backend.onrender.com/api/category/list", { withCredentials: true });
 //       setCategories(response.data);
 //     } catch (error) {
 //       alert("Failed to fetch categories");
@@ -26,7 +26,7 @@
 
 //   const fetchUser = async () => {
 //     try {
-//       const response = await axios.get("http://localhost:5000/api/users/me", { withCredentials: true });
+//       const response = await axios.get("https://agrihub-backend.onrender.com/api/users/me", { withCredentials: true });
 //       setUser(response.data);
 //     } catch (error) {
 //       console.log("User not logged in");
@@ -46,12 +46,12 @@
   
 //     try {
 //       if (isEditing) {
-//         await axios.put(`http://localhost:5000/api/category/${editId}`, category, { withCredentials: true });
+//         await axios.put(`https://agrihub-backend.onrender.com/api/category/${editId}`, category, { withCredentials: true });
 //         alert("Category updated successfully!");
 //         setIsEditing(false);
 //         setEditId(null);
 //       } else {
-//         await axios.post("http://localhost:5000/api/category/add", category, { withCredentials: true });
+//         await axios.post("https://agrihub-backend.onrender.com/api/category/add", category, { withCredentials: true });
 //         alert("Category added successfully!");
 //       }
 //       setCategory({ name: "", description: "" });
@@ -75,7 +75,7 @@
 //     }
 //     if (window.confirm("Are you sure you want to delete this category?")) {
 //       try {
-//         await axios.delete(`http://localhost:5000/api/category/${id}`, { withCredentials: true });
+//         await axios.delete(`https://agrihub-backend.onrender.com/api/category/${id}`, { withCredentials: true });
 //         alert("Category deleted successfully!");
 //         fetchCategories();
 //       } catch (error) {
@@ -200,7 +200,7 @@ const ManageCategory = () => {
 
   const fetchCategories = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/category/list", { withCredentials: true });
+      const response = await axios.get("https://agrihub-backend.onrender.com/api/category/list", { withCredentials: true });
       setCategories(response.data);
     } catch (error) {
       alert("Failed to fetch categories");
@@ -209,7 +209,7 @@ const ManageCategory = () => {
 
   const fetchUser = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/users/me", { withCredentials: true });
+      const response = await axios.get("https://agrihub-backend.onrender.com/api/users/me", { withCredentials: true });
       setUser(response.data);
       if (!response.data.isAdmin) navigate("/"); // Redirect non-admins
     } catch (error) {
@@ -230,12 +230,12 @@ const ManageCategory = () => {
     }
     try {
       if (isEditing) {
-        await axios.put(`http://localhost:5000/api/category/${editId}`, category, { withCredentials: true });
+        await axios.put(`https://agrihub-backend.onrender.com/api/category/${editId}`, category, { withCredentials: true });
         alert("Category updated successfully!");
         setIsEditing(false);
         setEditId(null);
       } else {
-        await axios.post("http://localhost:5000/api/category/add", category, { withCredentials: true });
+        await axios.post("https://agrihub-backend.onrender.com/api/category/add", category, { withCredentials: true });
         alert("Category added successfully!");
       }
       setCategory({ name: "", description: "" });
@@ -258,7 +258,7 @@ const ManageCategory = () => {
     }
     if (window.confirm("Are you sure you want to delete this category?")) {
       try {
-        await axios.delete(`http://localhost:5000/api/category/${id}`, { withCredentials: true });
+        await axios.delete(`https://agrihub-backend.onrender.com/api/category/${id}`, { withCredentials: true });
         alert("Category deleted successfully!");
         fetchCategories();
       } catch (error) {

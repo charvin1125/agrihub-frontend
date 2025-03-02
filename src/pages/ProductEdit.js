@@ -14,7 +14,7 @@
 //   useEffect(() => {
 //     const fetchProduct = async () => {
 //       try {
-//         const res = await axios.get(`http://localhost:5000/api/product/${id}`);
+//         const res = await axios.get(`https://agrihub-backend.onrender.com/api/product/${id}`);
 //         setProduct(res.data);
 //       } catch (error) {
 //         console.error("Error fetching product:", error);
@@ -23,8 +23,8 @@
 
 //     const fetchOptions = async () => {
 //       try {
-//         const categoryRes = await axios.get("http://localhost:5000/api/category/list");
-//         const brandRes = await axios.get("http://localhost:5000/api/vendor/list");
+//         const categoryRes = await axios.get("https://agrihub-backend.onrender.com/api/category/list");
+//         const brandRes = await axios.get("https://agrihub-backend.onrender.com/api/vendor/list");
 //         setCategories(categoryRes.data);
 //         setBrands(brandRes.data);
 //       } catch (error) {
@@ -57,7 +57,7 @@
 //       formData.append("variants", JSON.stringify(product.variants));
 //       if (image) formData.append("image", image);
 
-//       await axios.put(`http://localhost:5000/api/product/update/${id}`, formData, {
+//       await axios.put(`https://agrihub-backend.onrender.com/api/product/update/${id}`, formData, {
 //         withCredentials: true,
 //       });
 //       alert("Product updated successfully!");
@@ -70,7 +70,7 @@
 //   const handleDelete = async () => {
 //     if (window.confirm("Are you sure you want to delete this product?")) {
 //       try {
-//         await axios.delete(`http://localhost:5000/api/product/delete/${id}`, { withCredentials: true });
+//         await axios.delete(`https://agrihub-backend.onrender.com/api/product/delete/${id}`, { withCredentials: true });
 //         alert("Product deleted successfully!");
 //         navigate("/manage-products");
 //       } catch (error) {
@@ -143,7 +143,7 @@
 //   useEffect(() => {
 //     const fetchProduct = async () => {
 //       try {
-//         const res = await axios.get(`http://localhost:5000/api/product/${id}`);
+//         const res = await axios.get(`https://agrihub-backend.onrender.com/api/product/${id}`);
 //         setProduct(res.data);
 //       } catch (error) {
 //         console.error("Error fetching product:", error);
@@ -152,10 +152,10 @@
 
 //     const fetchOptions = async () => {
 //       try {
-//         // const categoryRes = await axios.get("http://localhost:5000/api/category/list");
-//         // const brandRes = await axios.get("http://localhost:5000/api/vendor/list");
-//         const categoryRes = await axios.get("http://localhost:5000/api/category/list", { withCredentials: true });
-//       const brandRes = await axios.get("http://localhost:5000/api/vendor/list", { withCredentials: true });
+//         // const categoryRes = await axios.get("https://agrihub-backend.onrender.com/api/category/list");
+//         // const brandRes = await axios.get("https://agrihub-backend.onrender.com/api/vendor/list");
+//         const categoryRes = await axios.get("https://agrihub-backend.onrender.com/api/category/list", { withCredentials: true });
+//       const brandRes = await axios.get("https://agrihub-backend.onrender.com/api/vendor/list", { withCredentials: true });
 //         setCategories(categoryRes.data);
 //         setBrands(brandRes.data);
 //       } catch (error) {
@@ -188,7 +188,7 @@
 //       formData.append("variants", JSON.stringify(product.variants));
 //       if (image) formData.append("image", image);
 
-//       await axios.put(`http://localhost:5000/api/product/update/${id}`, formData, {
+//       await axios.put(`https://agrihub-backend.onrender.com/api/product/update/${id}`, formData, {
 //         withCredentials: true,
 //       });
 //       alert("Product updated successfully!");
@@ -201,7 +201,7 @@
 //   const handleDelete = async () => {
 //     if (window.confirm("Are you sure you want to delete this product?")) {
 //       try {
-//         await axios.delete(`http://localhost:5000/api/product/delete/${id}`, { withCredentials: true });
+//         await axios.delete(`https://agrihub-backend.onrender.com/api/product/delete/${id}`, { withCredentials: true });
 //         alert("Product deleted successfully!");
 //         navigate("/manage-products");
 //       } catch (error) {
@@ -276,7 +276,7 @@
 //   useEffect(() => {
 //     const fetchProduct = async () => {
 //       try {
-//         const res = await axios.get(`http://localhost:5000/api/product/${id}`);
+//         const res = await axios.get(`https://agrihub-backend.onrender.com/api/product/${id}`);
 //         setProduct(res.data);
 //       } catch (error) {
 //         console.error("Error fetching product:", error);
@@ -285,8 +285,8 @@
 
 //     const fetchOptions = async () => {
 //       try {
-//         const categoryRes = await axios.get("http://localhost:5000/api/category/list",{ withCredentials: true });
-//         const brandRes = await axios.get("http://localhost:5000/api/vendor/list",{ withCredentials: true });
+//         const categoryRes = await axios.get("https://agrihub-backend.onrender.com/api/category/list",{ withCredentials: true });
+//         const brandRes = await axios.get("https://agrihub-backend.onrender.com/api/vendor/list",{ withCredentials: true });
 //         setCategories(categoryRes.data);
 //         setBrands(brandRes.data);
 //       } catch (error) {
@@ -323,7 +323,7 @@
 //       formData.append("variants", JSON.stringify(product.variants));
 //       if (image) formData.append("image", image);
 
-//       await axios.put(`http://localhost:5000/api/product/update/${id}`, formData, {
+//       await axios.put(`https://agrihub-backend.onrender.com/api/product/update/${id}`, formData, {
 //         withCredentials: true,
 //       });
 //       alert("Product updated successfully!");
@@ -336,7 +336,7 @@
 //   const handleDelete = async () => {
 //     if (window.confirm("Are you sure you want to delete this product?")) {
 //       try {
-//         await axios.delete(`http://localhost:5000/api/product/delete/${id}`, { withCredentials: true });
+//         await axios.delete(`https://agrihub-backend.onrender.com/api/product/delete/${id}`, { withCredentials: true });
 //         alert("Product deleted successfully!");
 //         navigate("/manage-products");
 //       } catch (error) {
@@ -441,7 +441,7 @@ const EditProduct = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/product/${id}`, { withCredentials: true });
+        const res = await axios.get(`https://agrihub-backend.onrender.com/api/product/${id}`, { withCredentials: true });
         setProduct(res.data);
       } catch (error) {
         console.error("Error fetching product:", error);
@@ -451,8 +451,8 @@ const EditProduct = () => {
     const fetchOptions = async () => {
       try {
         const [categoryRes, brandRes] = await Promise.all([
-          axios.get("http://localhost:5000/api/category/list", { withCredentials: true }),
-          axios.get("http://localhost:5000/api/vendor/list", { withCredentials: true }),
+          axios.get("https://agrihub-backend.onrender.com/api/category/list", { withCredentials: true }),
+          axios.get("https://agrihub-backend.onrender.com/api/vendor/list", { withCredentials: true }),
         ]);
         setCategories(categoryRes.data || []);
         setBrands(brandRes.data || []);
@@ -512,7 +512,7 @@ const EditProduct = () => {
       formData.append("variants", JSON.stringify(product.variants));
       if (image) formData.append("image", image);
 
-      await axios.put(`http://localhost:5000/api/product/update/${id}`, formData, {
+      await axios.put(`https://agrihub-backend.onrender.com/api/product/update/${id}`, formData, {
         withCredentials: true,
       });
       alert("Product updated successfully!");
@@ -526,7 +526,7 @@ const EditProduct = () => {
   const handleDelete = async () => {
     if (window.confirm("Are you sure you want to delete this product?")) {
       try {
-        await axios.delete(`http://localhost:5000/api/product/delete/${id}`, { withCredentials: true });
+        await axios.delete(`https://agrihub-backend.onrender.com/api/product/delete/${id}`, { withCredentials: true });
         alert("Product deleted successfully!");
         navigate("/manage-products");
       } catch (error) {

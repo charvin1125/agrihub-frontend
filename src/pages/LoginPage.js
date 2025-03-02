@@ -13,7 +13,7 @@
 
 //   // Check if the user is already logged in
 //   useEffect(() => {
-//     axios.get("http://localhost:5000/api/users/profile", { withCredentials: true })
+//     axios.get("https://agrihub-backend.onrender.com/api/users/profile", { withCredentials: true })
 //       .then((response) => {
 //         if (response.data) {
 //           navigate(response.data.isAdmin ? "/admin-dashboard" : "/profile");
@@ -31,10 +31,10 @@
 //   const handleSubmit = async (e) => {
 //     e.preventDefault();
 //     try {
-//       await axios.post("http://localhost:5000/api/users/login", formData, { withCredentials: true });
+//       await axios.post("https://agrihub-backend.onrender.com/api/users/login", formData, { withCredentials: true });
 
 //       // Fetch user session to verify login
-//       const response = await axios.get("http://localhost:5000/api/users/profile", { withCredentials: true });
+//       const response = await axios.get("https://agrihub-backend.onrender.com/api/users/profile", { withCredentials: true });
 
 //       if (response.data.isAdmin) {
 //         navigate("/admin-dashboard");
@@ -117,7 +117,7 @@
 // //   const navigate = useNavigate();
 
 // //   useEffect(() => {
-// //     axios.get("http://localhost:5000/api/users/profile", { withCredentials: true })
+// //     axios.get("https://agrihub-backend.onrender.com/api/users/profile", { withCredentials: true })
 // //       .then((response) => {
 // //         if (response.data) {
 // //           navigate(response.data.isAdmin ? "/admin-dashboard" : "/profile");
@@ -135,8 +135,8 @@
 // //   const handleSubmit = async (e) => {
 // //     e.preventDefault();
 // //     try {
-// //       await axios.post("http://localhost:5000/api/users/login", formData, { withCredentials: true });
-// //       const response = await axios.get("http://localhost:5000/api/users/profile", { withCredentials: true });
+// //       await axios.post("https://agrihub-backend.onrender.com/api/users/login", formData, { withCredentials: true });
+// //       const response = await axios.get("https://agrihub-backend.onrender.com/api/users/profile", { withCredentials: true });
 
 // //       if (response.data.isAdmin) {
 // //         navigate("/admin-dashboard");
@@ -229,7 +229,7 @@
 //   // Check if the user is already logged in
 //   useEffect(() => {
 //     axios
-//       .get("http://localhost:5000/api/users/profile", { withCredentials: true })
+//       .get("https://agrihub-backend.onrender.com/api/users/profile", { withCredentials: true })
 //       .then((response) => {
 //         if (response.data) {
 //           navigate(response.data.isAdmin ? "/admin-dashboard" : "/profile");
@@ -247,8 +247,8 @@
 //   const handleSubmit = async (e) => {
 //     e.preventDefault();
 //     try {
-//       await axios.post("http://localhost:5000/api/users/login", formData, { withCredentials: true });
-//       const response = await axios.get("http://localhost:5000/api/users/profile", { withCredentials: true });
+//       await axios.post("https://agrihub-backend.onrender.com/api/users/login", formData, { withCredentials: true });
+//       const response = await axios.get("https://agrihub-backend.onrender.com/api/users/profile", { withCredentials: true });
 
 //       if (response.data.isAdmin) {
 //         navigate("/admin-dashboard");
@@ -490,7 +490,7 @@ const LoginPage = () => {
   // Check if the user is already logged in
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/users/profile", { withCredentials: true })
+      .get("https://agrihub-backend.onrender.com/api/users/profile", { withCredentials: true })
       .then((response) => {
         if (response.data) {
           navigate(response.data.isAdmin ? "/admin-dashboard" : "/profile");
@@ -510,8 +510,8 @@ const LoginPage = () => {
     setMessage("");
     setLoading(true);
     try {
-      await axios.post("http://localhost:5000/api/users/login", formData, { withCredentials: true });
-      const response = await axios.get("http://localhost:5000/api/users/profile", { withCredentials: true });
+      await axios.post("https://agrihub-backend.onrender.com/api/users/login", formData, { withCredentials: true });
+      const response = await axios.get("https://agrihub-backend.onrender.com/api/users/profile", { withCredentials: true });
 
       if (response.data.isAdmin) {
         navigate("/admin-dashboard");
@@ -542,7 +542,7 @@ const LoginPage = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:5000/api/users/forgot-password", forgotData);
+      const response = await axios.post("https://agrihub-backend.onrender.com/api/users/forgot-password", forgotData);
       setForgotMessage(response.data.message || "Password reset successful! Please login.");
       setForgotData({
         mobile: "",

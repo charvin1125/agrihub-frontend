@@ -14,7 +14,7 @@
 //     // Fetch available products
 //     const fetchProducts = async () => {
 //       try {
-//         const response = await axios.get("http://localhost:5000/api/product/list");
+//         const response = await axios.get("https://agrihub-backend.onrender.com/api/product/list");
 //         setProducts(response.data);
 //       } catch (error) {
 //         console.error("Error fetching products:", error);
@@ -59,7 +59,7 @@
 //     const orderData = { name, phone, cart, crop, paymentMethod };
 
 //     try {
-//       const response = await axios.post("http://localhost:5000/api/orders/offline-purchase", orderData, { withCredentials: true });
+//       const response = await axios.post("https://agrihub-backend.onrender.com/api/orders/offline-purchase", orderData, { withCredentials: true });
 
 //       if (response.data.success) {
 //         alert("Offline Order Placed Successfully!");
@@ -190,7 +190,7 @@
 //   useEffect(() => {
 //     const fetchProducts = async () => {
 //       try {
-//         const res = await axios.get("http://localhost:5000/api/product/list");
+//         const res = await axios.get("https://agrihub-backend.onrender.com/api/product/list");
 //         setProducts(res.data);
 //       } catch (error) {
 //         console.error("Error fetching products:", error);
@@ -250,7 +250,7 @@
 //     console.log("Sending offline order data:", orderData);
   
 //     try {
-//       const response = await axios.post("http://localhost:5000/api/orders/offline-purchase", orderData, { 
+//       const response = await axios.post("https://agrihub-backend.onrender.com/api/orders/offline-purchase", orderData, { 
 //         withCredentials: true  // ✅ Ensures cookies are sent
 //       });
   
@@ -355,7 +355,7 @@
 //   useEffect(() => {
 //     const fetchProducts = async () => {
 //       try {
-//         const res = await axios.get("http://localhost:5000/api/product/list");
+//         const res = await axios.get("https://agrihub-backend.onrender.com/api/product/list");
 //         setProducts(res.data);
 //       } catch (error) {
 //         console.error("Error fetching products:", error);
@@ -416,7 +416,7 @@
 // //     console.log("Sending offline order data:", orderData);
 
 // //     try {
-// //       const response = await axios.post("http://localhost:5000/api/orders/offline-purchase", orderData, {
+// //       const response = await axios.post("https://agrihub-backend.onrender.com/api/orders/offline-purchase", orderData, {
 // //         withCredentials: true, // ✅ Ensures cookies are sent
 // //       });
 
@@ -443,7 +443,7 @@
 //     };
   
 //     try {
-//       const response = await axios.post("http://localhost:5000/api/orders/offline-purchase", orderData, {
+//       const response = await axios.post("https://agrihub-backend.onrender.com/api/orders/offline-purchase", orderData, {
 //         withCredentials: true,
 //       });
   
@@ -468,7 +468,7 @@
 //   // ✅ Ensure fetchProducts is defined
 //   const fetchProducts = async () => {
 //     try {
-//       const res = await axios.get("http://localhost:5000/api/product/list");
+//       const res = await axios.get("https://agrihub-backend.onrender.com/api/product/list");
 //       setProducts(res.data); // ✅ Update products after stock change
 //     } catch (error) {
 //       console.error("Error fetching products:", error);
@@ -573,7 +573,7 @@
 
 //   const fetchProducts = async () => {
 //     try {
-//       const res = await axios.get("http://localhost:5000/api/product/list");
+//       const res = await axios.get("https://agrihub-backend.onrender.com/api/product/list");
 //       setProducts(res.data);
 //     } catch (error) {
 //       console.error("Error fetching products:", error);
@@ -628,7 +628,7 @@
 //     };
 
 //     try {
-//       const response = await axios.post("http://localhost:5000/api/orders/offline-purchase", orderData, {
+//       const response = await axios.post("https://agrihub-backend.onrender.com/api/orders/offline-purchase", orderData, {
 //         withCredentials: true,
 //       });
 
@@ -778,7 +778,7 @@
 //   const fetchProducts = async () => {
 //     setLoading(true);
 //     try {
-//       const res = await axios.get("http://localhost:5000/api/product/list", { withCredentials: true });
+//       const res = await axios.get("https://agrihub-backend.onrender.com/api/product/list", { withCredentials: true });
 //       setProducts(res.data || []);
 //     } catch (error) {
 //       console.error("Error fetching products:", error);
@@ -846,7 +846,7 @@
 
 //     try {
 //       const response = await axios.post(
-//         "http://localhost:5000/api/orders/offline-purchase",
+//         "https://agrihub-backend.onrender.com/api/orders/offline-purchase",
 //         orderData,
 //         { withCredentials: true }
 //       );
@@ -1204,7 +1204,7 @@ const AdminOfflinePurchase = () => {
   const fetchProducts = async () => {
     setLoading(true);
     try {
-      const res = await axios.get("http://localhost:5000/api/product/list", { withCredentials: true });
+      const res = await axios.get("https://agrihub-backend.onrender.com/api/product/list", { withCredentials: true });
       setProducts(res.data || []);
     } catch (error) {
       console.error("Error fetching products:", error);
@@ -1270,7 +1270,7 @@ const AdminOfflinePurchase = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/orders/offline-purchase",
+        "https://agrihub-backend.onrender.com/api/orders/offline-purchase",
         orderData,
         { withCredentials: true }
       );

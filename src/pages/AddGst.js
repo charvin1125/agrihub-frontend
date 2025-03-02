@@ -12,7 +12,7 @@ const AddGST = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/product/${id}`);
+        const res = await axios.get(`https://agrihub-backend.onrender.com/api/product/${id}`);
         setGST(res.data.gst || 0);
         setProductName(res.data.name);
       } catch (error) {
@@ -29,7 +29,7 @@ const AddGST = () => {
   const handleUpdateGST = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:5000/api/product/update-gst/${id}`, { gst }, { withCredentials: true });
+      await axios.put(`https://agrihub-backend.onrender.com/api/product/update-gst/${id}`, { gst }, { withCredentials: true });
       alert("GST updated successfully!");
       navigate("/manage-products");
     } catch (error) {

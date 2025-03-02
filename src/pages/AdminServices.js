@@ -60,8 +60,8 @@ const AdminServices = () => {
     setLoading(true);
     try {
       const [servicesRes, userRes] = await Promise.all([
-        axios.get("http://localhost:5000/api/services/list", { withCredentials: true }),
-        axios.get("http://localhost:5000/api/users/me", { withCredentials: true }),
+        axios.get("https://agrihub-backend.onrender.com/api/services/list", { withCredentials: true }),
+        axios.get("https://agrihub-backend.onrender.com/api/users/me", { withCredentials: true }),
       ]);
       if (userRes.data && !userRes.data.isAdmin) {
         navigate("/"); // Redirect non-admins
@@ -96,12 +96,12 @@ const AdminServices = () => {
 
     try {
       if (isEditing) {
-        await axios.put(`http://localhost:5000/api/services/update/${editId}`, formData, {
+        await axios.put(`https://agrihub-backend.onrender.com/api/services/update/${editId}`, formData, {
           withCredentials: true,
         });
         alert("Service updated successfully!");
       } else {
-        await axios.post("http://localhost:5000/api/services/add", formData, {
+        await axios.post("https://agrihub-backend.onrender.com/api/services/add", formData, {
           withCredentials: true,
         });
         alert("Service added successfully!");
@@ -132,7 +132,7 @@ const AdminServices = () => {
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this service?")) {
       try {
-        await axios.delete(`http://localhost:5000/api/services/delete/${id}`, { withCredentials: true });
+        await axios.delete(`https://agrihub-backend.onrender.com/api/services/delete/${id}`, { withCredentials: true });
         alert("Service deleted successfully!");
         fetchServices();
       } catch (error) {
@@ -345,7 +345,7 @@ const AdminServices = () => {
                           <TableCell align="right">
                             {serviceItem.image ? (
                               <img
-                                src={`http://localhost:5000/${serviceItem.image}`}
+                                src={`https://agrihub-backend.onrender.com/${serviceItem.image}`}
                                 alt={serviceItem.name}
                                 style={{ width: isMobile ? 40 : 50, height: isMobile ? 40 : 50, objectFit: "cover", borderRadius: "4px" }}
                               />

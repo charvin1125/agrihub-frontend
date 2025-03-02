@@ -6,7 +6,7 @@ const LowStockNotification = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/product/low-stock", { withCredentials: true })
+      .get("https://agrihub-backend.onrender.com/api/product/low-stock", { withCredentials: true })
       .then((res) => setLowStockProducts(res.data))
       .catch((err) => console.error("Error fetching low stock products:", err));
   }, []);

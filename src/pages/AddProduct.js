@@ -27,7 +27,7 @@
 //   useEffect(() => {
 //     const fetchUser = async () => {
 //       try {
-//         const res = await axios.get("http://localhost:5000/api/users/me", { withCredentials: true });
+//         const res = await axios.get("https://agrihub-backend.onrender.com/api/users/me", { withCredentials: true });
 //         if (res.data && res.data.isAdmin) {
 //           setUser(res.data);
 //         } else {
@@ -45,9 +45,9 @@
 //     if (user) {
 //       const fetchData = async () => {
 //         try {
-//           const categoryRes = await axios.get("http://localhost:5000/api/category/list", { withCredentials: true });
-//           const brandRes = await axios.get("http://localhost:5000/api/vendor/list", { withCredentials: true });
-//           const productRes = await axios.get("http://localhost:5000/api/product/list", { withCredentials: true });
+//           const categoryRes = await axios.get("https://agrihub-backend.onrender.com/api/category/list", { withCredentials: true });
+//           const brandRes = await axios.get("https://agrihub-backend.onrender.com/api/vendor/list", { withCredentials: true });
+//           const productRes = await axios.get("https://agrihub-backend.onrender.com/api/product/list", { withCredentials: true });
 
 //           setCategories(categoryRes.data || []);
 //           setBrands(brandRes.data || []);
@@ -86,7 +86,7 @@
 //     if (image) formData.append("image", image);
 
 //     try {
-//       await axios.post("http://localhost:5000/api/product/add", formData, {
+//       await axios.post("https://agrihub-backend.onrender.com/api/product/add", formData, {
 //         withCredentials: true, // ✅ Ensures authentication cookies are sent
 //       });
 //       alert("Product added successfully!");
@@ -104,7 +104,7 @@
 //       setVariant({ size: "", price: "", discount: 0 });
 
 //       // Reload products to reflect the newly added product
-//       const productRes = await axios.get("http://localhost:5000/api/product/list");
+//       const productRes = await axios.get("https://agrihub-backend.onrender.com/api/product/list");
 //       setProducts(productRes.data || []);
 //     } catch (error) {
 //       console.error("Error adding product:", error);
@@ -257,7 +257,7 @@
 //   useEffect(() => {
 //     const fetchUser = async () => {
 //       try {
-//         const res = await axios.get("http://localhost:5000/api/users/me", { withCredentials: true });
+//         const res = await axios.get("https://agrihub-backend.onrender.com/api/users/me", { withCredentials: true });
 //         if (res.data && res.data.isAdmin) {
 //           setUser(res.data);
 //         } else {
@@ -275,9 +275,9 @@
 //     if (user) {
 //       const fetchData = async () => {
 //         try {
-//           const categoryRes = await axios.get("http://localhost:5000/api/category/list", { withCredentials: true });
-//           const brandRes = await axios.get("http://localhost:5000/api/vendor/list", { withCredentials: true });
-//           const productRes = await axios.get("http://localhost:5000/api/product/list", { withCredentials: true });
+//           const categoryRes = await axios.get("https://agrihub-backend.onrender.com/api/category/list", { withCredentials: true });
+//           const brandRes = await axios.get("https://agrihub-backend.onrender.com/api/vendor/list", { withCredentials: true });
+//           const productRes = await axios.get("https://agrihub-backend.onrender.com/api/product/list", { withCredentials: true });
 
 //           setCategories(categoryRes.data || []);
 //           setBrands(brandRes.data || []);
@@ -317,7 +317,7 @@
 //     if (image) formData.append("image", image);
 
 //     try {
-//       await axios.post("http://localhost:5000/api/product/add", formData, {
+//       await axios.post("https://agrihub-backend.onrender.com/api/product/add", formData, {
 //         withCredentials: true,
 //       });
 //       alert("Product added successfully!");
@@ -334,7 +334,7 @@
 //       setImage(null);
 //       setVariant({ size: "", price: "", discount: 0, stock: 0 });
 
-//       const productRes = await axios.get("http://localhost:5000/api/product/list");
+//       const productRes = await axios.get("https://agrihub-backend.onrender.com/api/product/list");
 //       setProducts(productRes.data || []);
 //     } catch (error) {
 //       console.error("Error adding product:", error);
@@ -484,7 +484,7 @@
 //   useEffect(() => {
 //     const fetchUser = async () => {
 //       try {
-//         const res = await axios.get("http://localhost:5000/api/users/me", { withCredentials: true });
+//         const res = await axios.get("https://agrihub-backend.onrender.com/api/users/me", { withCredentials: true });
 //         if (res.data && res.data.isAdmin) {
 //           setUser(res.data);
 //         } else {
@@ -502,9 +502,9 @@
 //     if (user) {
 //       const fetchData = async () => {
 //         try {
-//           const categoryRes = await axios.get("http://localhost:5000/api/category/list", { withCredentials: true });
-//           const brandRes = await axios.get("http://localhost:5000/api/vendor/list", { withCredentials: true });
-//           const productRes = await axios.get("http://localhost:5000/api/product/list", { withCredentials: true });
+//           const categoryRes = await axios.get("https://agrihub-backend.onrender.com/api/category/list", { withCredentials: true });
+//           const brandRes = await axios.get("https://agrihub-backend.onrender.com/api/vendor/list", { withCredentials: true });
+//           const productRes = await axios.get("https://agrihub-backend.onrender.com/api/product/list", { withCredentials: true });
 
 //           setCategories(categoryRes.data || []);
 //           setBrands(brandRes.data || []);
@@ -542,7 +542,7 @@
 //     if (image) formData.append("image", image);
 
 //     try {
-//       await axios.post("http://localhost:5000/api/product/add", formData, {
+//       await axios.post("https://agrihub-backend.onrender.com/api/product/add", formData, {
 //         withCredentials: true,
 //       });
 //       alert("Product added successfully!");
@@ -557,7 +557,7 @@
 //       setImage(null);
 //       setVariant({ size: "", price: "", discount: 0, stock: 0 });
 
-//       const productRes = await axios.get("http://localhost:5000/api/product/list");
+//       const productRes = await axios.get("https://agrihub-backend.onrender.com/api/product/list");
 //       setProducts(productRes.data || []);
 //     } catch (error) {
 //       console.error("Error adding product:", error);
@@ -698,7 +698,7 @@
 //   useEffect(() => {
 //     const fetchUser = async () => {
 //       try {
-//         const res = await axios.get("http://localhost:5000/api/users/me", { withCredentials: true });
+//         const res = await axios.get("https://agrihub-backend.onrender.com/api/users/me", { withCredentials: true });
 //         if (res.data && res.data.isAdmin) {
 //           setUser(res.data);
 //         } else {
@@ -716,9 +716,9 @@
 //     if (user) {
 //       const fetchData = async () => {
 //         try {
-//           const categoryRes = await axios.get("http://localhost:5000/api/category/list", { withCredentials: true });
-//           const brandRes = await axios.get("http://localhost:5000/api/vendor/list", { withCredentials: true });
-//           const productRes = await axios.get("http://localhost:5000/api/product/list", { withCredentials: true });
+//           const categoryRes = await axios.get("https://agrihub-backend.onrender.com/api/category/list", { withCredentials: true });
+//           const brandRes = await axios.get("https://agrihub-backend.onrender.com/api/vendor/list", { withCredentials: true });
+//           const productRes = await axios.get("https://agrihub-backend.onrender.com/api/product/list", { withCredentials: true });
 
 //           setCategories(categoryRes.data || []);
 //           setBrands(brandRes.data || []);
@@ -755,7 +755,7 @@
 //     if (image) formData.append("image", image);
 
 //     try {
-//       await axios.post("http://localhost:5000/api/product/add", formData, {
+//       await axios.post("https://agrihub-backend.onrender.com/api/product/add", formData, {
 //         withCredentials: true,
 //       });
 //       alert("Product added successfully!");
@@ -770,7 +770,7 @@
 //       setImage(null);
 //       setVariant({ size: "", price: "", discount: 0, stock: 0, gst: "" });
 
-//       const productRes = await axios.get("http://localhost:5000/api/product/list");
+//       const productRes = await axios.get("https://agrihub-backend.onrender.com/api/product/list");
 //       setProducts(productRes.data || []);
 //     } catch (error) {
 //       console.error("Error adding product:", error);
@@ -885,7 +885,7 @@
 //   useEffect(() => {
 //     const fetchUser = async () => {
 //       try {
-//         const res = await axios.get("http://localhost:5000/api/users/me", { withCredentials: true });
+//         const res = await axios.get("https://agrihub-backend.onrender.com/api/users/me", { withCredentials: true });
 //         if (res.data && res.data.isAdmin) {
 //           setUser(res.data);
 //         } else {
@@ -904,9 +904,9 @@
 //       const fetchData = async () => {
 //         try {
 //           const [categoryRes, brandRes, productRes] = await Promise.all([
-//             axios.get("http://localhost:5000/api/category/list", { withCredentials: true }),
-//             axios.get("http://localhost:5000/api/vendor/list", { withCredentials: true }),
-//             axios.get("http://localhost:5000/api/product/list", { withCredentials: true }),
+//             axios.get("https://agrihub-backend.onrender.com/api/category/list", { withCredentials: true }),
+//             axios.get("https://agrihub-backend.onrender.com/api/vendor/list", { withCredentials: true }),
+//             axios.get("https://agrihub-backend.onrender.com/api/product/list", { withCredentials: true }),
 //           ]);
 //           setCategories(categoryRes.data || []);
 //           setBrands(brandRes.data || []);
@@ -955,7 +955,7 @@
 //     if (image) formData.append("image", image);
 
 //     try {
-//       await axios.post("http://localhost:5000/api/product/add", formData, {
+//       await axios.post("https://agrihub-backend.onrender.com/api/product/add", formData, {
 //         withCredentials: true,
 //       });
 //       alert("Product added successfully!");
@@ -963,7 +963,7 @@
 //       setImage(null);
 //       setVariant({ size: "", price: "", discount: 0, stock: 0, gst: "" });
 
-//       const productRes = await axios.get("http://localhost:5000/api/product/list");
+//       const productRes = await axios.get("https://agrihub-backend.onrender.com/api/product/list");
 //       setProducts(productRes.data || []);
 //     } catch (error) {
 //       console.error("Error adding product:", error);
@@ -1252,7 +1252,7 @@ const AddProduct = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/users/me", { withCredentials: true });
+        const res = await axios.get("https://agrihub-backend.onrender.com/api/users/me", { withCredentials: true });
         if (res.data && res.data.isAdmin) {
           setUser(res.data);
         } else {
@@ -1281,9 +1281,9 @@ const AddProduct = () => {
       const fetchData = async () => {
         try {
           const [categoryRes, brandRes, productRes] = await Promise.all([
-            axios.get("http://localhost:5000/api/category/list", { withCredentials: true }),
-            axios.get("http://localhost:5000/api/vendor/list", { withCredentials: true }),
-            axios.get("http://localhost:5000/api/product/list", { withCredentials: true }),
+            axios.get("https://agrihub-backend.onrender.com/api/category/list", { withCredentials: true }),
+            axios.get("https://agrihub-backend.onrender.com/api/vendor/list", { withCredentials: true }),
+            axios.get("https://agrihub-backend.onrender.com/api/product/list", { withCredentials: true }),
           ]);
           setCategories(categoryRes.data || []);
           setBrands(brandRes.data || []);
@@ -1339,7 +1339,7 @@ const AddProduct = () => {
     if (image) formData.append("image", image);
 
     try {
-      await axios.post("http://localhost:5000/api/product/add", formData, {
+      await axios.post("https://agrihub-backend.onrender.com/api/product/add", formData, {
         withCredentials: true,
       });
       alert("Product added successfully!");
@@ -1347,7 +1347,7 @@ const AddProduct = () => {
       setImage(null);
       setVariant({ size: "", price: "", discount: 0, stock: 0, gst: "" });
 
-      const productRes = await axios.get("http://localhost:5000/api/product/list", { withCredentials: true });
+      const productRes = await axios.get("https://agrihub-backend.onrender.com/api/product/list", { withCredentials: true });
       setProducts(productRes.data || []);
     } catch (error) {
       console.error("Error adding product:", error);

@@ -38,7 +38,7 @@
 //               <div className="card mb-3 shadow-sm" key={index}>
 //                 <div className="row g-0">
 //                   <div className="col-md-4">
-//                     <img src={`http://localhost:5000/${item.image}`} alt={item.name} className="img-fluid rounded-start" />
+//                     <img src={`https://agrihub-backend.onrender.com/${item.image}`} alt={item.name} className="img-fluid rounded-start" />
 //                   </div>
 //                   <div className="col-md-8">
 //                     <div className="card-body">
@@ -120,7 +120,7 @@
 //               <div className="card mb-3 shadow-lg border-0 rounded" key={index}>
 //                 <div className="row g-0">
 //                   <div className="col-md-4">
-//                     <img src={`http://localhost:5000/${item.image}`} alt={item.name} className="img-fluid rounded-start" />
+//                     <img src={`https://agrihub-backend.onrender.com/${item.image}`} alt={item.name} className="img-fluid rounded-start" />
 //                   </div>
 //                   <div className="col-md-8 d-flex flex-column justify-content-between p-3">
 //                     <div>
@@ -222,7 +222,7 @@
 //               <div className="card mb-3 shadow-lg border-0 rounded" key={index}>
 //                 <div className="row g-0">
 //                   <div className="col-md-4">
-//                     <img src={`http://localhost:5000/${item.image}`} alt={item.name} className="img-fluid rounded-start" />
+//                     <img src={`https://agrihub-backend.onrender.com/${item.image}`} alt={item.name} className="img-fluid rounded-start" />
 //                   </div>
 //                   <div className="col-md-8 d-flex flex-column justify-content-between p-3">
 //                     <div>
@@ -326,7 +326,7 @@
 //               <div className="card mb-3 shadow-lg border-0 rounded" key={index}>
 //                 <div className="row g-0">
 //                   <div className="col-md-4">
-//                     <img src={`http://localhost:5000/${item.image}`} alt={item.name} className="img-fluid rounded-start" />
+//                     <img src={`https://agrihub-backend.onrender.com/${item.image}`} alt={item.name} className="img-fluid rounded-start" />
 //                   </div>
 //                   <div className="col-md-8 d-flex flex-column justify-content-between p-3">
 //                     <div>
@@ -450,7 +450,7 @@
 //               {cart.map((item, index) => (
 //                 <tr key={index}>
 //                   <td>
-//                     <img src={`http://localhost:5000/${item.image}`} alt={item.name} width="60" className="rounded" />
+//                     <img src={`https://agrihub-backend.onrender.com/${item.image}`} alt={item.name} width="60" className="rounded" />
 //                   </td>
 //                   <td>{item.name}</td>
 //                   <td>₹{item.price}</td>
@@ -562,7 +562,7 @@
 //               {cart.map((item, index) => (
 //                 <tr key={index}>
 //                   <td>
-//                     <img src={`http://localhost:5000/${item.image}`} alt={item.name} width="60" className="rounded" />
+//                     <img src={`https://agrihub-backend.onrender.com/${item.image}`} alt={item.name} width="60" className="rounded" />
 //                   </td>
 //                   <td>{item.name}</td>
 //                   <td>₹{parseFloat(item.price).toFixed(2)}</td>
@@ -777,7 +777,7 @@ const Cart = () => {
                               <Box sx={{ display: "flex", alignItems: "center" }}>
                                 {item.image && (
                                   <img
-                                    src={`http://localhost:5000/${item.image}`}
+                                    src={`https://agrihub-backend.onrender.com/${item.image}`}
                                     alt={item.name}
                                     style={{ width: 50, height: 50, borderRadius: "4px", marginRight: 8 }}
                                     onError={(e) => (e.target.style.display = "none")} // Hide broken images

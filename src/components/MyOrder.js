@@ -12,7 +12,7 @@
 //   useEffect(() => {
 //     const fetchOrders = async () => {
 //       try {
-//         const response = await axios.get("http://localhost:5000/api/orders/my-orders", {
+//         const response = await axios.get("https://agrihub-backend.onrender.com/api/orders/my-orders", {
 //           withCredentials: true, // Include credentials (session) for authentication
 //         });
 
@@ -144,7 +144,7 @@ const [rowsPerPage, setRowsPerPage] = useState(5);
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/orders/my-orders", {
+        const response = await axios.get("https://agrihub-backend.onrender.com/api/orders/my-orders", {
           withCredentials: true,
         });
 

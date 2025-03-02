@@ -16,7 +16,7 @@ const ShopPage = () => {
 
     const fetchProducts = async () => {
         try {
-            const response = await axios.get("http://localhost:5000/api/product/list");
+            const response = await axios.get("https://agrihub-backend.onrender.com/api/product/list");
             console.log("Fetched products:", response.data); // Debugging log
             setProducts(response.data); // Store fetched products in state
         } catch (error) {
@@ -54,7 +54,7 @@ const ShopPage = () => {
                     products.map((product) => (
                         <div key={product._id} className="product-card">
                             <img
-                                src={`http://localhost:5000/uploads/${product.image}`} // Fetch image dynamically
+                                src={`https://agrihub-backend.onrender.com/uploads/${product.image}`} // Fetch image dynamically
                                 alt={product.name}
                                 onClick={() => openProductDetails(product)}
                                 style={{ cursor: 'pointer' }}
@@ -95,7 +95,7 @@ const ShopPage = () => {
                         <span className="close" onClick={closeProductDetails}>
                             &times;
                         </span>
-                        <img src={`http://localhost:5000/uploads/${selectedProduct.image}`} alt={selectedProduct.name} />
+                        <img src={`https://agrihub-backend.onrender.com/uploads/${selectedProduct.image}`} alt={selectedProduct.name} />
                         <h2>{selectedProduct.name}</h2>
                         <p>{selectedProduct.description}</p>
                         <p className="price">Rs.{selectedProduct.price}</p>

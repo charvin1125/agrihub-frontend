@@ -365,7 +365,7 @@
 
 //   const handleLogout = () => {
 //     axios
-//       .post("http://localhost:5000/api/users/logout", {}, { withCredentials: true })
+//       .post("https://agrihub-backend.onrender.com/api/users/logout", {}, { withCredentials: true })
 //       .then(() => {
 //         const savedDataKey = `savedCustomerData_${user.username}`;
 //         localStorage.removeItem("token");
@@ -571,7 +571,7 @@
 //   useEffect(() => {
 //     const fetchUser = async () => {
 //       try {
-//         const res = await axios.get("http://localhost:5000/api/users/me", { withCredentials: true });
+//         const res = await axios.get("https://agrihub-backend.onrender.com/api/users/me", { withCredentials: true });
 //         setUser(res.data);
 //         localStorage.setItem("user", JSON.stringify(res.data));
 //       } catch (error) {
@@ -585,7 +585,7 @@
 
 //   const handleLogout = () => {
 //     axios
-//       .post("http://localhost:5000/api/users/logout", {}, { withCredentials: true })
+//       .post("https://agrihub-backend.onrender.com/api/users/logout", {}, { withCredentials: true })
 //       .then(() => {
 //         const savedDataKey = `savedCustomerData_${user?.username}`;
 //         localStorage.removeItem("token");
@@ -791,7 +791,7 @@ const Sidebar = ({ darkMode, toggleDarkMode, onToggleSidebar, isMobile, open, se
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/users/me", { withCredentials: true });
+        const res = await axios.get("https://agrihub-backend.onrender.com/api/users/me", { withCredentials: true });
         setUser(res.data);
         localStorage.setItem("user", JSON.stringify(res.data));
       } catch (error) {
@@ -805,7 +805,7 @@ const Sidebar = ({ darkMode, toggleDarkMode, onToggleSidebar, isMobile, open, se
 
   const handleLogout = () => {
     axios
-      .post("http://localhost:5000/api/users/logout", {}, { withCredentials: true })
+      .post("https://agrihub-backend.onrender.com/api/users/logout", {}, { withCredentials: true })
       .then(() => {
         const savedDataKey = `savedCustomerData_${user?.username}`;
         localStorage.removeItem("token");

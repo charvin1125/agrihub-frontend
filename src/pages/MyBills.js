@@ -9,7 +9,7 @@ const MyBills = () => {
   useEffect(() => {
     const fetchBills = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/orders/my-bills", {
+        const response = await axios.get("https://agrihub-backend.onrender.com/api/orders/my-bills", {
           withCredentials: true,
         });
 

@@ -25,7 +25,7 @@
 //   useEffect(() => {
 //     const fetchServices = async () => {
 //       try {
-//         const res = await axios.get("http://localhost:5000/api/services/list");
+//         const res = await axios.get("https://agrihub-backend.onrender.com/api/services/list");
 //         setServices(res.data || []);
 //       } catch (error) {
 //         console.error("Error fetching services:", error);
@@ -129,7 +129,7 @@
 //                     <CardMedia
 //                       component="img"
 //                       height={isMobile ? "150" : "200"}
-//                       image={service.image ? `http://localhost:5000/${service.image}` : "https://via.placeholder.com/300x200?text=No+Image"}
+//                       image={service.image ? `https://agrihub-backend.onrender.com/${service.image}` : "https://via.placeholder.com/300x200?text=No+Image"}
 //                       alt={service.name}
 //                       sx={{ objectFit: "cover" }}
 //                     />
@@ -199,7 +199,7 @@ const Services = () => {
   useEffect(() => {
     const fetchServices = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/services/list");
+        const res = await axios.get("https://agrihub-backend.onrender.com/api/services/list");
         setServices(res.data || []);
       } catch (error) {
         console.error("Error fetching services:", error);
@@ -303,7 +303,7 @@ const Services = () => {
                     <CardMedia
                       component="img"
                       height={isMobile ? "150" : "200"}
-                      image={service.image ? `http://localhost:5000/${service.image}` : "https://via.placeholder.com/300x200?text=No+Image"}
+                      image={service.image ? `https://agrihub-backend.onrender.com/${service.image}` : "https://via.placeholder.com/300x200?text=No+Image"}
                       alt={service.name}
                       sx={{ objectFit: "cover" }}
                     />

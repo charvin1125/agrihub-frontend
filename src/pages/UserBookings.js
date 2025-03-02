@@ -33,7 +33,7 @@
 //     const fetchBookings = async () => {
 //       setLoading(true);
 //       try {
-//         const res = await axios.get("http://localhost:5000/api/my-bookings", { withCredentials: true });
+//         const res = await axios.get("https://agrihub-backend.onrender.com/api/my-bookings", { withCredentials: true });
 //         setBookings(res.data || []);
 //       } catch (error) {
 //         console.error("Error fetching bookings:", error.response?.data || error.message);
@@ -228,7 +228,7 @@ const UserBookings = () => {
     const fetchBookings = async () => {
       setLoading(true);
       try {
-        const res = await axios.get("http://localhost:5000/api/my-bookings", { withCredentials: true });
+        const res = await axios.get("https://agrihub-backend.onrender.com/api/my-bookings", { withCredentials: true });
         setBookings(res.data || []);
       } catch (error) {
         console.error("Error fetching bookings:", error.response?.data || error.message);

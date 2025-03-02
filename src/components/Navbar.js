@@ -11,7 +11,7 @@
 //   useEffect(() => {
 //     const fetchUser = async () => {
 //       try {
-//         const response = await axios.get("http://localhost:5000/api/users/profile", {
+//         const response = await axios.get("https://agrihub-backend.onrender.com/api/users/profile", {
 //           withCredentials: true, // Ensure session cookies are sent
 //         });
 //         setUser(response.data);
@@ -25,7 +25,7 @@
 
 //   const handleLogout = async () => {
 //     try {
-//       await axios.post("http://localhost:5000/api/users/logout", {}, { withCredentials: true });
+//       await axios.post("https://agrihub-backend.onrender.com/api/users/logout", {}, { withCredentials: true });
 //       setUser(null); // Reset state after logout
 //       navigate("/login"); // Redirect to login
 //     } catch (error) {
@@ -95,7 +95,7 @@
 //   useEffect(() => {
 //     const fetchUser = async () => {
 //       try {
-//         const response = await axios.get("http://localhost:5000/api/users/profile", {
+//         const response = await axios.get("https://agrihub-backend.onrender.com/api/users/profile", {
 //           withCredentials: true,
 //         });
 //         setUser(response.data);
@@ -109,7 +109,7 @@
 
 //   const handleLogout = async () => {
 //     try {
-//       await axios.post("http://localhost:5000/api/users/logout", {}, { withCredentials: true });
+//       await axios.post("https://agrihub-backend.onrender.com/api/users/logout", {}, { withCredentials: true });
 //       setUser(null);
 //       navigate("/login");
 //     } catch (error) {
@@ -261,7 +261,7 @@ const NavigationBar = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/users/profile", {
+        const response = await axios.get("https://agrihub-backend.onrender.com/api/users/profile", {
           withCredentials: true,
         });
         setUser(response.data);
@@ -275,7 +275,7 @@ const NavigationBar = () => {
 
   const handleLogout = async () => {
     try {
-      await axios.post("http://localhost:5000/api/users/logout", {}, { withCredentials: true });
+      await axios.post("https://agrihub-backend.onrender.com/api/users/logout", {}, { withCredentials: true });
       setUser(null); // Clear user state
       handleMenuClose();
       navigate("/login");

@@ -38,7 +38,7 @@
 //   };
 
 //   try {
-//     const response = await axios.post("http://localhost:5000/api/orders/place", orderData, {
+//     const response = await axios.post("https://agrihub-backend.onrender.com/api/orders/place", orderData, {
 //       withCredentials: true, // 🔥 Ensure cookies (session) are sent
 //     });
 //     alert("Order placed successfully! Order ID: " + response.data.order.orderId);
@@ -179,7 +179,7 @@
 //   try {
 //     // ✅ Fetch latest stock before placing order
 //     console.log("Fetching stock data...");
-//     const { data: productsData } = await axios.get("http://localhost:5000/api/product/list");
+//     const { data: productsData } = await axios.get("https://agrihub-backend.onrender.com/api/product/list");
 
 //     console.log("Fetched products data:", productsData);
 //     console.log("Current Cart:", currentCart);
@@ -221,7 +221,7 @@
 //   try {
 //     console.log("Sending order data:", orderData);
     
-//     const response = await axios.post("http://localhost:5000/api/orders/place", orderData, {
+//     const response = await axios.post("https://agrihub-backend.onrender.com/api/orders/place", orderData, {
 //       withCredentials: true,
 //     });
 
@@ -385,7 +385,7 @@
 
 //     try {
 //       // Make API request to place the order
-//       const response = await fetch("http://localhost:5000/api/orders/place", {
+//       const response = await fetch("https://agrihub-backend.onrender.com/api/orders/place", {
 //         method: "POST",
 //         headers: {
 //           "Content-Type": "application/json",
@@ -538,7 +538,7 @@
 //     };
 
 //     try {
-//       const response = await fetch("http://localhost:5000/api/order/place", {
+//       const response = await fetch("https://agrihub-backend.onrender.com/api/order/place", {
 //         method: "POST",
 //         headers: {
 //           "Content-Type": "application/json",
@@ -736,7 +736,7 @@
 //   //   console.log("Sending order data:", JSON.stringify(orderData, null, 2));
 
 //   //   try {
-//   //     const response = await axios.post("http://localhost:5000/api/orders/place", orderData, {
+//   //     const response = await axios.post("https://agrihub-backend.onrender.com/api/orders/place", orderData, {
 //   //       withCredentials: true,
 //   //     });
 
@@ -781,7 +781,7 @@
 //     console.log("Sending order data:", JSON.stringify(orderData, null, 2));
   
 //     try {
-//       const response = await axios.post("http://localhost:5000/api/orders/place", orderData, {
+//       const response = await axios.post("https://agrihub-backend.onrender.com/api/orders/place", orderData, {
 //         withCredentials: true,
 //       });
   
@@ -928,7 +928,7 @@
 //     console.log("Sending order data:", JSON.stringify(orderData, null, 2));
 
 //     try {
-//       const response = await axios.post("http://localhost:5000/api/orders/place", orderData, {
+//       const response = await axios.post("https://agrihub-backend.onrender.com/api/orders/place", orderData, {
 //         withCredentials: true,
 //       });
 
@@ -1066,7 +1066,7 @@
 //     console.log("Sending order data:", JSON.stringify(orderData, null, 2));
 
 //     try {
-//       const response = await axios.post("http://localhost:5000/api/orders/place", orderData, {
+//       const response = await axios.post("https://agrihub-backend.onrender.com/api/orders/place", orderData, {
 //         withCredentials: true,
 //       });
 
@@ -1244,7 +1244,7 @@
 //     console.log("Sending order data:", JSON.stringify(orderData, null, 2));
 
 //     try {
-//       const response = await axios.post("http://localhost:5000/api/orders/place", orderData, {
+//       const response = await axios.post("https://agrihub-backend.onrender.com/api/orders/place", orderData, {
 //         withCredentials: true,
 //       });
 
@@ -1512,7 +1512,7 @@
 //   useEffect(() => {
 //     const fetchUserProfile = async () => {
 //       try {
-//         const response = await axios.get("http://localhost:5000/api/users/profile", {
+//         const response = await axios.get("https://agrihub-backend.onrender.com/api/users/profile", {
 //           withCredentials: true,
 //         });
 //         setUser(response.data);
@@ -1575,7 +1575,7 @@
 //     console.log("Sending order data:", JSON.stringify(orderData, null, 2));
 
 //     try {
-//       const response = await axios.post("http://localhost:5000/api/orders/place", orderData, {
+//       const response = await axios.post("https://agrihub-backend.onrender.com/api/orders/place", orderData, {
 //         withCredentials: true,
 //       });
 
@@ -1844,7 +1844,7 @@
 //   useEffect(() => {
 //     const fetchUserProfile = async () => {
 //       try {
-//         const response = await axios.get("http://localhost:5000/api/users/profile", {
+//         const response = await axios.get("https://agrihub-backend.onrender.com/api/users/profile", {
 //           withCredentials: true,
 //         });
 //         setUser(response.data);
@@ -1915,7 +1915,7 @@
 //     try {
 //       if (paymentMethod === "Pay Later" || paymentMethod === "Cash") {
 //         // Handle offline payments directly
-//         const response = await axios.post("http://localhost:5000/api/orders/place", orderData, {
+//         const response = await axios.post("https://agrihub-backend.onrender.com/api/orders/place", orderData, {
 //           withCredentials: true,
 //         });
 //         if (response.data.success) {
@@ -1939,7 +1939,7 @@
 
 //         // Create Razorpay order on backend
 //         const orderResponse = await axios.post(
-//           "http://localhost:5000/api/orders/create-razorpay-order",
+//           "https://agrihub-backend.onrender.com/api/orders/create-razorpay-order",
 //           { amount: totalAmount * 100 }, // Convert to paise
 //           { withCredentials: true }
 //         );
@@ -1955,7 +1955,7 @@
 //           handler: async (response) => {
 //             try {
 //               const verifyResponse = await axios.post(
-//                 "http://localhost:5000/api/orders/verify-razorpay-payment",
+//                 "https://agrihub-backend.onrender.com/api/orders/verify-razorpay-payment",
 //                 {
 //                   razorpay_order_id: response.razorpay_order_id,
 //                   razorpay_payment_id: response.razorpay_payment_id,
@@ -2246,7 +2246,7 @@ const Checkout = () => {
   useEffect(() => {
     const fetchUserProfile = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/users/profile", {
+        const response = await axios.get("https://agrihub-backend.onrender.com/api/users/profile", {
           withCredentials: true,
         });
         setUser(response.data);
@@ -2317,7 +2317,7 @@ const Checkout = () => {
 
     try {
       if (paymentMethod === "Pay Later" || paymentMethod === "Cash") {
-        const response = await axios.post("http://localhost:5000/api/orders/place", orderData, {
+        const response = await axios.post("https://agrihub-backend.onrender.com/api/orders/place", orderData, {
           withCredentials: true,
         });
         if (response.data.success) {
@@ -2339,7 +2339,7 @@ const Checkout = () => {
         }
 
         const orderResponse = await axios.post(
-          "http://localhost:5000/api/orders/create-razorpay-order",
+          "https://agrihub-backend.onrender.com/api/orders/create-razorpay-order",
           { amount: totalAmount * 100 },
           { withCredentials: true }
         );
@@ -2355,7 +2355,7 @@ const Checkout = () => {
           handler: async (response) => {
             try {
               const verifyResponse = await axios.post(
-                "http://localhost:5000/api/orders/verify-razorpay-payment",
+                "https://agrihub-backend.onrender.com/api/orders/verify-razorpay-payment",
                 {
                   razorpay_order_id: response.razorpay_order_id,
                   razorpay_payment_id: response.razorpay_payment_id,

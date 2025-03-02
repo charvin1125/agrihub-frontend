@@ -9,7 +9,7 @@
 //   useEffect(() => {
 //     const fetchBills = async () => {
 //       try {
-//         const response = await axios.get("http://localhost:5000/api/bills/list");
+//         const response = await axios.get("https://agrihub-backend.onrender.com/api/bills/list");
 //         setBills(response.data);
 //       } catch (error) {
 //         console.error("Error fetching bills:", error);
@@ -70,7 +70,7 @@
 //   useEffect(() => {
 //     const fetchBills = async () => {
 //       try {
-//         const response = await axios.get("http://localhost:5000/api/bills/list", {
+//         const response = await axios.get("https://agrihub-backend.onrender.com/api/bills/list", {
 //           withCredentials: true, // 🔥 Send session cookie
 //         });
   
@@ -160,7 +160,7 @@
 //   useEffect(() => {
 //     const fetchUserBills = async () => {
 //       try {
-//         const response = await axios.get("http://localhost:5000/api/bills/list", {
+//         const response = await axios.get("https://agrihub-backend.onrender.com/api/bills/list", {
 //           withCredentials: true, // 🔥 Ensures session is sent
 //         });
 
@@ -242,7 +242,7 @@
 //   useEffect(() => {
 //     const fetchUserBills = async () => {
 //       try {
-//         const response = await axios.get("http://localhost:5000/api/bills/list", {
+//         const response = await axios.get("https://agrihub-backend.onrender.com/api/bills/list", {
 //           withCredentials: true,
 //         });
 
@@ -338,7 +338,7 @@
 //   useEffect(() => {
 //     const fetchUserBills = async () => {
 //       try {
-//         const response = await axios.get("http://localhost:5000/api/bills/list", {
+//         const response = await axios.get("https://agrihub-backend.onrender.com/api/bills/list", {
 //           withCredentials: true,
 //         });
 
@@ -435,7 +435,7 @@ const PreviousBills = () => {
   useEffect(() => {
     const fetchUserBills = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/bills/list", {
+        const response = await axios.get("https://agrihub-backend.onrender.com/api/bills/list", {
           withCredentials: true,
         });
 

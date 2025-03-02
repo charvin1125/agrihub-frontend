@@ -9,7 +9,7 @@
 //   useEffect(() => {
 //     const fetchProducts = async () => {
 //       try {
-//         const res = await axios.get("http://localhost:5000/api/product/list");
+//         const res = await axios.get("https://agrihub-backend.onrender.com/api/product/list");
 //         setProducts(res.data);
 //       } catch (error) {
 //         console.error("Error fetching products:", error);
@@ -26,7 +26,7 @@
 //           <div key={product._id} className="col-12 col-sm-6 col-md-4 col-lg-3">
 //             <div className="card product-card">
 //               <img
-//                 src={`http://localhost:5000/${product.image}`}
+//                 src={`https://agrihub-backend.onrender.com/${product.image}`}
 //                 alt={product.name}
 //                 className="card-img-top product-image"
 //               />
@@ -61,7 +61,7 @@
 //   useEffect(() => {
 //     const fetchProducts = async () => {
 //       try {
-//         const res = await axios.get("http://localhost:5000/api/product/list");
+//         const res = await axios.get("https://agrihub-backend.onrender.com/api/product/list");
 //         setProducts(res.data);
 //       } catch (error) {
 //         console.error("Error fetching products:", error);
@@ -79,7 +79,7 @@
 //           <div key={product._id} className="col-12 col-sm-6 col-md-4 col-lg-3">
 //             <div className="card product-card">
 //               <img
-//                 src={`http://localhost:5000/${product.image}`}
+//                 src={`https://agrihub-backend.onrender.com/${product.image}`}
 //                 alt={product.name}
 //                 className="card-img-top product-image"
 //               />
@@ -114,7 +114,7 @@
 //   useEffect(() => {
 //     const fetchProducts = async () => {
 //       try {
-//         const res = await axios.get("http://localhost:5000/api/product/list");
+//         const res = await axios.get("https://agrihub-backend.onrender.com/api/product/list");
 //         setProducts(res.data);
 //       } catch (error) {
 //         console.error("Error fetching products:", error);
@@ -143,7 +143,7 @@
 //               <CardMedia
 //                 component="img"
 //                 height="200"
-//                 image={`http://localhost:5000/${product.image}`}
+//                 image={`https://agrihub-backend.onrender.com/${product.image}`}
 //                 alt={product.name}
 //                 sx={{ objectFit: "cover" }}
 //               />
@@ -205,7 +205,7 @@
 //   useEffect(() => {
 //     const fetchProducts = async () => {
 //       try {
-//         const res = await axios.get("http://localhost:5000/api/product/list");
+//         const res = await axios.get("https://agrihub-backend.onrender.com/api/product/list");
 //         setProducts(res.data);
 
 //         // Extract unique categories and brands
@@ -286,7 +286,7 @@
 //                 <CardMedia
 //                   component="img"
 //                   height="200"
-//                   image={`http://localhost:5000/${product.image}`}
+//                   image={`https://agrihub-backend.onrender.com/${product.image}`}
 //                   alt={product.name}
 //                   sx={{ objectFit: "cover" }}
 //                 />
@@ -355,7 +355,7 @@
 //   useEffect(() => {
 //     const fetchProducts = async () => {
 //       try {
-//         const res = await axios.get("http://localhost:5000/api/product/list");
+//         const res = await axios.get("https://agrihub-backend.onrender.com/api/product/list");
 //         setProducts(res.data);
 //       } catch (error) {
 //         console.error("Error fetching products:", error);
@@ -364,8 +364,8 @@
 
 //     const fetchFilters = async () => {
 //       try {
-//         const categoriesRes = await axios.get("http://localhost:5000/api/category/list");
-//         const brandsRes = await axios.get("http://localhost:5000/api/brand/list");
+//         const categoriesRes = await axios.get("https://agrihub-backend.onrender.com/api/category/list");
+//         const brandsRes = await axios.get("https://agrihub-backend.onrender.com/api/brand/list");
 
 //         setCategories(categoriesRes.data);
 //         setBrands(brandsRes.data);
@@ -447,7 +447,7 @@
 //               <CardMedia
 //                 component="img"
 //                 height="200"
-//                 image={`http://localhost:5000/${product.image}`}
+//                 image={`https://agrihub-backend.onrender.com/${product.image}`}
 //                 alt={product.name}
 //                 sx={{ objectFit: "cover" }}
 //               />
@@ -514,7 +514,7 @@ const ProductPage = () => {
 
   const fetchProducts = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/product/list",{ withCredentials: true });
+      const res = await axios.get("https://agrihub-backend.onrender.com/api/product/list",{ withCredentials: true });
       setProducts(res.data);
     } catch (error) {
       console.error("Error fetching products:", error);
@@ -523,8 +523,8 @@ const ProductPage = () => {
 
   const fetchFilters = async () => {
     try {
-      const categoryRes = await axios.get("http://localhost:5000/api/category/list",{ withCredentials: true });
-      const brandRes = await axios.get("http://localhost:5000/api/vendor/list",{ withCredentials: true });
+      const categoryRes = await axios.get("https://agrihub-backend.onrender.com/api/category/list",{ withCredentials: true });
+      const brandRes = await axios.get("https://agrihub-backend.onrender.com/api/vendor/list",{ withCredentials: true });
 
       // Convert to { _id: name } mapping
       const categories = categoryRes.data.reduce((acc, category) => {
@@ -615,7 +615,7 @@ const ProductPage = () => {
               <CardMedia
                 component="img"
                 height="200"
-                image={`http://localhost:5000/${product.image}`}
+                image={`https://agrihub-backend.onrender.com/${product.image}`}
                 alt={product.name}
                 sx={{ objectFit: "cover" }}
               />
