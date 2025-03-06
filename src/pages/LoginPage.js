@@ -918,13 +918,15 @@ const LoginPage = () => {
     try {
       const loginResponse = await axios.post(
         "https://agrihub-backend-tz4v.onrender.com/api/users/login",
-        formData
+        formData,
+        { withCredentials: true } // Ensure credentials are included
       );
       console.log("Login response:", loginResponse.data); // Debug login response
       console.log("Login headers:", loginResponse.headers); // Check Set-Cookie
 
       const profileResponse = await axios.get(
-        "https://agrihub-backend-tz4v.onrender.com/api/users/profile"
+        "https://agrihub-backend-tz4v.onrender.com/api/users/profile",
+        { withCredentials: true } // Ensure session is sent
       );
       console.log("Profile response:", profileResponse.data); // Debug profile response
 
