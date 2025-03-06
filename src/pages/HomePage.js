@@ -1,0 +1,2581 @@
+// import React from 'react';
+// import './styles/HomePage.css';
+// import NavigationBar from "../components/Navbar";
+
+// const HomePage = () => {
+//   return (
+//     <div className="home-container">
+//       <NavigationBar /> 
+      
+//       {/* Hero Section */}
+//       <header className="hero-section">
+//         <div className="hero-content">
+//           <h1>Welcome to <span className="highlight">AgriHub</span></h1>
+//           <p>Your one-stop solution for agriculture management</p>
+//           <button className="cta-button">Explore Now</button>
+//         </div>
+//       </header>
+
+//       {/* Features Section */}
+//       <section className="features-section">
+//         <h2 className="section-title">Our Features</h2>
+//         <div className="features">
+//           <div className="feature">
+//             <h3>Crop Management</h3>
+//             <p>Manage your crops effectively with our tools, ensuring optimal growth and harvest.</p>
+//           </div>
+//           <div className="feature">
+//             <h3>Weather Updates</h3>
+//             <p>Get real-time weather updates for your region, helping you plan your agricultural activities.</p>
+//           </div>
+//           <div className="feature">
+//             <h3>Market Insights</h3>
+//             <p>Stay informed about market trends and prices to make better decisions on crop sales.</p>
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* Services Section */}
+//       <section className="services-section">
+//         <h2 className="section-title">Our Services</h2>
+//         <div className="services">
+//           <div className="service">
+//             <h3>Consultation</h3>
+//             <p>Expert advice on crop management, pest control, and sustainable farming practices.</p>
+//           </div>
+//           <div className="service">
+//             <h3>Crop Disease Detection</h3>
+//             <p>Using advanced image processing and AI to detect diseases early and recommend treatments.</p>
+//           </div>
+//           <div className="service">
+//             <h3>Farming Equipment</h3>
+//             <p>Access to modern farming tools and machinery to improve productivity and efficiency.</p>
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* Testimonials Section */}
+//       <section className="testimonials-section">
+//         <h2 className="section-title">What Our Users Say</h2>
+//         <div className="testimonials">
+//           <div className="testimonial">
+//             <p>"AgriHub has revolutionized the way I manage my farm. The weather updates and crop management tools are a game-changer!"</p>
+//             <h4>- Rajesh Kumar, Farmer</h4>
+//           </div>
+//           <div className="testimonial">
+//             <p>"The crop disease detection feature saved my crops from a potential outbreak. Highly recommended!"</p>
+//             <h4>- Sunita Devi, Farmer</h4>
+//           </div>
+//           <div className="testimonial">
+//             <p>"I love the market insights. They help me decide the best time to sell my produce for maximum profit."</p>
+//             <h4>- Anil Sharma, Grower</h4>
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* Footer Section */}
+//       <footer className="footer">
+//         <p>&copy; 2025 AgriHub. All rights reserved.</p>
+//       </footer>
+//     </div>
+//   );
+// };
+
+// export default HomePage;
+// import React, { useState } from "react"; // Added useState here
+// import NavigationBar from "../components/Navbar";
+// import { useNavigate } from "react-router-dom";
+// import {
+//   Box,
+//   Typography,
+//   Button,
+//   Grid,
+//   Card,
+//   CardContent,
+//   IconButton,
+//   Container,
+// } from "@mui/material";
+// import { createTheme, ThemeProvider } from "@mui/material/styles";
+// import { motion } from "framer-motion"; // Install: npm install framer-motion
+// import AgricultureIcon from "@mui/icons-material/Agriculture";
+// import CloudIcon from "@mui/icons-material/Cloud";
+// import TrendingUpIcon from "@mui/icons-material/TrendingUp";
+// import SupportAgentIcon from "@mui/icons-material/SupportAgent";
+// import BugReportIcon from "@mui/icons-material/BugReport";
+// import BuildIcon from "@mui/icons-material/Build";
+
+// const HomePage = () => {
+//   const navigate = useNavigate();
+//   const [darkMode] = useState(localStorage.getItem("theme") === "dark");
+
+//   // Theme configuration with green agriculture palette
+//   const theme = createTheme({
+//     palette: {
+//       mode: darkMode ? "dark" : "light",
+//       primary: { main: darkMode ? "#66BB6A" : "#388E3C" },
+//       secondary: { main: darkMode ? "#A5D6A7" : "#4CAF50" },
+//       background: { default: darkMode ? "#121212" : "#f5f5f5", paper: darkMode ? "#1e1e1e" : "#fff" },
+//       text: { primary: darkMode ? "#E0E0E0" : "#212121", secondary: darkMode ? "#B0B0B0" : "#757575" },
+//     },
+//     components: {
+//       MuiCard: {
+//         styleOverrides: {
+//           root: {
+//             borderRadius: "12px",
+//             boxShadow: darkMode ? "0 4px 20px rgba(255,255,255,0.1)" : "0 4px 20px rgba(0,0,0,0.1)",
+//             transition: "transform 0.3s ease, box-shadow 0.3s ease",
+//             "&:hover": {
+//               transform: "translateY(-5px)",
+//               boxShadow: darkMode ? "0 6px 24px rgba(255,255,255,0.2)" : "0 6px 24px rgba(0,0,0,0.15)",
+//             },
+//           },
+//         },
+//       },
+//       MuiButton: {
+//         styleOverrides: {
+//           root: { borderRadius: "8px", textTransform: "none" },
+//         },
+//       },
+//     },
+//   });
+
+//   // Animation variants
+//   const fadeIn = {
+//     hidden: { opacity: 0, y: 20 },
+//     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+//   };
+
+//   return (
+//     <ThemeProvider theme={theme}>
+//       <Box sx={{ bgcolor: "background.default", minHeight: "100vh" }}>
+//         <NavigationBar />
+
+//         {/* Hero Section */}
+//         <Box
+//           component={motion.section}
+//           initial="hidden"
+//           animate="visible"
+//           variants={fadeIn}
+//           sx={{
+//             bgcolor: darkMode ? "#1A3C34" : "#E8F5E9",
+//             py: { xs: 8, sm: 12 },
+//             textAlign: "center",
+//             backgroundImage: "url('')", // Replace with your image
+//             backgroundSize: "cover",
+//             backgroundPosition: "center",
+//           }}
+//         >
+//           <Container maxWidth="md">
+//             <Typography
+//               variant="h2"
+//               sx={{ fontWeight: "bold", color: darkMode ? "#FFF" : "#388E3C", mb: 2, fontSize: { xs: "2rem", md: "3.5rem" } }}
+//             >
+//               Welcome to <span style={{ color: darkMode ? "#81C784" : "#4CAF50" }}>AgriHub</span>
+//             </Typography>
+//             <Typography
+//               variant="h5"
+//               sx={{ color: darkMode ? "#E0E0E0" : "#757575", mb: 4, fontSize: { xs: "1.2rem", md: "1.5rem" } }}
+//             >
+//               Your one-stop solution for agriculture management
+//             </Typography>
+//             <Button
+//               variant="contained"
+//               color="primary"
+//               size="large"
+//               onClick={() => navigate("/services")}
+//               sx={{ py: 1.5, px: 4, fontSize: { xs: "1rem", md: "1.2rem" }, bgcolor: darkMode ? "#66BB6A" : "#388E3C", "&:hover": { bgcolor: darkMode ? "#81C784" : "#4CAF50" } }}
+//             >
+//               Explore Now
+//             </Button>
+//           </Container>
+//         </Box>
+
+//         {/* Features Section */}
+//         <Box component={motion.section} initial="hidden" animate="visible" variants={fadeIn} sx={{ py: { xs: 6, sm: 8 } }}>
+//           <Container maxWidth="lg">
+//             <Typography
+//               variant="h4"
+//               sx={{ textAlign: "center", fontWeight: "bold", color: "text.primary", mb: 6, fontSize: { xs: "1.8rem", md: "2.5rem" } }}
+//             >
+//               Our Features
+//             </Typography>
+//             <Grid container spacing={4}>
+//               {[
+//                 { title: "Crop Management", desc: "Manage your crops effectively with our tools, ensuring optimal growth.", icon: <AgricultureIcon /> },
+//                 { title: "Weather Updates", desc: "Real-time weather updates to plan your farming activities.", icon: <CloudIcon /> },
+//                 { title: "Market Insights", desc: "Stay informed about market trends for better sales decisions.", icon: <TrendingUpIcon /> },
+//               ].map((feature, index) => (
+//                 <Grid item xs={12} sm={6} md={4} key={index}>
+//                   <Card sx={{ bgcolor: darkMode ? "#263238" : "#E8F5E9", textAlign: "center" }}>
+//                     <CardContent>
+//                       <IconButton sx={{ color: darkMode ? "#81C784" : "#388E3C", fontSize: "3rem", mb: 2 }}>{feature.icon}</IconButton>
+//                       <Typography variant="h6" sx={{ color: "text.primary", mb: 1 }}>{feature.title}</Typography>
+//                       <Typography variant="body2" sx={{ color: "text.secondary" }}>{feature.desc}</Typography>
+//                     </CardContent>
+//                   </Card>
+//                 </Grid>
+//               ))}
+//             </Grid>
+//           </Container>
+//         </Box>
+
+//         {/* Services Section */}
+//         <Box
+//           component={motion.section}
+//           initial="hidden"
+//           animate="visible"
+//           variants={fadeIn}
+//           sx={{ py: { xs: 6, sm: 8 }, bgcolor: darkMode ? "#1A3C34" : "#F9F9F9" }}
+//         >
+//           <Container maxWidth="lg">
+//             <Typography
+//               variant="h4"
+//               sx={{ textAlign: "center", fontWeight: "bold", color: "text.primary", mb: 6, fontSize: { xs: "1.8rem", md: "2.5rem" } }}
+//             >
+//               Our Services
+//             </Typography>
+//             <Grid container spacing={4}>
+//               {[
+//                 { title: "Consultation", desc: "Expert advice on crop management and sustainable practices.", icon: <SupportAgentIcon /> },
+//                 { title: "Crop Disease Detection", desc: "AI-powered disease detection and treatment recommendations.", icon: <BugReportIcon /> },
+//                 { title: "Farming Equipment", desc: "Access modern tools to boost productivity.", icon: <BuildIcon /> },
+//               ].map((service, index) => (
+//                 <Grid item xs={12} sm={6} md={4} key={index}>
+//                   <Card sx={{ bgcolor: darkMode ? "#263238" : "#fff", textAlign: "center" }}>
+//                     <CardContent>
+//                       <IconButton sx={{ color: darkMode ? "#81C784" : "#388E3C", fontSize: "3rem", mb: 2 }}>{service.icon}</IconButton>
+//                       <Typography variant="h6" sx={{ color: "text.primary", mb: 1 }}>{service.title}</Typography>
+//                       <Typography variant="body2" sx={{ color: "text.secondary" }}>{service.desc}</Typography>
+//                     </CardContent>
+//                   </Card>
+//                 </Grid>
+//               ))}
+//             </Grid>
+//           </Container>
+//         </Box>
+
+//         {/* Testimonials Section */}
+//         <Box component={motion.section} initial="hidden" animate="visible" variants={fadeIn} sx={{ py: { xs: 6, sm: 8 } }}>
+//           <Container maxWidth="lg">
+//             <Typography
+//               variant="h4"
+//               sx={{ textAlign: "center", fontWeight: "bold", color: "text.primary", mb: 6, fontSize: { xs: "1.8rem", md: "2.5rem" } }}
+//             >
+//               What Our Users Say
+//             </Typography>
+//             <Grid container spacing={4}>
+//               {[
+//                 { quote: "AgriHub revolutionized my farm with weather updates and crop tools!", author: "Rajesh Kumar, Farmer" },
+//                 { quote: "Crop disease detection saved my crops from an outbreak.", author: "Sunita Devi, Farmer" },
+//                 { quote: "Market insights help me maximize profits.", author: "Anil Sharma, Grower" },
+//               ].map((testimonial, index) => (
+//                 <Grid item xs={12} sm={6} md={4} key={index}>
+//                   <Card sx={{ bgcolor: darkMode ? "#263238" : "#E8F5E9" }}>
+//                     <CardContent>
+//                       <Typography variant="body1" sx={{ color: "text.secondary", mb: 2, fontStyle: "italic" }}>
+//                         "{testimonial.quote}"
+//                       </Typography>
+//                       <Typography variant="subtitle2" sx={{ color: darkMode ? "#81C784" : "#388E3C", fontWeight: "bold" }}>
+//                         - {testimonial.author}
+//                       </Typography>
+//                     </CardContent>
+//                   </Card>
+//                 </Grid>
+//               ))}
+//             </Grid>
+//           </Container>
+//         </Box>
+
+//         {/* Footer Section */}
+//         <Box sx={{ py: 4, bgcolor: darkMode ? "#1A3C34" : "#E8F5E9", textAlign: "center" }}>
+//           <Typography variant="body2" sx={{ color: "text.secondary" }}>
+//             © {new Date().getFullYear()} AgriHub. All rights reserved.
+//           </Typography>
+//         </Box>
+//       </Box>
+//     </ThemeProvider>
+//   );
+// };
+
+// export default HomePage;
+
+// import React, { useState, useEffect } from "react";
+// import NavigationBar from "../components/Navbar";
+// import { useNavigate } from "react-router-dom";
+// import {
+//   Box,
+//   Typography,
+//   Button,
+//   Grid,
+//   Card,
+//   CardContent,
+//   IconButton,
+//   Container,
+// } from "@mui/material";
+// import { createTheme, ThemeProvider } from "@mui/material/styles";
+// import { motion, useScroll, useTransform } from "framer-motion";
+// import AgricultureIcon from "@mui/icons-material/Agriculture";
+// import CloudIcon from "@mui/icons-material/Cloud";
+// import TrendingUpIcon from "@mui/icons-material/TrendingUp";
+// import SupportAgentIcon from "@mui/icons-material/SupportAgent";
+// import BugReportIcon from "@mui/icons-material/BugReport";
+// import BuildIcon from "@mui/icons-material/Build";
+// import SlideImg1 from "../img/hero.jpg";
+// import SlideImg2 from "../img/slide-2.jpeg";
+// import SlideImg3 from "../img/slide-3.jpeg";
+
+// const HomePage = () => {
+//   const navigate = useNavigate();
+
+//   // Theme configuration (light mode only, green theme)
+//   const theme = createTheme({
+//     palette: {
+//       mode: "light",
+//       primary: { main: "#388E3C" }, // Dark green
+//       secondary: { main: "#4CAF50" }, // Light green
+//       background: { default: "#f5f5f5", paper: "#fff" },
+//       text: { primary: "#212121", secondary: "#757575" },
+//     },
+//     components: {
+//       MuiCard: {
+//         styleOverrides: {
+//           root: {
+//             borderRadius: "12px",
+//             boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
+//             transition: "transform 0.3s ease, box-shadow 0.3s ease",
+//             "&:hover": {
+//               transform: "translateY(-5px)",
+//               boxShadow: "0 6px 24px rgba(0,0,0,0.15)",
+//             },
+//           },
+//         },
+//       },
+//       MuiButton: {
+//         styleOverrides: {
+//           root: { borderRadius: "8px", textTransform: "none" },
+//         },
+//       },
+//     },
+//   });
+
+//   // Slideshow data with images
+//   const slides = [
+//     {
+//       title: "Welcome to AgriHub",
+//       subtitle: "Your one-stop solution for agriculture management",
+//       image: SlideImg1,
+//     },
+//     {
+//       title: "Grow Smarter",
+//       subtitle: "Leverage technology for better yields",
+//       image: SlideImg2,
+//     },
+//     {
+//       title: "Sustainable Future",
+//       subtitle: "Eco-friendly farming solutions",
+//       image: SlideImg3,
+//     },
+//   ];
+
+//   const [currentSlide, setCurrentSlide] = useState(0);
+
+//   // Auto-slide every 5 seconds
+//   useEffect(() => {
+//     const interval = setInterval(() => {
+//       setCurrentSlide((prev) => (prev + 1) % slides.length);
+//     }, 5000);
+//     return () => clearInterval(interval);
+//   }, [slides.length]);
+
+//   // Scroll effect for slogans
+//   const { scrollY } = useScroll();
+
+//   // Simplified scroll range (adjust these based on your content height)
+//   const scrollStart = 500; // Start after features section
+//   const scrollEnd = 1500;  // End later in the page
+
+//   // Transform scrollY into horizontal movement
+//   const slogan1X = useTransform(scrollY, [scrollStart, scrollEnd], [0, 200]); // Right on scroll down
+//   const slogan2X = useTransform(scrollY, [scrollStart, scrollEnd], [0, -200]); // Left on scroll down
+
+//   // Animation variants
+//   const fadeIn = {
+//     hidden: { opacity: 0, y: 20 },
+//     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+//   };
+
+//   return (
+//     <ThemeProvider theme={theme}>
+//       <Box sx={{ bgcolor: "background.default", minHeight: "100vh" }}>
+//         <NavigationBar />
+
+//         {/* Spacer for Navbar */}
+//         <Box sx={{ height: { xs: 56, sm: 64, md: 70 } }} /> {/* Matches Navbar spacer */}
+
+//         {/* Hero Section with Slideshow */}
+//         <Box
+//           component={motion.section}
+//           initial="hidden"
+//           animate="visible"
+//           variants={fadeIn}
+//           sx={{
+//             position: "relative",
+//             py: { xs: 8, sm: 12 },
+//             textAlign: "center",
+//             overflow: "hidden",
+//             minHeight: { xs: "300px", md: "500px" },
+//           }}
+//         >
+//           {slides.map((slide, index) => (
+//             <Box
+//               key={index}
+//               sx={{
+//                 position: "absolute",
+//                 top: 0,
+//                 left: 0,
+//                 width: "100%",
+//                 height: "100%",
+//                 bgcolor: "#E8F5E9", // Light green background
+//                 backgroundImage: `url(${slide.image})`,
+//                 backgroundSize: "cover",
+//                 backgroundPosition: "center",
+//                 opacity: currentSlide === index ? 1 : 0,
+//                 transition: "opacity 0.5s ease-in-out",
+//                 zIndex: currentSlide === index ? 1 : 0,
+//               }}
+//             >
+//               <Container maxWidth="md" sx={{ position: "relative", zIndex: 2 }}>
+//                 <Typography
+//                   variant="h2"
+//                   sx={{
+//                     fontWeight: "bold",
+//                     color: "#388E3C",
+//                     mb: 2,
+//                     fontSize: { xs: "1.8rem", sm: "2.5rem", md: "3.5rem" },
+//                   }}
+//                 >
+//                   {slide.title}{" "}
+//                   <span style={{ color: "#4CAF50" }}>{index === 0 ? "AgriHub" : ""}</span>
+//                 </Typography>
+//                 <Typography
+//                   variant="h5"
+//                   sx={{
+//                     color: "#757575",
+//                     mb: 4,
+//                     fontSize: { xs: "1rem", sm: "1.2rem", md: "1.5rem" },
+//                   }}
+//                 >
+//                   {slide.subtitle}
+//                 </Typography>
+//                 <Button
+//                   variant="contained"
+//                   color="primary"
+//                   size="large"
+//                   onClick={() => navigate("/services")}
+//                   sx={{
+//                     py: 1.5,
+//                     px: 4,
+//                     fontSize: { xs: "0.9rem", md: "1.2rem" },
+//                     bgcolor: "#388E3C",
+//                     "&:hover": { bgcolor: "#4CAF50" },
+//                   }}
+//                 >
+//                   Explore Now
+//                 </Button>
+//               </Container>
+//             </Box>
+//           ))}
+//         </Box>
+
+//         {/* Features Section */}
+//         <Box component={motion.section} initial="hidden" animate="visible" variants={fadeIn} sx={{ py: { xs: 6, sm: 8 } }}>
+//           <Container maxWidth="lg">
+//             <Typography
+//               variant="h4"
+//               sx={{
+//                 textAlign: "center",
+//                 fontWeight: "bold",
+//                 color: "text.primary",
+//                 mb: 6,
+//                 fontSize: { xs: "1.8rem", md: "2.5rem" },
+//               }}
+//             >
+//               Our Features
+//             </Typography>
+//             <Grid container spacing={4}>
+//               {[
+//                 { title: "Crop Management", desc: "Manage your crops effectively with our tools.", icon: <AgricultureIcon /> },
+//                 { title: "Weather Updates", desc: "Real-time weather updates for planning.", icon: <CloudIcon /> },
+//                 { title: "Market Insights", desc: "Stay informed about market trends.", icon: <TrendingUpIcon /> },
+//               ].map((feature, index) => (
+//                 <Grid item xs={12} sm={6} md={4} key={index}>
+//                   <Card sx={{ bgcolor: "#E8F5E9", textAlign: "center" }}>
+//                     <CardContent>
+//                       <IconButton sx={{ color: "#388E3C", fontSize: "3rem", mb: 2 }}>{feature.icon}</IconButton>
+//                       <Typography variant="h6" sx={{ color: "text.primary", mb: 1 }}>{feature.title}</Typography>
+//                       <Typography variant="body2" sx={{ color: "text.secondary" }}>{feature.desc}</Typography>
+//                     </CardContent>
+//                   </Card>
+//                 </Grid>
+//               ))}
+//             </Grid>
+//           </Container>
+//         </Box>
+
+//         {/* Slogan Section with Scroll Effect */}
+//         <Box sx={{ py: 6, bgcolor: "#F9F9F9", overflow: "hidden" }}>
+//           <motion.div
+//             style={{ x: slogan1X }}
+//             initial={{ x: 0 }}
+//             animate={{ transition: { type: "spring", stiffness: 50 } }}
+//           >
+//             <Typography
+//               variant="h3" // Increased font size to match image prominence
+//               sx={{
+//                 textAlign: "center",
+//                 color: "#388E3C", // Dark green
+//                 fontWeight: "bold",
+//                 fontSize: { xs: "1.5rem", sm: "2rem", md: "3rem" }, // Larger, responsive size
+//                 whiteSpace: "nowrap",
+//                 textTransform: "uppercase", // Match bold, uppercase look
+//                 padding: "10px 20px", // Correct margins
+//                 backgroundColor: "#E8F5E9", // Light green background
+//                 borderRadius: "8px", // Rounded corners
+//                 display: "inline-block", // Ensure text fits within background
+//                 boxShadow: "0 2px 10px rgba(0,0,0,0.1)", // Subtle shadow
+//               }}
+//             >
+//               --- BUILD THE FUTURE ------
+//             </Typography>
+//           </motion.div>
+//           <motion.div
+//             style={{ x: slogan2X }}
+//             initial={{ x: 0 }}
+//             animate={{ transition: { type: "spring", stiffness: 50 } }}
+//           >
+//             <Typography
+//               variant="h3" // Increased font size to match image prominence
+//               sx={{
+//                 textAlign: "center",
+//                 color: "#4CAF50", // Light green
+//                 fontWeight: "bold",
+//                 fontSize: { xs: "1.5rem", sm: "2rem", md: "3rem" }, // Larger, responsive size
+//                 mt: 4, // Increased margin for better spacing
+//                 whiteSpace: "nowrap",
+//                 textTransform: "uppercase", // Match bold, uppercase look
+//                 padding: "10px 20px", // Correct margins
+//                 backgroundColor: "#E8F5E9", // Light green background
+//                 borderRadius: "8px", // Rounded corners
+//                 display: "inline-block", // Ensure text fits within background
+//                 boxShadow: "0 2px 10px rgba(0,0,0,0.1)", // Subtle shadow
+//               }}
+//             >
+//               DESIGNER - DESIGNER - DESIGNER -
+//             </Typography>
+//           </motion.div>
+//         </Box>
+
+//         {/* Services Section */}
+//         <Box
+//           component={motion.section}
+//           initial="hidden"
+//           animate="visible"
+//           variants={fadeIn}
+//           sx={{ py: { xs: 6, sm: 8 }, bgcolor: "#F9F9F9" }}
+//         >
+//           <Container maxWidth="lg">
+//             <Typography
+//               variant="h4"
+//               sx={{
+//                 textAlign: "center",
+//                 fontWeight: "bold",
+//                 color: "text.primary",
+//                 mb: 6,
+//                 fontSize: { xs: "1.8rem", md: "2.5rem" },
+//               }}
+//             >
+//               Our Services
+//             </Typography>
+//             <Grid container spacing={4}>
+//               {[
+//                 { title: "Consultation", desc: "Expert advice on sustainable practices.", icon: <SupportAgentIcon /> },
+//                 { title: "Crop Disease Detection", desc: "AI-powered disease detection.", icon: <BugReportIcon /> },
+//                 { title: "Farming Equipment", desc: "Access modern tools for productivity.", icon: <BuildIcon /> },
+//               ].map((service, index) => (
+//                 <Grid item xs={12} sm={6} md={4} key={index}>
+//                   <Card sx={{ bgcolor: "#fff", textAlign: "center" }}>
+//                     <CardContent>
+//                       <IconButton sx={{ color: "#388E3C", fontSize: "3rem", mb: 2 }}>{service.icon}</IconButton>
+//                       <Typography variant="h6" sx={{ color: "text.primary", mb: 1 }}>{service.title}</Typography>
+//                       <Typography variant="body2" sx={{ color: "text.secondary" }}>{service.desc}</Typography>
+//                     </CardContent>
+//                   </Card>
+//                 </Grid>
+//               ))}
+//             </Grid>
+//           </Container>
+//         </Box>
+
+//         {/* Testimonials Section */}
+//         <Box component={motion.section} initial="hidden" animate="visible" variants={fadeIn} sx={{ py: { xs: 6, sm: 8 } }}>
+//           <Container maxWidth="lg">
+//             <Typography
+//               variant="h4"
+//               sx={{
+//                 textAlign: "center",
+//                 fontWeight: "bold",
+//                 color: "text.primary",
+//                 mb: 6,
+//                 fontSize: { xs: "1.8rem", md: "2.5rem" },
+//               }}
+//             >
+//               What Our Users Say
+//             </Typography>
+//             <Grid container spacing={4}>
+//               {[
+//                 { quote: "AgriHub revolutionized my farm!", author: "Rajesh Kumar, Farmer" },
+//                 { quote: "Saved my crops from an outbreak.", author: "Sunita Devi, Farmer" },
+//                 { quote: "Helps me maximize profits.", author: "Anil Sharma, Grower" },
+//               ].map((testimonial, index) => (
+//                 <Grid item xs={12} sm={6} md={4} key={index}>
+//                   <Card sx={{ bgcolor: "#E8F5E9" }}>
+//                     <CardContent>
+//                       <Typography variant="body1" sx={{ color: "text.secondary", mb: 2, fontStyle: "italic" }}>
+//                         "{testimonial.quote}"
+//                       </Typography>
+//                       <Typography variant="subtitle2" sx={{ color: "#388E3C", fontWeight: "bold" }}>
+//                         - {testimonial.author}
+//                       </Typography>
+//                     </CardContent>
+//                   </Card>
+//                 </Grid>
+//               ))}
+//             </Grid>
+//           </Container>
+//         </Box>
+
+//         {/* Footer Section */}
+//         <Box sx={{ py: 4, bgcolor: "#E8F5E9", textAlign: "center" }}>
+//           <Typography variant="body2" sx={{ color: "text.secondary" }}>
+//             © {new Date().getFullYear()} AgriHub. All rights reserved.
+//           </Typography>
+//         </Box>
+//       </Box>
+//     </ThemeProvider>
+//   );
+// };
+
+// export default HomePage;
+// import React, { useState, useEffect } from "react";
+// import NavigationBar from "../components/Navbar";
+// import { useNavigate } from "react-router-dom";
+// import {
+//   Box,
+//   Typography,
+//   Button,
+//   Grid,
+//   Card,
+//   CardContent,
+//   IconButton,
+//   Container,
+// } from "@mui/material";
+// import { createTheme, ThemeProvider } from "@mui/material/styles";
+// import { motion, useScroll, useTransform } from "framer-motion";
+// import AgricultureIcon from "@mui/icons-material/Agriculture";
+// import CloudIcon from "@mui/icons-material/Cloud";
+// import TrendingUpIcon from "@mui/icons-material/TrendingUp";
+// import SupportAgentIcon from "@mui/icons-material/SupportAgent";
+// import BugReportIcon from "@mui/icons-material/BugReport";
+// import BuildIcon from "@mui/icons-material/Build";
+// import SlideImg1 from "../img/hero.jpg";
+// import SlideImg2 from "../img/slide-2.jpeg";
+// import SlideImg3 from "../img/slide-3.jpeg";
+// const HomePage = () => {
+//   const navigate = useNavigate();
+
+//   // Theme configuration (light mode only, green theme)
+//   const theme = createTheme({
+//     palette: {
+//       mode: "light",
+//       primary: { main: "#388E3C" }, // Dark green
+//       secondary: { main: "#4CAF50" }, // Light green
+//       background: { default: "#f5f5f5", paper: "#fff" },
+//       text: { primary: "#212121", secondary: "#757575" },
+//     },
+//     components: {
+//       MuiCard: {
+//         styleOverrides: {
+//           root: {
+//             borderRadius: "12px",
+//             boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
+//             transition: "transform 0.3s ease, box-shadow 0.3s ease",
+//             "&:hover": {
+//               transform: "translateY(-5px)",
+//               boxShadow: "0 6px 24px rgba(0,0,0,0.15)",
+//             },
+//           },
+//         },
+//       },
+//       MuiButton: {
+//         styleOverrides: {
+//           root: { borderRadius: "8px", textTransform: "none" },
+//         },
+//       },
+//     },
+//   });
+
+//   // Slideshow data with images
+//   const slides = [
+//     {
+//       title: "Welcome to AgriHub",
+//       subtitle: "Your one-stop solution for agriculture management",
+//       image: SlideImg1, // Fixed size: 1200x400
+//     },
+//     {
+//       title: "Grow Smarter",
+//       subtitle: "Leverage technology for better yields",
+//       image: SlideImg2, // Fixed size: 1200x400
+//     },
+//     {
+//       title: "Sustainable Future",
+//       subtitle: "Eco-friendly farming solutions",
+//       image: SlideImg3, // Fixed size: 1200x400
+//     },
+//   ];
+
+//   const [currentSlide, setCurrentSlide] = useState(0);
+
+//   // Auto-slide every 5 seconds
+//   useEffect(() => {
+//     const interval = setInterval(() => {
+//       setCurrentSlide((prev) => (prev + 1) % slides.length);
+//     }, 5000);
+//     return () => clearInterval(interval);
+//   }, [slides.length]);
+
+//   // Scroll effect for slogans
+//   const { scrollY } = useScroll();
+
+//   // Simplified scroll range (adjust these based on your content height)
+//   const scrollStart = 500; // Start after features section
+//   const scrollEnd = 1500;  // End later in the page
+
+//   // Transform scrollY into horizontal movement
+//   const slogan1X = useTransform(scrollY, [scrollStart, scrollEnd], [0, 200]); // Right on scroll down
+//   const slogan2X = useTransform(scrollY, [scrollStart, scrollEnd], [0, -200]); // Left on scroll down
+
+//   // Animation variants
+//   const fadeIn = {
+//     hidden: { opacity: 0, y: 20 },
+//     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+//   };
+
+//   return (
+//     <ThemeProvider theme={theme}>
+//       <Box sx={{ bgcolor: "background.default", minHeight: "100vh" }}>
+//         <NavigationBar />
+
+//         {/* Spacer for Navbar */}
+//         <Box sx={{ height: { xs: 56, sm: 64, md: 70 } }} /> {/* Matches Navbar spacer */}
+
+//         {/* Hero Section with Slideshow */}
+//         <Box
+//           component={motion.section}
+//           initial="hidden"
+//           animate="visible"
+//           variants={fadeIn}
+//           sx={{
+//             position: "relative",
+//             py: { xs: 8, sm: 12 },
+//             textAlign: "center",
+//             overflow: "hidden",
+//             minHeight: { xs: "300px", md: "400px" }, // Adjusted to match image height
+//           }}
+//         >
+//           {slides.map((slide, index) => (
+//             <Box
+//               key={index}
+//               sx={{
+//                 position: "absolute",
+//                 top: 0,
+//                 left: 0,
+//                 width: "100%",
+//                 height: "100%",
+//                 bgcolor: "#E8F5E9", // Light green background
+//                 backgroundImage: `url(${slide.image})`,
+//                 backgroundSize: "contain", // Ensure image fits without stretching
+//                 backgroundPosition: "center",
+//                 backgroundRepeat: "no-repeat",
+//                 opacity: currentSlide === index ? 1 : 0,
+//                 transition: "opacity 0.5s ease-in-out",
+//                 zIndex: currentSlide === index ? 1 : 0,
+//               }}
+//             >
+//               <Container maxWidth="md" sx={{ position: "relative", zIndex: 2, height: "100%", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+//                 <Typography
+//                   variant="h2"
+//                   sx={{
+//                     fontWeight: "bold",
+//                     color: "#388E3C",
+//                     mb: 2,
+//                     fontSize: { xs: "1.8rem", sm: "2.5rem", md: "3.5rem" },
+//                     textAlign: "center", // Ensure centered
+//                   }}
+//                 >
+//                   {slide.title}{" "}
+//                   <span style={{ color: "#4CAF50" }}>{index === 0 ? "AgriHub" : ""}</span>
+//                 </Typography>
+//                 <Typography
+//                   variant="h5"
+//                   sx={{
+//                     color: "#757575",
+//                     mb: 4,
+//                     fontSize: { xs: "1rem", sm: "1.2rem", md: "1.5rem" },
+//                     textAlign: "center", // Ensure centered
+//                   }}
+//                 >
+//                   {slide.subtitle}
+//                 </Typography>
+//                 <Button
+//                   variant="contained"
+//                   color="primary"
+//                   size="large"
+//                   onClick={() => navigate("/services")}
+//                   sx={{
+//                     py: 1.5,
+//                     px: 4,
+//                     fontSize: { xs: "0.9rem", md: "1.2rem" },
+//                     bgcolor: "#388E3C",
+//                     "&:hover": { bgcolor: "#4CAF50" },
+//                     textAlign: "center", // Ensure centered
+//                   }}
+//                 >
+//                   Explore Now
+//                 </Button>
+//               </Container>
+//             </Box>
+//           ))}
+//         </Box>
+
+//         {/* Features Section */}
+//         <Box component={motion.section} initial="hidden" animate="visible" variants={fadeIn} sx={{ py: { xs: 6, sm: 8 } }}>
+//           <Container maxWidth="lg">
+//             <Typography
+//               variant="h4"
+//               sx={{
+//                 textAlign: "center",
+//                 fontWeight: "bold",
+//                 color: "text.primary",
+//                 mb: 6,
+//                 fontSize: { xs: "1.8rem", md: "2.5rem" },
+//               }}
+//             >
+//               Our Features
+//             </Typography>
+//             <Grid container spacing={4}>
+//               {[
+//                 { title: "Crop Management", desc: "Manage your crops effectively with our tools.", icon: <AgricultureIcon /> },
+//                 { title: "Weather Updates", desc: "Real-time weather updates for planning.", icon: <CloudIcon /> },
+//                 { title: "Market Insights", desc: "Stay informed about market trends.", icon: <TrendingUpIcon /> },
+//               ].map((feature, index) => (
+//                 <Grid item xs={12} sm={6} md={4} key={index}>
+//                   <Card sx={{ bgcolor: "#E8F5E9", textAlign: "center" }}>
+//                     <CardContent>
+//                       <IconButton sx={{ color: "#388E3C", fontSize: "3rem", mb: 2 }}>{feature.icon}</IconButton>
+//                       <Typography variant="h6" sx={{ color: "text.primary", mb: 1 }}>{feature.title}</Typography>
+//                       <Typography variant="body2" sx={{ color: "text.secondary" }}>{feature.desc}</Typography>
+//                     </CardContent>
+//                   </Card>
+//                 </Grid>
+//               ))}
+//             </Grid>
+//           </Container>
+//         </Box>
+
+//         {/* Slogan Section with Scroll Effect */}
+//         <Box sx={{ py: 6, bgcolor: "#F9F9F9", overflow: "hidden" }}>
+//           <motion.div
+//             style={{ x: slogan1X, position: "relative", left: "20px" }} // Margin left, fixed right to screen
+//             initial={{ x: 0 }}
+//             animate={{ transition: { type: "spring", stiffness: 50 } }}
+//           >
+//             <Typography
+//               variant="h2" // Even larger font size
+//               sx={{
+//                 textAlign: "center",
+//                 color: "transparent", // Transparent text for border-only effect
+//                 WebkitTextStroke: "2px #388E3C", // Text border in dark green
+//                 fontWeight: "bold",
+//                 fontSize: { xs: "1.8rem", sm: "2.5rem", md: "4rem" }, // Increased size
+//                 whiteSpace: "nowrap",
+//                 textTransform: "uppercase",
+//                 padding: "15px 20px", // Increased padding for prominence
+//                 backgroundColor: "#F9F9F9", // Page background color
+//                 borderRadius: "10px", // Rounded corners
+//                 display: "inline-block", // Ensure text fits within background
+//                 boxShadow: "0 2px 15px rgba(0,0,0,0.1)", // Enhanced shadow
+//                 width: "calc(100% - 20px)", // Adjust width for left margin, fixed right
+//                 marginRight: "auto", // Fixed to right edge
+//               }}
+//             >
+//               --- BUILD THE FUTURE ------
+//             </Typography>
+//           </motion.div>
+//           <motion.div
+//             style={{ x: slogan2X, position: "relative", right: "20px" }} // Margin right, fixed left to screen
+//             initial={{ x: 0 }}
+//             animate={{ transition: { type: "spring", stiffness: 50 } }}
+//           >
+//             <Typography
+//               variant="h2" // Even larger font size
+//               sx={{
+//                 textAlign: "center",
+//                 color: "#388E3C", // Dark green text
+//                 fontWeight: "bold",
+//                 fontSize: { xs: "1.8rem", sm: "2.5rem", md: "4rem" }, // Increased size
+//                 mt: 6, // Increased margin for better spacing
+//                 whiteSpace: "nowrap",
+//                 textTransform: "uppercase",
+//                 padding: "15px 20px", // Increased padding for prominence
+//                 backgroundColor: "#F9F9F9", // Page background color
+//                 borderRadius: "10px", // Rounded corners
+//                 display: "inline-block", // Ensure text fits within background
+//                 boxShadow: "0 2px 15px rgba(0,0,0,0.1)", // Enhanced shadow
+//                 width: "calc(100% - 20px)", // Adjust width for right margin, fixed left
+//                 marginLeft: "auto", // Fixed to left edge
+//               }}
+//             >
+//               DESIGNER - DESIGNER - DESIGNER -
+//             </Typography>
+//           </motion.div>
+//         </Box>
+
+//         {/* Services Section */}
+//         <Box
+//           component={motion.section}
+//           initial="hidden"
+//           animate="visible"
+//           variants={fadeIn}
+//           sx={{ py: { xs: 6, sm: 8 }, bgcolor: "#F9F9F9" }}
+//         >
+//           <Container maxWidth="lg">
+//             <Typography
+//               variant="h4"
+//               sx={{
+//                 textAlign: "center",
+//                 fontWeight: "bold",
+//                 color: "text.primary",
+//                 mb: 6,
+//                 fontSize: { xs: "1.8rem", md: "2.5rem" },
+//               }}
+//             >
+//               Our Services
+//             </Typography>
+//             <Grid container spacing={4}>
+//               {[
+//                 { title: "Consultation", desc: "Expert advice on sustainable practices.", icon: <SupportAgentIcon /> },
+//                 { title: "Crop Disease Detection", desc: "AI-powered disease detection.", icon: <BugReportIcon /> },
+//                 { title: "Farming Equipment", desc: "Access modern tools for productivity.", icon: <BuildIcon /> },
+//               ].map((service, index) => (
+//                 <Grid item xs={12} sm={6} md={4} key={index}>
+//                   <Card sx={{ bgcolor: "#fff", textAlign: "center" }}>
+//                     <CardContent>
+//                       <IconButton sx={{ color: "#388E3C", fontSize: "3rem", mb: 2 }}>{service.icon}</IconButton>
+//                       <Typography variant="h6" sx={{ color: "text.primary", mb: 1 }}>{service.title}</Typography>
+//                       <Typography variant="body2" sx={{ color: "text.secondary" }}>{service.desc}</Typography>
+//                     </CardContent>
+//                   </Card>
+//                 </Grid>
+//               ))}
+//             </Grid>
+//           </Container>
+//         </Box>
+
+//         {/* Testimonials Section */}
+//         <Box component={motion.section} initial="hidden" animate="visible" variants={fadeIn} sx={{ py: { xs: 6, sm: 8 } }}>
+//           <Container maxWidth="lg">
+//             <Typography
+//               variant="h4"
+//               sx={{
+//                 textAlign: "center",
+//                 fontWeight: "bold",
+//                 color: "text.primary",
+//                 mb: 6,
+//                 fontSize: { xs: "1.8rem", md: "2.5rem" },
+//               }}
+//             >
+//               What Our Users Say
+//             </Typography>
+//             <Grid container spacing={4}>
+//               {[
+//                 { quote: "AgriHub revolutionized my farm!", author: "Rajesh Kumar, Farmer" },
+//                 { quote: "Saved my crops from an outbreak.", author: "Sunita Devi, Farmer" },
+//                 { quote: "Helps me maximize profits.", author: "Anil Sharma, Grower" },
+//               ].map((testimonial, index) => (
+//                 <Grid item xs={12} sm={6} md={4} key={index}>
+//                   <Card sx={{ bgcolor: "#E8F5E9" }}>
+//                     <CardContent>
+//                       <Typography variant="body1" sx={{ color: "text.secondary", mb: 2, fontStyle: "italic" }}>
+//                         "{testimonial.quote}"
+//                       </Typography>
+//                       <Typography variant="subtitle2" sx={{ color: "#388E3C", fontWeight: "bold" }}>
+//                         - {testimonial.author}
+//                       </Typography>
+//                     </CardContent>
+//                   </Card>
+//                 </Grid>
+//               ))}
+//             </Grid>
+//           </Container>
+//         </Box>
+
+//         {/* Footer Section */}
+//         <Box sx={{ py: 4, bgcolor: "#E8F5E9", textAlign: "center" }}>
+//           <Typography variant="body2" sx={{ color: "text.secondary" }}>
+//             © {new Date().getFullYear()} AgriHub. All rights reserved.
+//           </Typography>
+//         </Box>
+//       </Box>
+//     </ThemeProvider>
+//   );
+// };
+
+// export default HomePage;
+// import React, { useState, useEffect } from "react";
+// import NavigationBar from "../components/Navbar";
+// import { useNavigate } from "react-router-dom";
+// import {
+//   Box,
+//   Typography,
+//   Button,
+//   Grid,
+//   Card,
+//   CardContent,
+//   IconButton,
+//   Container,
+// } from "@mui/material";
+// import { createTheme, ThemeProvider } from "@mui/material/styles";
+// import { motion, useScroll, useTransform } from "framer-motion";
+// import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+// import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+// import AgricultureIcon from "@mui/icons-material/Agriculture";
+// import CloudIcon from "@mui/icons-material/Cloud";
+// import TrendingUpIcon from "@mui/icons-material/TrendingUp";
+// import SupportAgentIcon from "@mui/icons-material/SupportAgent";
+// import BugReportIcon from "@mui/icons-material/BugReport";
+// import BuildIcon from "@mui/icons-material/Build";
+// import SlideImg1 from "../img/hero.jpg";
+// import SlideImg2 from "../img/slide-2.jpeg";
+// import SlideImg3 from "../img/slide-3.jpeg";
+// const HomePage = () => {
+//   const navigate = useNavigate();
+
+//   // Theme configuration (light mode only, green theme)
+//   const theme = createTheme({
+//     palette: {
+//       mode: "light",
+//       primary: { main: "#388E3C" }, // Dark green
+//       secondary: { main: "#4CAF50" }, // Light green
+//       background: { default: "#f5f5f5", paper: "#fff" },
+//       text: { primary: "#212121", secondary: "#757575" },
+//     },
+//     components: {
+//       MuiCard: {
+//         styleOverrides: {
+//           root: {
+//             borderRadius: "12px",
+//             boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
+//             transition: "transform 0.3s ease, box-shadow 0.3s ease",
+//             "&:hover": {
+//               transform: "translateY(-5px)",
+//               boxShadow: "0 6px 24px rgba(0,0,0,0.15)",
+//             },
+//           },
+//         },
+//       },
+//       MuiButton: {
+//         styleOverrides: {
+//           root: { borderRadius: "8px", textTransform: "none" },
+//         },
+//       },
+//     },
+//   });
+
+//   // Slider data with images and content
+//   const slides = [
+//     {
+//       title: "Peripheral Device Management System",
+//       description: "The Peripheral Device Monitoring System for Network Administration and Lab Management aims to simplify and streamline the process of managing peripheral devices, minimize downtime for network users and lab researchers.",
+//       image: SlideImg1, // Replace with your image
+//       buttonText: "Download",
+//     },
+//     {
+//       title: "Deadstock Management System",
+//       description: "A platform that allows educational institutes to effectively manage their resources through two registers: the Store register and Departmental register.",
+//       image: SlideImg2, // Replace with your image
+//     },
+//     // Add more slides as needed
+//   ];
+
+//   const [currentSlide, setCurrentSlide] = useState(0);
+
+//   // Manual slide navigation
+//   const handlePrev = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+//   const handleNext = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
+
+//   // Scroll effect for slogans
+//   const { scrollY } = useScroll();
+
+//   // Simplified scroll range for slogans (adjust based on content height)
+//   const scrollStart = 500; // Start after features section
+//   const scrollEnd = 1500;  // End later in the page
+
+//   // Transform scrollY into horizontal movement
+//   const slogan1X = useTransform(scrollY, [scrollStart, scrollEnd], [0, 200]); // Right on scroll down
+//   const slogan2X = useTransform(scrollY, [scrollStart, scrollEnd], [0, -200]); // Left on scroll down
+
+//   // Animation variants
+//   const fadeIn = {
+//     hidden: { opacity: 0, y: 20 },
+//     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+//   };
+
+//   return (
+//     <ThemeProvider theme={theme}>
+//       <Box sx={{ bgcolor: "background.default", minHeight: "100vh" }}>
+//         <NavigationBar />
+
+//         {/* Spacer for Navbar */}
+//         <Box sx={{ height: { xs: 56, sm: 64, md: 70 } }} /> {/* Matches Navbar spacer */}
+
+//         {/* Slider Section (Hero Section) */}
+//         <Box
+//           component={motion.section}
+//           initial="hidden"
+//           animate="visible"
+//           variants={fadeIn}
+//           sx={{
+//             position: "relative",
+//             py: { xs: 4, sm: 6, md: 8 },
+//             textAlign: "center",
+//             overflow: "hidden",
+//             minHeight: { xs: "300px", md: "400px" },
+//             bgcolor: "linear-gradient(90deg, #2C3E50, #4A00E0)", // Dark blue to purple gradient
+//             color: "#FFFFFF", // White text
+//             borderRadius: "16px", // Rounded corners
+//             mx: { xs: 2, md: 4 },
+//             backgroundColor:"#4CAF50" // Margin for mobile and desktop
+//           }}
+//         >
+//           <Container maxWidth="lg" sx={{ position: "relative", height: "100%", display: "flex", flexDirection: { xs: "column", md: "row" }, alignItems: "center", justifyContent: "center" }}>
+//             {/* Navigation Arrows */}
+//             <IconButton
+//               onClick={handlePrev}
+//               sx={{
+//                 position: "absolute",
+//                 left: 16,
+//                 color: "#FFFFFF",
+//                 fontSize: { xs: "1.5rem", md: "2rem" },
+//                 zIndex: 2,
+//                 display: { xs: "none", md: "block" }, // Hide on mobile
+//               }}
+//             >
+//               <ArrowBackIosIcon />
+//             </IconButton>
+//             <IconButton
+//               onClick={handleNext}
+//               sx={{
+//                 position: "absolute",
+//                 right: 16,
+//                 color: "#FFFFFF",
+//                 fontSize: { xs: "1.5rem", md: "2rem" },
+//                 zIndex: 2,
+//                 display: { xs: "none", md: "block" }, // Hide on mobile
+//               }}
+//             >
+//               <ArrowForwardIosIcon />
+//             </IconButton>
+
+//             {/* Slide Content */}
+//             <Box
+//               sx={{
+//                 display: "flex",
+//                 flexDirection: { xs: "column", md: "row" },
+//                 alignItems: "center",
+//                 justifyContent: "space-between",
+//                 width: "100%",
+//                 px: { xs: 2, md: 4 },
+//               }}
+//             >
+//               {/* Text Section */}
+//               <Box sx={{ flex: 1, textAlign: { xs: "center", md: "left" }, mb: { xs: 2, md: 0 } }}>
+//                 <Typography
+//                   variant="h1"
+//                   sx={{
+//                     fontWeight: "bold",
+//                     color: "#DDA0DD", // Light purple for title
+//                     mb: 2,
+//                     fontSize: { xs: "1.5rem", sm: "2rem", md: "3rem" },
+//                     textTransform: "uppercase",
+//                   }}
+//                 >
+//                 </Typography>
+//                 <Typography
+//                   variant="h4"
+//                   sx={{
+//                     color: "#FFFFFF",
+//                     mb: 4,
+//                     fontSize: { xs: "1rem", sm: "1.2rem", md: "1.8rem" },
+//                   }}
+//                 >
+//                   {slides[currentSlide].title}
+//                 </Typography>
+//                 <Typography
+//                   variant="body1"
+//                   sx={{
+//                     color: "#FFFFFF",
+//                     mb: 4,
+//                     fontSize: { xs: "0.9rem", sm: "1rem", md: "1.2rem" },
+//                   }}
+//                 >
+//                   {slides[currentSlide].description}
+//                 </Typography>
+//                 <Button
+//                   variant="outlined"
+//                   sx={{
+//                     color: "#FFFFFF",
+//                     borderColor: "#FFFFFF",
+//                     mr: 2,
+//                     "&:hover": { borderColor: "#DDA0DD", color: "#DDA0DD" },
+//                     fontSize: { xs: "0.8rem", md: "1rem" },
+//                   }}
+//                 >
+//                   {slides[currentSlide].buttonText || "Download"}
+//                 </Button>
+//                 <Button
+//                   variant="outlined"
+//                   sx={{
+//                     color: "#FFFFFF",
+//                     borderColor: "#FFFFFF",
+//                     "&:hover": { borderColor: "#DDA0DD", color: "#DDA0DD" },
+//                     fontSize: { xs: "0.8rem", md: "1rem" },
+//                   }}
+//                 >
+//                   Download All
+//                 </Button>
+//               </Box>
+
+//               {/* Image Section */}
+//               <Box sx={{ flex: 1, mt: { xs: 2, md: 0 }, textAlign: "center" }}>
+//                 <img
+//                   src={slides[currentSlide].image}
+//                   alt={slides[currentSlide].title}
+//                   style={{
+//                     maxWidth: "100%",
+//                     height: "auto",
+//                     borderRadius: "16px", // Rounded corners
+//                   }}
+//                 />
+//               </Box>
+//             </Box>
+//           </Container>
+//         </Box>
+
+//         {/* Features Section */}
+//         <Box component={motion.section} initial="hidden" animate="visible" variants={fadeIn} sx={{ py: { xs: 6, sm: 8 } }}>
+//           <Container maxWidth="lg">
+//             <Typography
+//               variant="h4"
+//               sx={{
+//                 textAlign: "center",
+//                 fontWeight: "bold",
+//                 color: "text.primary",
+//                 mb: 6,
+//                 fontSize: { xs: "1.8rem", md: "2.5rem" },
+//               }}
+//             >
+//               Our Features
+//             </Typography>
+//             <Grid container spacing={4}>
+//               {[
+//                 { title: "Crop Management", desc: "Manage your crops effectively with our tools.", icon: <AgricultureIcon /> },
+//                 { title: "Weather Updates", desc: "Real-time weather updates for planning.", icon: <CloudIcon /> },
+//                 { title: "Market Insights", desc: "Stay informed about market trends.", icon: <TrendingUpIcon /> },
+//               ].map((feature, index) => (
+//                 <Grid item xs={12} sm={6} md={4} key={index}>
+//                   <Card sx={{ bgcolor: "#E8F5E9", textAlign: "center" }}>
+//                     <CardContent>
+//                       <IconButton sx={{ color: "#388E3C", fontSize: "3rem", mb: 2 }}>{feature.icon}</IconButton>
+//                       <Typography variant="h6" sx={{ color: "text.primary", mb: 1 }}>{feature.title}</Typography>
+//                       <Typography variant="body2" sx={{ color: "text.secondary" }}>{feature.desc}</Typography>
+//                     </CardContent>
+//                   </Card>
+//                 </Grid>
+//               ))}
+//             </Grid>
+//           </Container>
+//         </Box>
+
+//         {/* Slogan Section with Scroll Effect */}
+//         <Box sx={{ py: 6, bgcolor: "#F9F9F9", overflow: "hidden" }}>
+//           <motion.div
+//             style={{ x: slogan1X, position: "relative", left: "20px" }} // Margin left, fixed right to screen
+//             initial={{ x: 0 }}
+//             animate={{ transition: { type: "spring", stiffness: 50 } }}
+//           >
+//             <Typography
+//               variant="h2" // Even larger font size
+//               sx={{
+//                 textAlign: "center",
+//                 color: "transparent", // Transparent text for border-only effect
+//                 WebkitTextStroke: "2px #388E3C", // Text border in dark green
+//                 fontWeight: "bold",
+//                 fontSize: { xs: "1.8rem", sm: "2.5rem", md: "4rem" }, // Increased size
+//                 whiteSpace: "nowrap",
+//                 textTransform: "uppercase",
+//                 padding: "15px 20px", // Increased padding for prominence
+//                 backgroundColor: "#F9F9F9", // Page background color
+//                 borderRadius: "10px", // Rounded corners
+//                 display: "inline-block", // Ensure text fits within background
+//                 boxShadow: "0 2px 15px rgba(0,0,0,0.1)", // Enhanced shadow
+//                 width: "calc(100% - 20px)", // Adjust width for left margin, fixed right
+//                 marginRight: "auto", // Fixed to right edge
+//               }}
+//             >
+//               --- BUILD THE FUTURE ------
+//             </Typography>
+//           </motion.div>
+//           <motion.div
+//             style={{ x: slogan2X, position: "relative", right: "20px" }} // Margin right, fixed left to screen
+//             initial={{ x: 0 }}
+//             animate={{ transition: { type: "spring", stiffness: 50 } }}
+//           >
+//             <Typography
+//               variant="h2" // Even larger font size
+//               sx={{
+//                 textAlign: "center",
+//                 color: "#388E3C", // Dark green text
+//                 fontWeight: "bold",
+//                 fontSize: { xs: "1.8rem", sm: "2.5rem", md: "4rem" }, // Increased size
+//                 mt: 6, // Increased margin for better spacing
+//                 whiteSpace: "nowrap",
+//                 textTransform: "uppercase",
+//                 padding: "15px 20px", // Increased padding for prominence
+//                 backgroundColor: "#F9F9F9", // Page background color
+//                 borderRadius: "10px", // Rounded corners
+//                 display: "inline-block", // Ensure text fits within background
+//                 boxShadow: "0 2px 15px rgba(0,0,0,0.1)", // Enhanced shadow
+//                 width: "calc(100% - 20px)", // Adjust width for right margin, fixed left
+//                 marginLeft: "auto", // Fixed to left edge
+//               }}
+//             >
+//               DESIGNER - DESIGNER - DESIGNER -
+//             </Typography>
+//           </motion.div>
+//         </Box>
+
+//         {/* Services Section */}
+//         <Box
+//           component={motion.section}
+//           initial="hidden"
+//           animate="visible"
+//           variants={fadeIn}
+//           sx={{ py: { xs: 6, sm: 8 }, bgcolor: "#F9F9F9" }}
+//         >
+//           <Container maxWidth="lg">
+//             <Typography
+//               variant="h4"
+//               sx={{
+//                 textAlign: "center",
+//                 fontWeight: "bold",
+//                 color: "text.primary",
+//                 mb: 6,
+//                 fontSize: { xs: "1.8rem", md: "2.5rem" },
+//               }}
+//             >
+//               Our Services
+//             </Typography>
+//             <Grid container spacing={4}>
+//               {[
+//                 { title: "Consultation", desc: "Expert advice on sustainable practices.", icon: <SupportAgentIcon /> },
+//                 { title: "Crop Disease Detection", desc: "AI-powered disease detection.", icon: <BugReportIcon /> },
+//                 { title: "Farming Equipment", desc: "Access modern tools for productivity.", icon: <BuildIcon /> },
+//               ].map((service, index) => (
+//                 <Grid item xs={12} sm={6} md={4} key={index}>
+//                   <Card sx={{ bgcolor: "#fff", textAlign: "center" }}>
+//                     <CardContent>
+//                       <IconButton sx={{ color: "#388E3C", fontSize: "3rem", mb: 2 }}>{service.icon}</IconButton>
+//                       <Typography variant="h6" sx={{ color: "text.primary", mb: 1 }}>{service.title}</Typography>
+//                       <Typography variant="body2" sx={{ color: "text.secondary" }}>{service.desc}</Typography>
+//                     </CardContent>
+//                   </Card>
+//                 </Grid>
+//               ))}
+//             </Grid>
+//           </Container>
+//         </Box>
+
+//         {/* Testimonials Section */}
+//         <Box component={motion.section} initial="hidden" animate="visible" variants={fadeIn} sx={{ py: { xs: 6, sm: 8 } }}>
+//           <Container maxWidth="lg">
+//             <Typography
+//               variant="h4"
+//               sx={{
+//                 textAlign: "center",
+//                 fontWeight: "bold",
+//                 color: "text.primary",
+//                 mb: 6,
+//                 fontSize: { xs: "1.8rem", md: "2.5rem" },
+//               }}
+//             >
+//               What Our Users Say
+//             </Typography>
+//             <Grid container spacing={4}>
+//               {[
+//                 { quote: "AgriHub revolutionized my farm!", author: "Rajesh Kumar, Farmer" },
+//                 { quote: "Saved my crops from an outbreak.", author: "Sunita Devi, Farmer" },
+//                 { quote: "Helps me maximize profits.", author: "Anil Sharma, Grower" },
+//               ].map((testimonial, index) => (
+//                 <Grid item xs={12} sm={6} md={4} key={index}>
+//                   <Card sx={{ bgcolor: "#E8F5E9" }}>
+//                     <CardContent>
+//                       <Typography variant="body1" sx={{ color: "text.secondary", mb: 2, fontStyle: "italic" }}>
+//                         "{testimonial.quote}"
+//                       </Typography>
+//                       <Typography variant="subtitle2" sx={{ color: "#388E3C", fontWeight: "bold" }}>
+//                         - {testimonial.author}
+//                       </Typography>
+//                     </CardContent>
+//                   </Card>
+//                 </Grid>
+//               ))}
+//             </Grid>
+//           </Container>
+//         </Box>
+
+//         {/* Footer Section */}
+//         <Box sx={{ py: 4, bgcolor: "#E8F5E9", textAlign: "center" }}>
+//           <Typography variant="body2" sx={{ color: "text.secondary" }}>
+//             © {new Date().getFullYear()} AgriHub. All rights reserved.
+//           </Typography>
+//         </Box>
+//       </Box>
+//     </ThemeProvider>
+//   );
+// };
+
+// export default HomePage;
+// import React, { useState, useEffect } from "react";
+// import NavigationBar from "../components/Navbar";
+// import { useNavigate } from "react-router-dom";
+// import {
+//   Box,
+//   Typography,
+//   Button,
+//   Grid,
+//   Card,
+//   CardContent,
+//   IconButton,
+//   Container,
+// } from "@mui/material";
+// import { createTheme, ThemeProvider } from "@mui/material/styles";
+// import { motion, useScroll, useTransform ,AnimatePresence} from "framer-motion";
+// import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+// import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+// import AgricultureIcon from "@mui/icons-material/Agriculture";
+// import CloudIcon from "@mui/icons-material/Cloud";
+// import TrendingUpIcon from "@mui/icons-material/TrendingUp";
+// import SupportAgentIcon from "@mui/icons-material/SupportAgent";
+// import BugReportIcon from "@mui/icons-material/BugReport";
+// import BuildIcon from "@mui/icons-material/Build";
+// import SlideImg1 from "../img/hero.jpg";
+// import SlideImg2 from "../img/slide-2.jpeg";
+// import SlideImg3 from "../img/slide-3.jpeg";
+
+// const HomePage = () => {
+//   const navigate = useNavigate();
+
+//   // Theme configuration (light mode only, green theme)
+//   const theme = createTheme({
+//     palette: {
+//       mode: "light",
+//       primary: { main: "#388E3C" }, // Dark green
+//       secondary: { main: "#4CAF50" }, // Light green
+//       background: { default: "#f5f5f5", paper: "#fff" },
+//       text: { primary: "#212121", secondary: "#757575" },
+//     },
+//     components: {
+//       MuiCard: {
+//         styleOverrides: {
+//           root: {
+//             borderRadius: "12px",
+//             boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
+//             transition: "transform 0.3s ease, box-shadow 0.3s ease",
+//             "&:hover": {
+//               transform: "translateY(-5px)",
+//               boxShadow: "0 6px 24px rgba(0,0,0,0.15)",
+//             },
+//           },
+//         },
+//       },
+//       MuiButton: {
+//         styleOverrides: {
+//           root: { borderRadius: "8px", textTransform: "none" },
+//         },
+//       },
+//     },
+//   });
+
+//   // Slider data with images and content
+//   const slides = [
+//     {
+//       title: "Welcome to AgriHub",
+//       description: "Your one-stop solution for agriculture management.",
+//       image: SlideImg1, // Use provided image
+//     },
+//     {
+//       title: "Grow Smarter",
+//       description: "Leverage technology for better yields.",
+//       image: SlideImg2, // Use provided image
+//     },
+//     {
+//       title: "Sustainable Future",
+//       description: "Eco-friendly farming solutions",
+//       image: SlideImg3, // Use provided image
+//     },
+//   ];
+
+//   const [currentSlide, setCurrentSlide] = useState(0);
+
+//   // Manual slide navigation
+//   const handlePrev = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+//   const handleNext = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
+
+//   useEffect(() => {
+//     const interval = setInterval(() => {
+//       setCurrentSlide((prev) => (prev + 1) % slides.length);
+//     }, 5000);
+//     return () => clearInterval(interval);
+//   }, [slides.length]);
+
+//   // Scroll effect for slogans
+//   const { scrollY } = useScroll();
+
+//   // Simplified scroll range for slogans (adjust based on content height)
+//   const scrollStart = 500; // Start after features section
+//   const scrollEnd = 1500;  // End later in the page
+
+//   // Transform scrollY into horizontal movement
+//   const slogan1X = useTransform(scrollY, [scrollStart, scrollEnd], [0, 200]); // Right on scroll down
+//   const slogan2X = useTransform(scrollY, [scrollStart, scrollEnd], [0, -200]); // Left on scroll down
+// const slideVariants = {
+//     hidden: { opacity: 0, x: 100, scale: 0.95 },
+//     visible: { opacity: 1, x: 0, scale: 1, transition: { duration: 0.6, ease: "easeInOut" } },
+//     exit: { opacity: 0, x: -100, scale: 0.95, transition: { duration: 0.6, ease: "easeInOut" } },
+//   };
+//   // Animation variants
+//   const fadeIn = {
+//     hidden: { opacity: 0, y: 20 },
+//     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+//   };
+
+//   return (
+//     <ThemeProvider theme={theme}>
+//       <Box sx={{ bgcolor: "background.default", minHeight: "100vh" }}>
+//         <NavigationBar />
+
+//         {/* Spacer for Navbar */}
+//         <Box sx={{ height: { xs: 56, sm: 64, md: 70 } }} /> {/* Matches Navbar spacer */}
+
+//         {/* Slider Section (Hero Section) */}
+//         <Box
+//           component={motion.section}
+//           initial="hidden"
+//           animate="visible"
+//           variants={fadeIn}
+//           sx={{
+//             position: "relative",
+//             py: { xs: 4, sm: 6, md: 8 },
+//             textAlign: "center",
+//             overflow: "hidden",
+//             minHeight: { xs: "300px", md: "400px" },
+//             bgcolor: "#E8F5E9", // Match Features card background color
+//             borderRadius: "16px", // Rounded corners
+//             mx: { xs: 2, md: 4 },
+//             // Margin for mobile and desktop
+//           }}
+//         >
+//           <Container maxWidth="lg" sx={{ position: "relative", height: "100%", display: "flex", flexDirection: { xs: "column", md: "row" }, alignItems: "center", justifyContent: "center" }}>
+//             {/* Navigation Arrows */}
+//             <IconButton
+//               onClick={handlePrev}
+//               sx={{
+//                 position: "absolute",
+//                 left: 16,
+//                 color: "#388E3C", // Dark green for arrows
+//                 fontSize: { xs: "1.5rem", md: "2rem" },
+//                 zIndex: 2,
+//                 display: { xs: "none", md: "block" }, // Hide on mobile
+//               }}
+//             >
+//               <ArrowBackIosIcon />
+//             </IconButton>
+//             <IconButton
+//               onClick={handleNext}
+//               sx={{
+//                 position: "absolute",
+//                 right: 16,
+//                 color: "#388E3C", // Dark green for arrows
+//                 fontSize: { xs: "1.5rem", md: "2rem" },
+//                 zIndex: 2,
+//                 display: { xs: "none", md: "block" }, // Hide on mobile
+//               }}
+//             >
+//               <ArrowForwardIosIcon />
+//             </IconButton>
+//             <AnimatePresence mode="wait">
+//               <motion.div
+//                 key={currentSlide}
+//                 variants={slideVariants}
+//                 initial="hidden"
+//                 animate="visible"
+//                 exit="exit"
+//                 sx={{
+//                   display: "flex",
+//                   flexDirection: { xs: "column", md: "row" },
+//                   alignItems: "center",
+//                   justifyContent: "space-between",
+//                   width: "100%",
+//                   px: { xs: 2, md: 4 },
+//                   height: "100%", // Ensure content fills fixed height
+//                 }}
+//               ></motion.div>
+//               </AnimatePresence>
+//             {/* Slide Content */}
+//             <Box
+//               sx={{
+//                 display: "flex",
+//                 flexDirection: { xs: "column", md: "row" },
+//                 alignItems: "center",
+//                 justifyContent: "space-between",
+//                 width: "100%",
+//                 px: { xs: 2, md: 4 },
+//               }}
+//             >
+//               {/* Text Section */}
+//               <Box sx={{ flex: 1, textAlign: { xs: "center", md: "left" }, mb: { xs: 2, md: 0 } }}>
+//                 {/* <Typography
+//                   variant="h1"
+//                   sx={{
+//                     fontWeight: "bold",
+//                     color: "#4CAF50", // Light green for title (AgriHub theme)
+//                     mb: 2,
+//                     fontSize: { xs: "1.5rem", sm: "2rem", md: "3rem" },
+//                     textTransform: "uppercase",
+//                   }}
+//                 >
+//                   PROBLEM STATEMENTS
+//                 </Typography> */}
+//                 <Typography
+//                   variant="h4"
+//                   sx={{
+//                     fontWeight: "bold",
+//                     color: " #388E3C", // Dark text for contrast on light background
+//                     mb: 4,
+//                     fontSize: { xs: "1.5rem", sm: "2rem", md: "3rem" },
+//                   }}
+//                 >
+//                   {slides[currentSlide].title}
+//                 </Typography>
+//                 <Typography
+//                   variant="body1"
+//                   sx={{
+//                     color: "#757575", // Secondary text color
+//                     mb: 4,
+//                     fontSize: { xs: "0.9rem", sm: "1rem", md: "1.2rem" },
+//                   }}
+//                 >
+//                   {slides[currentSlide].description}
+//                 </Typography>
+                
+//               </Box>
+
+//               {/* Image Section */}
+//               <Box sx={{ flex: 1, mt: { xs: 2, md: 0 }, textAlign: "center" }}>
+//                 <img
+//                   src={slides[currentSlide].image}
+//                   alt={slides[currentSlide].title}
+//                   style={{
+//                     width: "700px", // Fixed width
+//                     height: "500px", // Fixed height
+//                     objectFit: "cover", // Maintain aspect ratio, crop if needed
+//                     borderRadius: "16px", // Rounded corners
+//                   }}
+//                 />
+//               </Box>
+//             </Box>
+//           </Container>
+//         </Box>
+
+//         {/* Features Section */}
+//         <Box component={motion.section} initial="hidden" animate="visible" variants={fadeIn} sx={{ py: { xs: 6, sm: 8 } }}>
+//           <Container maxWidth="lg">
+//             <Typography
+//               variant="h4"
+//               sx={{
+//                 textAlign: "center",
+//                 fontWeight: "bold",
+//                 color: "text.primary",
+//                 mb: 6,
+//                 fontSize: { xs: "1.8rem", md: "2.5rem" },
+//               }}
+//             >
+//               Our Features
+//             </Typography>
+//             <Grid container spacing={4}>
+//               {[
+//                 { title: "Crop Management", desc: "Manage your crops effectively with our tools.", icon: <AgricultureIcon /> },
+//                 { title: "Weather Updates", desc: "Real-time weather updates for planning.", icon: <CloudIcon /> },
+//                 { title: "Market Insights", desc: "Stay informed about market trends.", icon: <TrendingUpIcon /> },
+//               ].map((feature, index) => (
+//                 <Grid item xs={12} sm={6} md={4} key={index}>
+//                   <Card sx={{ bgcolor: "#E8F5E9", textAlign: "center" }}>
+//                     <CardContent>
+//                       <IconButton sx={{ color: "#388E3C", fontSize: "3rem", mb: 2 }}>{feature.icon}</IconButton>
+//                       <Typography variant="h6" sx={{ color: "text.primary", mb: 1 }}>{feature.title}</Typography>
+//                       <Typography variant="body2" sx={{ color: "text.secondary" }}>{feature.desc}</Typography>
+//                     </CardContent>
+//                   </Card>
+//                 </Grid>
+//               ))}
+//             </Grid>
+//           </Container>
+//         </Box>
+
+//         {/* Slogan Section with Scroll Effect */}
+//         <Box sx={{ py: 6, bgcolor: "#F9F9F9", overflow: "hidden" }}>
+//           <motion.div
+//             style={{ x: slogan1X, position: "relative", left: "20px" }} // Margin left, fixed right to screen
+//             initial={{ x: 0 }}
+//             animate={{ transition: { type: "spring", stiffness: 50 } }}
+//           >
+//             <Typography
+//               variant="h2" // Even larger font size
+//               sx={{
+//                 textAlign: "center",
+//                 color: "transparent", // Transparent text for border-only effect
+//                 WebkitTextStroke: "1.5px #000000", // Text border in dark green
+//                 // fontWeight: "bold",
+//                 fontSize: { xs: "1.8rem", sm: "2.5rem", md: "4rem" }, // Increased size
+//                 whiteSpace: "nowrap",
+//                 textTransform: "uppercase",
+//                 padding: "15px 20px", // Increased padding for prominence
+//                 backgroundColor: "#388E3C", // Page background color
+//                 borderRadius: "10px", // Rounded corners
+//                 display: "inline-block", // Ensure text fits within background
+//                 boxShadow: "0 2px 15px rgba(0,0,0,0.1)", // Enhanced shadow
+//                 width: "calc(100% - 20px)", // Adjust width for left margin, fixed right
+//                 marginRight: "auto", // Fixed to right edge
+//               }}
+//             >
+//               --- BUILD THE AGRIHUB ------
+//             </Typography>
+//           </motion.div>
+//           <motion.div
+//             style={{ x: slogan2X, position: "relative", right: "20px" }} // Margin right, fixed left to screen
+//             initial={{ x: 0 }}
+//             animate={{ transition: { type: "spring", stiffness: 50 } }}
+//           >
+//             <Typography
+//               variant="h2" // Even larger font size
+//               sx={{
+//                 textAlign: "center",
+//                 color: "#388E3C", // Dark green text
+//                 // fontWeight: "bold",
+//                 fontSize: { xs: "1.8rem", sm: "2.5rem", md: "4rem" }, // Increased size
+//                 mt: 6, // Increased margin for better spacing
+//                 whiteSpace: "nowrap",
+//                 textTransform: "uppercase",
+//                 padding: "15px 20px", // Increased padding for prominence
+//                 backgroundColor: "#F9F9F9", // Page background color
+//                 borderRadius: "10px", // Rounded corners
+//                 display: "inline-block", // Ensure text fits within background
+//                 boxShadow: "0 2px 15px rgba(0,0,0,0.1)", // Enhanced shadow
+//                 width: "calc(100% - 20px)", // Adjust width for right margin, fixed left
+//                 marginLeft: "auto", // Fixed to left edge
+//               }}
+//             >
+//               ONE STOP - FARMING - SOLUTION
+//             </Typography>
+//           </motion.div>
+//         </Box>
+
+//         {/* Services Section */}
+//         <Box
+//           component={motion.section}
+//           initial="hidden"
+//           animate="visible"
+//           variants={fadeIn}
+//           sx={{ py: { xs: 6, sm: 8 }, bgcolor: "#F9F9F9" }}
+//         >
+//           <Container maxWidth="lg">
+//             <Typography
+//               variant="h4"
+//               sx={{
+//                 textAlign: "center",
+//                 fontWeight: "bold",
+//                 color: "text.primary",
+//                 mb: 6,
+//                 fontSize: { xs: "1.8rem", md: "2.5rem" },
+//               }}
+//             >
+//               Our Services
+//             </Typography>
+//             <Grid container spacing={4}>
+//               {[
+//                 { title: "Consultation", desc: "Expert advice on sustainable practices.", icon: <SupportAgentIcon /> },
+//                 { title: "Crop Disease Detection", desc: "AI-powered disease detection.", icon: <BugReportIcon /> },
+//                 { title: "Farming Equipment", desc: "Access modern tools for productivity.", icon: <BuildIcon /> },
+//               ].map((service, index) => (
+//                 <Grid item xs={12} sm={6} md={4} key={index}>
+//                   <Card sx={{ bgcolor: "#fff", textAlign: "center" }}>
+//                     <CardContent>
+//                       <IconButton sx={{ color: "#388E3C", fontSize: "3rem", mb: 2 }}>{service.icon}</IconButton>
+//                       <Typography variant="h6" sx={{ color: "text.primary", mb: 1 }}>{service.title}</Typography>
+//                       <Typography variant="body2" sx={{ color: "text.secondary" }}>{service.desc}</Typography>
+//                     </CardContent>
+//                   </Card>
+//                 </Grid>
+//               ))}
+//             </Grid>
+//           </Container>
+//         </Box>
+
+//         {/* Testimonials Section */}
+//         <Box component={motion.section} initial="hidden" animate="visible" variants={fadeIn} sx={{ py: { xs: 6, sm: 8 } }}>
+//           <Container maxWidth="lg">
+//             <Typography
+//               variant="h4"
+//               sx={{
+//                 textAlign: "center",
+//                 fontWeight: "bold",
+//                 color: "text.primary",
+//                 mb: 6,
+//                 fontSize: { xs: "1.8rem", md: "2.5rem" },
+//               }}
+//             >
+//               What Our Users Say
+//             </Typography>
+//             <Grid container spacing={4}>
+//               {[
+//                 { quote: "AgriHub revolutionized my farm!", author: "Rajesh Kumar, Farmer" },
+//                 { quote: "Saved my crops from an outbreak.", author: "Sunita Devi, Farmer" },
+//                 { quote: "Helps me maximize profits.", author: "Anil Sharma, Grower" },
+//               ].map((testimonial, index) => (
+//                 <Grid item xs={12} sm={6} md={4} key={index}>
+//                   <Card sx={{ bgcolor: "#E8F5E9" }}>
+//                     <CardContent>
+//                       <Typography variant="body1" sx={{ color: "text.secondary", mb: 2, fontStyle: "italic" }}>
+//                         "{testimonial.quote}"
+//                       </Typography>
+//                       <Typography variant="subtitle2" sx={{ color: "#388E3C", fontWeight: "bold" }}>
+//                         - {testimonial.author}
+//                       </Typography>
+//                     </CardContent>
+//                   </Card>
+//                 </Grid>
+//               ))}
+//             </Grid>
+//           </Container>
+//         </Box>
+
+//         {/* Footer Section */}
+//         <Box sx={{ py: 4, bgcolor: "#E8F5E9", textAlign: "center" }}>
+//           <Typography variant="body2" sx={{ color: "text.secondary" }}>
+//             © {new Date().getFullYear()} AgriHub. All rights reserved.
+//           </Typography>
+//         </Box>
+//       </Box>
+//     </ThemeProvider>
+//   );
+// };
+
+// export default HomePage;
+import React, { useState, useEffect } from "react";
+import NavigationBar from "../components/Navbar";
+import { useNavigate } from "react-router-dom";
+import {
+  Box,
+  Typography,
+  Grid,
+  Card,
+  CardContent,
+  IconButton,
+  Container,
+} from "@mui/material";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { motion, useScroll, useTransform } from "framer-motion";
+import AgricultureIcon from "@mui/icons-material/Agriculture";
+import CloudIcon from "@mui/icons-material/Cloud";
+import TrendingUpIcon from "@mui/icons-material/TrendingUp";
+import SupportAgentIcon from "@mui/icons-material/SupportAgent";
+import BugReportIcon from "@mui/icons-material/BugReport";
+import BuildIcon from "@mui/icons-material/Build";
+import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap CSS
+import { Carousel } from "react-bootstrap"; // Import Bootstrap Carousel
+import SlideImg1 from "../img/hero.jpg"; // Ensure these paths are correct
+import SlideImg2 from "../img/slide-4.jpg";
+import SlideImg3 from "../img/slide-5.avif";
+
+const HomePage = () => {
+  const navigate = useNavigate();
+
+  // Theme configuration (light mode only, green theme)
+  const theme = createTheme({
+    palette: {
+      mode: "light",
+      primary: { main: "#388E3C" },
+      secondary: { main: "#4CAF50" },
+      background: { default: "#f5f5f5", paper: "#fff" },
+      text: { primary: "#212121", secondary: "#757575" },
+    },
+    components: {
+      MuiCard: {
+        styleOverrides: {
+          root: {
+            borderRadius: "12px",
+            boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
+            transition: "transform 0.3s ease, box-shadow 0.3s ease",
+            "&:hover": {
+              transform: "translateY(-5px)",
+              boxShadow: "0 6px 24px rgba(0,0,0,0.15)",
+            },
+          },
+        },
+      },
+      MuiButton: {
+        styleOverrides: {
+          root: { borderRadius: "8px", textTransform: "none" },
+        },
+      },
+    },
+  });
+
+  // Slider data
+  const slides = [
+    { title: "Welcome to AgriHub", description: "Your one-stop solution for agriculture management.", image: SlideImg1 },
+    { title: "Grow Smarter", description: "Leverage technology for better yields.", image: SlideImg2 },
+    { title: "", description: "", image: SlideImg3 },
+  ];
+
+  // Animation variants
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
+  // Scroll effect for slogans
+  const { scrollY } = useScroll();
+  const scrollStart = 500;
+  const scrollEnd = 1500;
+  const slogan1X = useTransform(scrollY, [scrollStart, scrollEnd], [0, 200]);
+  const slogan2X = useTransform(scrollY, [scrollStart, scrollEnd], [0, -200]);
+
+  return (
+    <ThemeProvider theme={theme}>
+      <Box sx={{ bgcolor: "background.default", minHeight: "100vh" }}>
+        <NavigationBar />
+        <Box sx={{ height: { xs: 56, sm: 64, md: 70 } }} />
+
+        {/* Bootstrap Carousel Section */}
+        <Box
+          component={motion.section}
+          initial="hidden"
+          animate="visible"
+          variants={fadeIn}
+          sx={{
+            py: { xs: 4, sm: 6, md: 8 },
+            mx: { xs: 2, md: 4 },
+          }}
+        >
+          <Carousel fade interval={5000} controls={true} indicators={true}>
+            {slides.map((slide, index) => (
+              <Carousel.Item key={index}>
+                <div
+                  style={{
+                    backgroundImage: `url(${slide.image})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    height: "500px", // Fixed height for consistency
+                    position: "relative",
+                    borderRadius: "16px",
+                    overflow: "hidden",
+                  }}
+                >
+                  {/* Overlay for text readability */}
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "100%",
+                      height: "100%",
+                      backgroundColor: "rgba(0, 0, 0, 0.4)", // Dark overlay
+                      zIndex: 1,
+                    }}
+                  />
+                  {/* Text content */}
+                  <Carousel.Caption style={{ zIndex: 2, position: "absolute", top: "50%", transform: "translateY(-50%)" }}>
+                    <Typography
+                      variant="h4"
+                      sx={{
+                        fontWeight: "bold",
+                        color: "#fff",
+                        mb: 2,
+                        fontSize: { xs: "1.5rem", sm: "2rem", md: "3rem" },
+                      }}
+                    >
+                      {slide.title}
+                    </Typography>
+                    <Typography
+                      variant="body1"
+                      sx={{
+                        color: "#fff",
+                        fontSize: { xs: "0.9rem", sm: "1rem", md: "1.2rem" },
+                      }}
+                    >
+                      {slide.description}
+                    </Typography>
+                  </Carousel.Caption>
+                </div>
+              </Carousel.Item>
+            ))}
+          </Carousel>
+        </Box>
+
+        {/* Features Section */}
+        <Box component={motion.section} initial="hidden" animate="visible" variants={fadeIn} sx={{ py: { xs: 6, sm: 8 } }}>
+          <Container maxWidth="lg">
+            <Typography
+              variant="h4"
+              sx={{
+                textAlign: "center",
+                fontWeight: "bold",
+                color: "text.primary",
+                mb: 6,
+                fontSize: { xs: "1.8rem", md: "2.5rem" },
+              }}
+            >
+              Our Features
+            </Typography>
+            <Grid container spacing={4}>
+              {[
+                { title: "Crop Management", desc: "Manage your crops effectively with our tools.", icon: <AgricultureIcon /> },
+                { title: "Weather Updates", desc: "Real-time weather updates for planning.", icon: <CloudIcon /> ,link: "/crop-management",},
+                { title: "Market Insights", desc: "Stay informed about market trends.", icon: <TrendingUpIcon /> },
+              ].map((feature, index) => (
+                <Grid item xs={12} sm={6} md={4} key={index}>
+                  <Card sx={{ bgcolor: "#E8F5E9", textAlign: "center" }}>
+                    <CardContent>
+                      <IconButton sx={{ color: "#388E3C", fontSize: "3rem", mb: 2 }}>{feature.icon}</IconButton>
+                      <Typography variant="h6" sx={{ color: "text.primary", mb: 1 }}>{feature.title}</Typography>
+                      <Typography variant="body2" sx={{ color: "text.secondary" }}>{feature.desc}</Typography>
+                    </CardContent>
+                  </Card>
+                </Grid>
+              ))}
+            </Grid>
+          </Container>
+        </Box>
+
+        {/* Slogan Section */}
+        <Box sx={{ py: 6, bgcolor: "#F9F9F9", overflow: "hidden" }}>
+          <motion.div
+            style={{ x: slogan1X, position: "relative", left: "20px" }}
+            initial={{ x: 0 }}
+            animate={{ transition: { type: "spring", stiffness: 50 } }}
+          >
+            <Typography
+              variant="h2"
+              sx={{
+                textAlign: "center",
+                color: "transparent",
+                WebkitTextStroke: "1.5px #000000",
+                fontSize: { xs: "1.8rem", sm: "2.5rem", md: "4rem" },
+                whiteSpace: "nowrap",
+                textTransform: "uppercase",
+                padding: "15px 20px",
+                backgroundColor: "#388E3C",
+                borderRadius: "10px",
+                display: "inline-block",
+                boxShadow: "0 2px 15px rgba(0,0,0,0.1)",
+                width: "calc(100% - 20px)",
+                marginRight: "auto",
+              }}
+            >
+              --- BUILD THE AGRIHUB ------
+            </Typography>
+          </motion.div>
+          <motion.div
+            style={{ x: slogan2X, position: "relative", right: "20px" }}
+            initial={{ x: 0 }}
+            animate={{ transition: { type: "spring", stiffness: 50 } }}
+          >
+            <Typography
+              variant="h2"
+              sx={{
+                textAlign: "center",
+                color: "#388E3C",
+                fontSize: { xs: "1.8rem", sm: "2.5rem", md: "4rem" },
+                mt: 6,
+                whiteSpace: "nowrap",
+                textTransform: "uppercase",
+                padding: "15px 20px",
+                backgroundColor: "#F9F9F9",
+                borderRadius: "10px",
+                display: "inline-block",
+                boxShadow: "0 2px 15px rgba(0,0,0,0.1)",
+                width: "calc(100% - 20px)",
+                marginLeft: "auto",
+              }}
+            >
+              ONE STOP - FARMING - SOLUTION
+            </Typography>
+          </motion.div>
+        </Box>
+
+        {/* Services Section */}
+        <Box
+          component={motion.section}
+          initial="hidden"
+          animate="visible"
+          variants={fadeIn}
+          sx={{ py: { xs: 6, sm: 8 }, bgcolor: "#F9F9F9" }}
+        >
+          <Container maxWidth="lg">
+            <Typography
+              variant="h4"
+              sx={{
+                textAlign: "center",
+                fontWeight: "bold",
+                color: "text.primary",
+                mb: 6,
+                fontSize: { xs: "1.8rem", md: "2.5rem" },
+              }}
+            >
+              Our Services
+            </Typography>
+            <Grid container spacing={4}>
+              {[
+                { title: "Consultation", desc: "Expert advice on sustainable practices.", icon: <SupportAgentIcon /> },
+                { title: "Crop Disease Detection", desc: "AI-powered disease detection.", icon: <BugReportIcon /> },
+                { title: "Farming Equipment", desc: "Access modern tools for productivity.", icon: <BuildIcon /> },
+              ].map((service, index) => (
+                <Grid item xs={12} sm={6} md={4} key={index}>
+                  <Card sx={{ bgcolor: "#fff", textAlign: "center" }}>
+                    <CardContent>
+                      <IconButton sx={{ color: "#388E3C", fontSize: "3rem", mb: 2 }}>{service.icon}</IconButton>
+                      <Typography variant="h6" sx={{ color: "text.primary", mb: 1 }}>{service.title}</Typography>
+                      <Typography variant="body2" sx={{ color: "text.secondary" }}>{service.desc}</Typography>
+                    </CardContent>
+                  </Card>
+                </Grid>
+              ))}
+            </Grid>
+          </Container>
+        </Box>
+
+        {/* Testimonials Section */}
+        <Box component={motion.section} initial="hidden" animate="visible" variants={fadeIn} sx={{ py: { xs: 6, sm: 8 } }}>
+          <Container maxWidth="lg">
+            <Typography
+              variant="h4"
+              sx={{
+                textAlign: "center",
+                fontWeight: "bold",
+                color: "text.primary",
+                mb: 6,
+                fontSize: { xs: "1.8rem", md: "2.5rem" },
+              }}
+            >
+              What Our Users Say
+            </Typography>
+            <Grid container spacing={4}>
+              {[
+                { quote: "AgriHub revolutionized my farm!", author: "Rajesh Kumar, Farmer" },
+                { quote: "Saved my crops from an outbreak.", author: "Sunita Devi, Farmer" },
+                { quote: "Helps me maximize profits.", author: "Anil Sharma, Grower" },
+              ].map((testimonial, index) => (
+                <Grid item xs={12} sm={6} md={4} key={index}>
+                  <Card sx={{ bgcolor: "#E8F5E9" }}>
+                    <CardContent>
+                      <Typography variant="body1" sx={{ color: "text.secondary", mb: 2, fontStyle: "italic" }}>
+                        "{testimonial.quote}"
+                      </Typography>
+                      <Typography variant="subtitle2" sx={{ color: "#388E3C", fontWeight: "bold" }}>
+                        - {testimonial.author}
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </Grid>
+              ))}
+            </Grid>
+          </Container>
+        </Box>
+
+        {/* Footer Section */}
+        <Box sx={{ py: 4, bgcolor: "#E8F5E9", textAlign: "center" }}>
+          <Typography variant="body2" sx={{ color: "text.secondary" }}>
+            © {new Date().getFullYear()} AgriHub. All rights reserved.
+          </Typography>
+        </Box>
+      </Box>
+    </ThemeProvider>
+  );
+};
+
+export default HomePage;
+// import React, { useState, useEffect } from "react";
+// import NavigationBar from "../components/Navbar";
+// import { useNavigate } from "react-router-dom";
+// import {
+//   Box,
+//   Typography,
+//   Grid,
+//   Card,
+//   CardContent,
+//   IconButton,
+//   Container,
+//   Button,
+// } from "@mui/material";
+// import { createTheme, ThemeProvider } from "@mui/material/styles";
+// import { motion, useScroll, useTransform } from "framer-motion";
+// import AgricultureIcon from "@mui/icons-material/Agriculture";
+// import CloudIcon from "@mui/icons-material/Cloud";
+// import TrendingUpIcon from "@mui/icons-material/TrendingUp";
+// import SupportAgentIcon from "@mui/icons-material/SupportAgent";
+// import BugReportIcon from "@mui/icons-material/BugReport";
+// import BuildIcon from "@mui/icons-material/Build";
+// import "bootstrap/dist/css/bootstrap.min.css";
+// import { Carousel } from "react-bootstrap";
+// import SlideImg1 from "../img/hero.jpg";
+// import SlideImg2 from "../img/slide-2.jpeg";
+// import SlideImg3 from "../img/slide-3.jpeg";
+
+// const HomePage = () => {
+//   const navigate = useNavigate();
+
+//   const theme = createTheme({
+//     palette: {
+//       mode: "light",
+//       primary: { main: "#388E3C" },
+//       secondary: { main: "#4CAF50" },
+//       background: { default: "#f5f5f5", paper: "#fff" },
+//       text: { primary: "#212121", secondary: "#757575" },
+//     },
+//     components: {
+//       MuiCard: {
+//         styleOverrides: {
+//           root: {
+//             borderRadius: "12px",
+//             boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
+//             transition: "transform 0.3s ease, box-shadow 0.3s ease",
+//             "&:hover": {
+//               transform: "translateY(-5px)",
+//               boxShadow: "0 6px 24px rgba(0,0,0,0.15)",
+//             },
+//           },
+//         },
+//       },
+//       MuiButton: {
+//         styleOverrides: {
+//           root: { borderRadius: "8px", textTransform: "none" },
+//         },
+//       },
+//     },
+//   });
+
+//   const slides = [
+//     { title: "Welcome to AgriHub", description: "Your one-stop solution for agriculture management.", image: SlideImg1 },
+//     { title: "Grow Smarter", description: "Leverage technology for better yields.", image: SlideImg2 },
+//     { title: "Sustainable Future", description: "Eco-friendly farming solutions", image: SlideImg3 },
+//   ];
+
+//   const fadeIn = {
+//     hidden: { opacity: 0, y: 20 },
+//     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+//   };
+
+//   const { scrollY } = useScroll();
+//   const scrollStart = 500;
+//   const scrollEnd = 1500;
+//   const slogan1X = useTransform(scrollY, [scrollStart, scrollEnd], [0, 200]);
+//   const slogan2X = useTransform(scrollY, [scrollStart, scrollEnd], [0, -200]);
+
+//   return (
+//     <ThemeProvider theme={theme}>
+//       <Box sx={{ bgcolor: "background.default", minHeight: "100vh" }}>
+//         <NavigationBar />
+//         <Box sx={{ height: { xs: 56, sm: 64, md: 70 } }} />
+
+//         {/* Bootstrap Carousel Section */}
+//         <Box
+//           component={motion.section}
+//           initial="hidden"
+//           animate="visible"
+//           variants={fadeIn}
+//           sx={{
+//             py: { xs: 4, sm: 6, md: 8 },
+//             mx: { xs: 2, md: 4 },
+//           }}
+//         >
+//           <Carousel fade interval={5000} controls={true} indicators={true}>
+//             {slides.map((slide, index) => (
+//               <Carousel.Item key={index}>
+//                 <div
+//                   style={{
+//                     backgroundImage: `url(${slide.image})`,
+//                     backgroundSize: "cover",
+//                     backgroundPosition: "center",
+//                     height: "500px",
+//                     position: "relative",
+//                     borderRadius: "16px",
+//                     overflow: "hidden",
+//                   }}
+//                 >
+//                   <div
+//                     style={{
+//                       position: "absolute",
+//                       top: 0,
+//                       left: 0,
+//                       width: "100%",
+//                       height: "100%",
+//                       backgroundColor: "rgba(0, 0, 0, 0.4)",
+//                       zIndex: 1,
+//                     }}
+//                   />
+//                   <Carousel.Caption style={{ zIndex: 2, position: "absolute", top: "50%", transform: "translateY(-50%)" }}>
+//                     <Typography
+//                       variant="h4"
+//                       sx={{
+//                         fontWeight: "bold",
+//                         color: "#fff",
+//                         mb: 2,
+//                         fontSize: { xs: "1.5rem", sm: "2rem", md: "3rem" },
+//                       }}
+//                     >
+//                       {slide.title}
+//                     </Typography>
+//                     <Typography
+//                       variant="body1"
+//                       sx={{
+//                         color: "#fff",
+//                         fontSize: { xs: "0.9rem", sm: "1rem", md: "1.2rem" },
+//                       }}
+//                     >
+//                       {slide.description}
+//                     </Typography>
+//                   </Carousel.Caption>
+//                 </div>
+//               </Carousel.Item>
+//             ))}
+//           </Carousel>
+//         </Box>
+
+//         {/* Updated Features Section */}
+//         <Box component={motion.section} initial="hidden" animate="visible" variants={fadeIn} sx={{ py: { xs: 6, sm: 8 } }}>
+//           <Container maxWidth="lg">
+//             <Typography
+//               variant="h4"
+//               sx={{
+//                 textAlign: "center",
+//                 fontWeight: "bold",
+//                 color: "text.primary",
+//                 mb: 6,
+//                 fontSize: { xs: "1.8rem", md: "2.5rem" },
+//               }}
+//             >
+//               Our Features
+//             </Typography>
+//             <Grid container spacing={4}>
+//               {[
+//                 {
+//                   title: "Crop Management",
+//                   desc: "Plan planting schedules, track soil health, schedule irrigation, get pest/disease alerts, and forecast yields.",
+//                   icon: <AgricultureIcon />,
+//                   link: "/crop-management",
+//                 },
+//                 { title: "Weather Updates", desc: "Real-time weather updates for planning.", icon: <CloudIcon /> },
+//                 { title: "Market Insights", desc: "Stay informed about market trends.", icon: <TrendingUpIcon /> },
+//               ].map((feature, index) => (
+//                 <Grid item xs={12} sm={6} md={4} key={index}>
+//                   <Card sx={{ bgcolor: "#E8F5E9", textAlign: "center" }}>
+//                     <CardContent>
+//                       <IconButton sx={{ color: "#388E3C", fontSize: "3rem", mb: 2 }}>{feature.icon}</IconButton>
+//                       <Typography variant="h6" sx={{ color: "text.primary", mb: 1 }}>{feature.title}</Typography>
+//                       <Typography variant="body2" sx={{ color: "text.secondary", mb: 2 }}>{feature.desc}</Typography>
+//                       {feature.link && (
+//                         <Button
+//                           variant="contained"
+//                           color="primary"
+//                           size="small"
+//                           onClick={() => navigate(feature.link)}
+//                         >
+//                           Learn More
+//                         </Button>
+//                       )}
+//                     </CardContent>
+//                   </Card>
+//                 </Grid>
+//               ))}
+//             </Grid>
+//           </Container>
+//         </Box>
+
+//         {/* Slogan Section */}
+//         <Box sx={{ py: 6, bgcolor: "#F9F9F9", overflow: "hidden" }}>
+//           <motion.div
+//             style={{ x: slogan1X, position: "relative", left: "20px" }}
+//             initial={{ x: 0 }}
+//             animate={{ transition: { type: "spring", stiffness: 50 } }}
+//           >
+//             <Typography
+//               variant="h2"
+//               sx={{
+//                 textAlign: "center",
+//                 color: "transparent",
+//                 WebkitTextStroke: "1.5px #000000",
+//                 fontSize: { xs: "1.8rem", sm: "2.5rem", md: "4rem" },
+//                 whiteSpace: "nowrap",
+//                 textTransform: "uppercase",
+//                 padding: "15px 20px",
+//                 backgroundColor: "#388E3C",
+//                 borderRadius: "10px",
+//                 display: "inline-block",
+//                 boxShadow: "0 2px 15px rgba(0,0,0,0.1)",
+//                 width: "calc(100% - 20px)",
+//                 marginRight: "auto",
+//               }}
+//             >
+//               --- BUILD THE AGRIHUB ------
+//             </Typography>
+//           </motion.div>
+//           <motion.div
+//             style={{ x: slogan2X, position: "relative", right: "20px" }}
+//             initial={{ x: 0 }}
+//             animate={{ transition: { type: "spring", stiffness: 50 } }}
+//           >
+//             <Typography
+//               variant="h2"
+//               sx={{
+//                 textAlign: "center",
+//                 color: "#388E3C",
+//                 fontSize: { xs: "1.8rem", sm: "2.5rem", md: "4rem" },
+//                 mt: 6,
+//                 whiteSpace: "nowrap",
+//                 textTransform: "uppercase",
+//                 padding: "15px 20px",
+//                 backgroundColor: "#F9F9F9",
+//                 borderRadius: "10px",
+//                 display: "inline-block",
+//                 boxShadow: "0 2px 15px rgba(0,0,0,0.1)",
+//                 width: "calc(100% - 20px)",
+//                 marginLeft: "auto",
+//               }}
+//             >
+//               ONE STOP - FARMING - SOLUTION
+//             </Typography>
+//           </motion.div>
+//         </Box>
+
+//         {/* Services Section */}
+//         <Box
+//           component={motion.section}
+//           initial="hidden"
+//           animate="visible"
+//           variants={fadeIn}
+//           sx={{ py: { xs: 6, sm: 8 }, bgcolor: "#F9F9F9" }}
+//         >
+//           <Container maxWidth="lg">
+//             <Typography
+//               variant="h4"
+//               sx={{
+//                 textAlign: "center",
+//                 fontWeight: "bold",
+//                 color: "text.primary",
+//                 mb: 6,
+//                 fontSize: { xs: "1.8rem", md: "2.5rem" },
+//               }}
+//             >
+//               Our Services
+//             </Typography>
+//             <Grid container spacing={4}>
+//               {[
+//                 { title: "Consultation", desc: "Expert advice on sustainable practices.", icon: <SupportAgentIcon /> },
+//                 { title: "Crop Disease Detection", desc: "AI-powered disease detection.", icon: <BugReportIcon /> },
+//                 { title: "Farming Equipment", desc: "Access modern tools for productivity.", icon: <BuildIcon /> },
+//               ].map((service, index) => (
+//                 <Grid item xs={12} sm={6} md={4} key={index}>
+//                   <Card sx={{ bgcolor: "#fff", textAlign: "center" }}>
+//                     <CardContent>
+//                       <IconButton sx={{ color: "#388E3C", fontSize: "3rem", mb: 2 }}>{service.icon}</IconButton>
+//                       <Typography variant="h6" sx={{ color: "text.primary", mb: 1 }}>{service.title}</Typography>
+//                       <Typography variant="body2" sx={{ color: "text.secondary" }}>{service.desc}</Typography>
+//                     </CardContent>
+//                   </Card>
+//                 </Grid>
+//               ))}
+//             </Grid>
+//           </Container>
+//         </Box>
+
+//         {/* Testimonials Section */}
+//         <Box component={motion.section} initial="hidden" animate="visible" variants={fadeIn} sx={{ py: { xs: 6, sm: 8 } }}>
+//           <Container maxWidth="lg">
+//             <Typography
+//               variant="h4"
+//               sx={{
+//                 textAlign: "center",
+//                 fontWeight: "bold",
+//                 color: "text.primary",
+//                 mb: 6,
+//                 fontSize: { xs: "1.8rem", md: "2.5rem" },
+//               }}
+//             >
+//               What Our Users Say
+//             </Typography>
+//             <Grid container spacing={4}>
+//               {[
+//                 { quote: "AgriHub revolutionized my farm!", author: "Rajesh Kumar, Farmer" },
+//                 { quote: "Saved my crops from an outbreak.", author: "Sunita Devi, Farmer" },
+//                 { quote: "Helps me maximize profits.", author: "Anil Sharma, Grower" },
+//               ].map((testimonial, index) => (
+//                 <Grid item xs={12} sm={6} md={4} key={index}>
+//                   <Card sx={{ bgcolor: "#E8F5E9" }}>
+//                     <CardContent>
+//                       <Typography variant="body1" sx={{ color: "text.secondary", mb: 2, fontStyle: "italic" }}>
+//                         "{testimonial.quote}"
+//                       </Typography>
+//                       <Typography variant="subtitle2" sx={{ color: "#388E3C", fontWeight: "bold" }}>
+//                         - {testimonial.author}
+//                       </Typography>
+//                     </CardContent>
+//                   </Card>
+//                 </Grid>
+//               ))}
+//             </Grid>
+//           </Container>
+//         </Box>
+
+//         {/* Footer Section */}
+//         <Box sx={{ py: 4, bgcolor: "#E8F5E9", textAlign: "center" }}>
+//           <Typography variant="body2" sx={{ color: "text.secondary" }}>
+//             © {new Date().getFullYear()} AgriHub. All rights reserved.
+//           </Typography>
+//         </Box>
+//       </Box>
+//     </ThemeProvider>
+//   );
+// };
+
+// export default HomePage;
