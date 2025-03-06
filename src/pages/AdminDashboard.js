@@ -2649,22 +2649,22 @@ const AdminDashboard = () => {
   }, []);
 
   // Fetch user details
-  useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        const res = await axios.get("https://agrihub-backend-tz4v.onrender.com/api/users/me", { withCredentials: true });
-        if (res.data && res.data.isAdmin) {
-          setUser(res.data);
-        } else {
-          navigate("/");
-        }
-      } catch (error) {
-        console.error("Error fetching user:", error);
-        navigate("/");
-      }
-    };
-    fetchUser();
-  }, [navigate]);
+  // useEffect(() => {
+  //   const fetchUser = async () => {
+  //     try {
+  //       const res = await axios.get("https://agrihub-backend-tz4v.onrender.com/api/users/me", { withCredentials: true });
+  //       if (res.data && res.data.isAdmin) {
+  //         setUser(res.data);
+  //       } else {
+  //         navigate("/");
+  //       }
+  //     } catch (error) {
+  //       console.error("Error fetching user:", error);
+  //       navigate("/");
+  //     }
+  //   };
+  //   fetchUser();
+  // }, [navigate]);
 
   // Fetch dashboard stats
   useEffect(() => {
