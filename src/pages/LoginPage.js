@@ -913,12 +913,11 @@ const LoginPage = () => {
     setLoading(true);
     try {
       await axios.post("https://agrihub-backend-xu19.onrender.com/api/users/login", formData, { withCredentials: true });
-      const response = await axios.get("https://agrihub-backend-xu19.onrender.com/api/users/profile");
 
       if (response.data.isAdmin) {
         navigate("/admin-dashboard");
       } else {
-        navigate("/profile");
+        navigate("/home");
       }
     } catch (error) {
       setMessage(error.response?.data?.message || "Login failed");
