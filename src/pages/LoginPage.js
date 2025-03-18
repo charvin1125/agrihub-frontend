@@ -889,7 +889,10 @@ const LoginPage = () => {
   // Check if the user is already logged in
   useEffect(() => {
     axios
-      .get("https://agrihub-backend-xu19.onrender.com/api/users/profile")
+  .get("https://agrihub-backend-xu19.onrender.com/api/users/profile", {
+    withCredentials: true, // Important for sending cookies/session
+  })
+
       .then((response) => {
         if (response.data) {
           navigate(response.data.isAdmin ? "/admin-dashboard" : "/profile");
