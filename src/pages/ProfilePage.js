@@ -385,9 +385,7 @@ const ProfilePage = () => {
   useEffect(() => {
     const fetchUserProfile = async () => {
       try {
-        const response = await axios.get("https://agrihub-backend-xu19.onrender.com/api/users/profile", {
-          withCredentials: true,
-        });
+        const response = await axios.get("https://agrihub-backend-xu19.onrender.com/api/users/profile");
         setUser(response.data);
         setFormData(response.data);
       } catch (error) {

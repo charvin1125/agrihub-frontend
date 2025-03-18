@@ -889,7 +889,7 @@ const LoginPage = () => {
   // Check if the user is already logged in
   useEffect(() => {
     axios
-      .get("https://agrihub-backend-xu19.onrender.com/api/users/profile", { withCredentials: true })
+      .get("https://agrihub-backend-xu19.onrender.com/api/users/profile")
       .then((response) => {
         if (response.data) {
           navigate(response.data.isAdmin ? "/admin-dashboard" : "/profile");
@@ -910,7 +910,7 @@ const LoginPage = () => {
     setLoading(true);
     try {
       await axios.post("https://agrihub-backend-xu19.onrender.com/api/users/login", formData, { withCredentials: true });
-      const response = await axios.get("https://agrihub-backend-xu19.onrender.com/api/users/profile", { withCredentials: true });
+      const response = await axios.get("https://agrihub-backend-xu19.onrender.com/api/users/profile");
 
       if (response.data.isAdmin) {
         navigate("/admin-dashboard");
