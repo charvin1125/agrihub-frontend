@@ -896,9 +896,7 @@ const NavigationBar = () => {
 
     const fetchUser = async () => {
       try {
-        const response = await axios.get("https://agrihub-backend-xu19.onrender.com/api/users/profile", {
-          withCredentials: true,
-        });
+        const response = await axios.get("https://agrihub-backend-xu19.onrender.com/api/users/profile");
         setUser(response.data);
       } catch (error) {
         console.error("Fetch user error:", error.response?.data || error.message);
