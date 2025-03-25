@@ -610,6 +610,9 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import PhoneIcon from "@mui/icons-material/Phone";
 import "./styles/LoginPage.css";
 
+// Set axios defaults to always include credentials
+axios.defaults.withCredentials = true;
+
 const LoginPage = () => {
   const [formData, setFormData] = useState({ mobile: "", otp: "" });
   const [message, setMessage] = useState("");
@@ -619,9 +622,9 @@ const LoginPage = () => {
 
   useEffect(() => {
     axios
-      .get("https://agrihub-backend-pvfl.onrender.com/api/users/profile", { withCredentials: true })
+      .get("https://agrihub-backend-pvfl.onrender.com/api/users/profile")
       .then((response) => {
-        console.log("Initial profile check:", response.data); // Debug log
+        console.log("Initial profile check:", response.data);
         if (response.data) {
           navigate(response.data.isAdmin ? "/admin-dashboard" : "/profile");
         }
@@ -647,13 +650,11 @@ const LoginPage = () => {
     setMessage("");
     setLoading(true);
     try {
-      const response = await axios.post(
-        "https://agrihub-backend-pvfl.onrender.com/api/users/login",
-        { mobile: formData.mobile },
-        { withCredentials: true }
-      );
-      console.log("Send OTP response:", response.data); // Debug log
-      setMessage("OTP sent to your mobile.");
+      const response = await axios.post("https://agrihub-backend-pvfl.onrender.com/api/users/login", {
+        mobile: formData.mobile,
+      });
+      console.log("Send OTP response:", response.data);
+      setMessage("OTP sent to your mobile. Please verify.");
       setOtpSent(true);
     } catch (error) {
       console.error("Send OTP error:", error.response?.data || error.message);
@@ -670,19 +671,17 @@ const LoginPage = () => {
     try {
       const response = await axios.post(
         "https://agrihub-backend-pvfl.onrender.com/api/users/verify-login-otp",
-        { mobile: formData.mobile, otp: formData.otp },
-        { withCredentials: true }
+        { mobile: formData.mobile, otp: formData.otp }
       );
-      console.log("Verify OTP response:", response.data); // Debug log
-      // Verify session is set by fetching profile immediately
-      const profileResponse = await axios.get("https://agrihub-backend-pvfl.onrender.com/api/users/profile", {
-        withCredentials: true,
-      });
-      console.log("Post-login profile check:", profileResponse.data); // Debug log
-      navigate(response.data.user.isAdmin ? "/admin-dashboard" : "/profile");
+      console.log("Verify OTP response:", response.data);
+      setMessage("Login successful!");
+      // Delay navigation slightly to ensure cookie is set
+      setTimeout(() => {
+        navigate(response.data.user.isAdmin ? "/admin-dashboard" : "/profile");
+      }, 500);
     } catch (error) {
       console.error("Verify OTP error:", error.response?.data || error.message);
-      setMessage(error.response?.data?.error || "Invalid OTP");
+      setMessage(error.response?.data?.error || "Invalid OTP or login failed");
     } finally {
       setLoading(false);
     }
@@ -736,7 +735,9 @@ const LoginPage = () => {
                     onChange={handleChange}
                     variant="outlined"
                     required
-                    InputProps={{ startAdornment: <InputAdornment position="start"><PhoneIcon sx={{ color: "primary.main" }} /></InputAdornment> }}
+                    InputProps={{
+                      startAdornment: <InputAdornment position="start"><PhoneIcon sx={{ color: "primary.main" }} /></InputAdornment>,
+                    }}
                     sx={{ mb: 3 }}
                   />
                   <Button
@@ -776,7 +777,7 @@ const LoginPage = () => {
               )}
 
               {message && (
-                <Typography variant="body2" sx={{ color: "secondary.main", textAlign: "center", mt: 2 }}>
+                <Typography variant="body2" sx={{ color: message.includes("successful") ? "primary.main" : "secondary.main", textAlign: "center", mt: 2 }}>
                   {message}
                 </Typography>
               )}
