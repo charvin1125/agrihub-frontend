@@ -401,6 +401,196 @@
 // };
 
 // export default LoginPage;
+// import React, { useState, useEffect } from "react";
+// import axios from "axios";
+// import { useNavigate } from "react-router-dom";
+// import NavigationBar from "../components/Navbar";
+// import {
+//   Box,
+//   Typography,
+//   TextField,
+//   Button,
+//   CircularProgress,
+//   Divider,
+//   Card,
+//   CardContent,
+//   InputAdornment,
+// } from "@mui/material";
+// import { createTheme, ThemeProvider } from "@mui/material/styles";
+// import PhoneIcon from "@mui/icons-material/Phone";
+// import "./styles/LoginPage.css";
+
+// const LoginPage = () => {
+//   const [formData, setFormData] = useState({ mobile: "", otp: "" });
+//   const [message, setMessage] = useState("");
+//   const [loading, setLoading] = useState(true);
+//   const [otpSent, setOtpSent] = useState(false);
+//   const navigate = useNavigate();
+
+//   useEffect(() => {
+//     axios
+//       .get("https://agrihub-backend-pvfl.onrender.com/api/users/profile", { withCredentials: true })
+//       .then((response) => {
+//         if (response.data) {
+//           navigate(response.data.isAdmin ? "/admin-dashboard" : "/profile");
+//         }
+//       })
+//       .catch(() => {})
+//       .finally(() => setLoading(false));
+//   }, [navigate]);
+
+//   const handleChange = (e) => {
+//     const { name, value } = e.target;
+//     setFormData({ ...formData, [name]: value });
+//   };
+
+//   const handleSendOTP = async (e) => {
+//     e.preventDefault();
+//     if (!/^\d{10}$/.test(formData.mobile)) {
+//       setMessage("Mobile number must be 10 digits.");
+//       return;
+//     }
+
+//     setMessage("");
+//     setLoading(true);
+//     try {
+//       await axios.post("https://agrihub-backend-pvfl.onrender.com/api/users/login", { mobile: formData.mobile }, { withCredentials: true });
+//       setMessage("OTP sent to your mobile.");
+//       setOtpSent(true);
+//     } catch (error) {
+//       setMessage(error.response?.data?.message || "Failed to send OTP");
+//     } finally {
+//       setLoading(false);
+//     }
+//   };
+
+//   const handleVerifyOTP = async (e) => {
+//     e.preventDefault();
+//     setMessage("");
+//     setLoading(true);
+//     try {
+//       const response = await axios.post(
+//         "https://agrihub-backend-pvfl.onrender.com/api/users/verify-login-otp",
+//         { mobile: formData.mobile, otp: formData.otp },
+//         { withCredentials: true }
+//       );
+//       navigate(response.data.user.isAdmin ? "/admin-dashboard" : "/profile");
+//     } catch (error) {
+//       setMessage(error.response?.data?.error || "Invalid OTP");
+//     } finally {
+//       setLoading(false);
+//     }
+//   };
+
+//   const handleSignUp = () => {
+//     navigate("/register");
+//   };
+
+//   const theme = createTheme({
+//     palette: { primary: { main: "#4CAF50" }, secondary: { main: "#FF5722" }, background: { default: "#F5F7FA" } },
+//     typography: { fontFamily: "'Roboto', sans-serif", h4: { fontWeight: 700 } },
+//     components: {
+//       MuiCard: { styleOverrides: { root: { borderRadius: "16px", boxShadow: "0 8px 24px rgba(0,0,0,0.1)" } } },
+//       MuiButton: { styleOverrides: { root: { borderRadius: "8px", textTransform: "none", padding: "12px 24px" } } },
+//       MuiTextField: { styleOverrides: { root: { "& .MuiOutlinedInput-root": { borderRadius: "8px" } } } },
+//     },
+//   });
+
+//   if (loading) {
+//     return (
+//       <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh", bgcolor: "background.default" }}>
+//         <CircularProgress size={60} sx={{ color: "primary.main" }} />
+//         <Typography sx={{ ml: 2, color: "text.secondary" }}>Checking session...</Typography>
+//       </Box>
+//     );
+//   }
+
+//   return (
+//     <ThemeProvider theme={theme}>
+//       <Box sx={{ minHeight: "100vh", bgcolor: "background.default" }}>
+//         <NavigationBar />
+//         <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", pt: 8, px: 2 }}>
+//           <Card sx={{ maxWidth: 450, width: "100%" }}>
+//             <CardContent sx={{ p: 4 }}>
+//               <Typography variant="h4" sx={{ textAlign: "center", color: "primary.main", mb: 1 }}>
+//                 Welcome Back
+//               </Typography>
+//               <Typography variant="body1" sx={{ textAlign: "center", color: "text.secondary", mb: 4 }}>
+//                 Login to AgriHub
+//               </Typography>
+
+//               {!otpSent ? (
+//                 <form onSubmit={handleSendOTP}>
+//                   <TextField
+//                     fullWidth
+//                     label="Mobile Number"
+//                     name="mobile"
+//                     type="tel"
+//                     value={formData.mobile}
+//                     onChange={handleChange}
+//                     variant="outlined"
+//                     required
+//                     InputProps={{ startAdornment: <InputAdornment position="start"><PhoneIcon sx={{ color: "primary.main" }} /></InputAdornment> }}
+//                     sx={{ mb: 3 }}
+//                   />
+//                   <Button
+//                     type="submit"
+//                     variant="contained"
+//                     color="primary"
+//                     fullWidth
+//                     disabled={loading}
+//                     sx={{ py: 1.5, fontSize: "1.1rem" }}
+//                   >
+//                     {loading ? <CircularProgress size={24} color="inherit" /> : "Send OTP"}
+//                   </Button>
+//                 </form>
+//               ) : (
+//                 <form onSubmit={handleVerifyOTP}>
+//                   <TextField
+//                     fullWidth
+//                     label="Enter OTP"
+//                     name="otp"
+//                     value={formData.otp}
+//                     onChange={handleChange}
+//                     variant="outlined"
+//                     required
+//                     sx={{ mb: 3 }}
+//                   />
+//                   <Button
+//                     type="submit"
+//                     variant="contained"
+//                     color="primary"
+//                     fullWidth
+//                     disabled={loading}
+//                     sx={{ py: 1.5, fontSize: "1.1rem" }}
+//                   >
+//                     {loading ? <CircularProgress size={24} color="inherit" /> : "Verify OTP"}
+//                   </Button>
+//                 </form>
+//               )}
+
+//               {message && (
+//                 <Typography variant="body2" sx={{ color: "secondary.main", textAlign: "center", mt: 2 }}>
+//                   {message}
+//                 </Typography>
+//               )}
+
+//               <Divider sx={{ my: 3 }} />
+//               <Typography variant="body2" sx={{ textAlign: "center", color: "text.secondary" }}>
+//                 Don’t have an account?{" "}
+//                 <Button onClick={handleSignUp} sx={{ color: "primary.main", textDecoration: "underline", p: 0 }}>
+//                   Sign up
+//                 </Button>
+//               </Typography>
+//             </CardContent>
+//           </Card>
+//         </Box>
+//       </Box>
+//     </ThemeProvider>
+//   );
+// };
+
+// export default LoginPage;
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -431,11 +621,14 @@ const LoginPage = () => {
     axios
       .get("https://agrihub-backend-pvfl.onrender.com/api/users/profile", { withCredentials: true })
       .then((response) => {
+        console.log("Initial profile check:", response.data); // Debug log
         if (response.data) {
           navigate(response.data.isAdmin ? "/admin-dashboard" : "/profile");
         }
       })
-      .catch(() => {})
+      .catch((error) => {
+        console.error("Initial profile check error:", error.response?.data || error.message);
+      })
       .finally(() => setLoading(false));
   }, [navigate]);
 
@@ -454,10 +647,16 @@ const LoginPage = () => {
     setMessage("");
     setLoading(true);
     try {
-      await axios.post("https://agrihub-backend-pvfl.onrender.com/api/users/login", { mobile: formData.mobile }, { withCredentials: true });
+      const response = await axios.post(
+        "https://agrihub-backend-pvfl.onrender.com/api/users/login",
+        { mobile: formData.mobile },
+        { withCredentials: true }
+      );
+      console.log("Send OTP response:", response.data); // Debug log
       setMessage("OTP sent to your mobile.");
       setOtpSent(true);
     } catch (error) {
+      console.error("Send OTP error:", error.response?.data || error.message);
       setMessage(error.response?.data?.message || "Failed to send OTP");
     } finally {
       setLoading(false);
@@ -474,8 +673,15 @@ const LoginPage = () => {
         { mobile: formData.mobile, otp: formData.otp },
         { withCredentials: true }
       );
+      console.log("Verify OTP response:", response.data); // Debug log
+      // Verify session is set by fetching profile immediately
+      const profileResponse = await axios.get("https://agrihub-backend-pvfl.onrender.com/api/users/profile", {
+        withCredentials: true,
+      });
+      console.log("Post-login profile check:", profileResponse.data); // Debug log
       navigate(response.data.user.isAdmin ? "/admin-dashboard" : "/profile");
     } catch (error) {
+      console.error("Verify OTP error:", error.response?.data || error.message);
       setMessage(error.response?.data?.error || "Invalid OTP");
     } finally {
       setLoading(false);
